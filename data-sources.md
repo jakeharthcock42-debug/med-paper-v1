@@ -2,7 +2,7 @@
 
 **Project context**: Supporting secondary data analysis for a medical student research paper/abstract on disparities of care across Mississippi counties (race, rural-urban, access). Target: local/regional conference abstract (e.g., MAFP, ACP MS chapter, UMMC Research Day).
 
-**Last updated**: 2026-11-26  
+**Last updated**: 2026-11-26 (Paper 01 county pull added)  
 **Maintainer notes**: Focus on publicly available or low-barrier datasets. UMMC internal resources noted separately for potential enrichment.
 
 ---
@@ -18,6 +18,7 @@
 - **Limitations**: Some measures are modeled or lagged; limited race stratification in core files.
 - **ENT relevance**: Low (general access/outcomes only).
 - **Suggested use**: Primary backbone for access → outcome analyses; stratify by rurality or poverty quintiles.
+- **PULLED 2026-11-26 (Paper 01)**: 2025 release analytic file, all 82 MS counties: https://www.countyhealthrankings.org/sites/default/files/media/document/analytic_data2025_v3.csv. Variables used: PCP (AMA 2021), uninsured <65 (SAHIE 2022), % rural (2020 Census), % non-Hispanic Black (2023), children in poverty, median household income (2023). Year list: https://www.countyhealthrankings.org/sites/default/files/media/document/2025%20Select%20and%20additional%20measures%2C%20data%20sources%20and%20years.pdf. Results: `papers/01-hearing-loss-disparities/county-analysis.md`.
 
 ### 2. MSTAHRS (Mississippi Statistically Automated Health Resource System)
 - **What it provides**: Vital statistics — births, deaths (cause-specific), infant deaths, pregnancies, early elective deliveries, population. Queryable by year, age, race, ethnicity, sex, county/region of residence.
@@ -38,6 +39,7 @@
 - **Limitations**: Model-based (not direct survey counts); caution against using for intervention evaluation.
 - **ENT relevance**: **High** — hearing disability prevalence is the strongest free county-level ENT-related measure available.
 - **Suggested use**: Primary source for hearing disability disparities; secondary for other chronic conditions or preventive care gaps.
+- **PULLED 2026-11-26 (Paper 01)**: 2025 release (dataset `swc5-untb`, rows updated 2025-12-04; BRFSS 2023), measure `HEARING` (crude and age-adjusted % adults with hearing disability), 82 MS counties via the Socrata API: https://data.cdc.gov/resource/swc5-untb.csv?$where=stateabbr='MS' AND measureid='HEARING'. Dataset page: https://data.cdc.gov/500-Cities-Places/PLACES-Local-Data-for-Better-Health-County-Data-20/swc5-untb. Other disability measures in the same file (vision, cognition, mobility, self-care, independent living, any disability) are available for later papers.
 
 ### 4. State Cancer Profiles (NCI / CDC)
 - **What it provides**: Cancer incidence and mortality rates by county, site, race, sex, age, stage (where available), rural-urban continuum.
@@ -83,9 +85,23 @@
 
 ---
 
+## Tier 1b — Added during Paper 01 (public)
+
+### 4b. American Community Survey (ACS) 5-year 2020–2024, Table-Based Summary File (U.S. Census Bureau)
+- **What it provides**: County estimates for hearing difficulty by sex and age (B18102), race (B02001), poverty (B17001), and thousands of other tables; all 82 MS counties.
+- **Years**: ACS 5-year 2020–2024.
+- **Access**: Free bulk files, no key: https://www2.census.gov/programs-surveys/acs/summary_file/2024/table-based-SF/data/5YRData/ (file names `acsdt5y2024-<table>.dat`, pipe-delimited, all geographies; geography key in `documentation/Geos20245YR.txt`; labels in `ACS20245YR_Table_Shells.txt`). The Census API (`api.census.gov`) returned "Missing Key" on 2026-11-26, so bulk files were used instead of requesting a key.
+- **Limitations**: Self-reported difficulty; sampling error is large in small counties (margins of error are in the `_M` columns; not propagated in Paper 01); civilian noninstitutionalized population only.
+- **Used in**: Paper 01 (`papers/01-hearing-loss-disparities/county-analysis.md`).
+
+---
+
 ## UMMC-Internal Resources
 
 ### Patient Cohort Explorer / Research Data Warehouse (RDW) — ACCESS CONFIRMED
+- **Data-use status**: Data use confirmed by Jake Harthcock 2026-11-26 per the Cohort Explorer guide. Extracted rules with page cites: [`data-use-rules.md`](data-use-rules.md). Jake runs all queries; AI tools have no direct access to the Explorer.
+- **Suppression rule (project)**: never record a UMMC RDW cell under 11 ("<11 (suppressed)"), with complementary suppression where a hidden cell could be backed out. The app itself only allows report view/export when the population is greater than 25 (guide p. 20). Public county data are unaffected.
+- **Active request list (Paper 01)**: `papers/01-hearing-loss-disparities/rdw-data-requests.md`.
 - **Status**: Student has confirmed access and can run queries / export aggregate or de-identified results.
 - **What it provides**: De-identified, date-shifted data from Epic covering ~750,000 patients and ~24 million encounters (updated quarterly). Supports rapid cohort discovery by diagnosis, procedure, demographics, encounter type, etc.
 - **Potential for this project**:
@@ -120,7 +136,7 @@ These are designed to be low-burden exploratory queries that can quickly inform 
 1. Among patients with a hearing-loss diagnosis, proportion who had an audiology or ENT encounter within 12 months of the first coded diagnosis (if timing is feasible).
 2. Simple comparison of ED utilization or inpatient admission rates for ENT-related diagnoses by race.
 
-**Output preference**: Aggregate counts and percentages in tables (no row-level data needed). Note any cell sizes <10 that require suppression.
+**Output preference**: Aggregate counts and percentages in tables (no row-level data needed). Suppress any cell under 11 (project rule).
 
 Once results from A + one of B are available, we can decide whether to lean into an ENT-specific abstract (e.g., disparities in documented hearing loss or head/neck cancer care at UMMC) or keep the broader county-level public-data frame and use RDW only for complementary local context.
 
@@ -141,13 +157,14 @@ Merge public data on county FIPS; use RDW for within-catchment clinical detail.
 ## Next Steps / Living Document Notes
 
 - [x] Confirm RDW / Patient Cohort Explorer access.
-- [ ] Download latest CHR Mississippi Excel and PLACES county file.
+- [x] Download latest CHR Mississippi data and PLACES county file (done 2026-11-26 for Paper 01: CHR 2025 analytic data, PLACES 2025 release; also ACS 2020–2024).
 - [ ] Run sample MSTAHRS queries for diabetes / CVD / infant mortality by race and county.
 - [ ] Check State Cancer Profiles for Oral Cavity & Pharynx rates in MS counties.
-- [ ] Run RDW Query set A + at least one from set B and share aggregate results.
-- [ ] Decide primary outcome / niche (hearing disability vs mortality vs cancer incidence vs UMMC clinical cohort).
+- [ ] Run RDW Query set A + at least one from set B and share aggregate results (Paper 01 version: `rdw-data-requests.md`, R0 to R11).
+- [x] Decide primary outcome / niche for Paper 01: hearing loss (H90.3) at UMMC + county-level hearing disability context. Other niches: later papers.
 - [ ] Draft specific aims once primary outcome chosen.
 
 **File history**:  
 - Created 2026-11-26 as initial catalog.  
 - Updated 2026-11-26: Confirmed student RDW access; added proposed query sets and hybrid analysis option.
+- 2026-11-26: Paper 01 pass: pulled CDC PLACES 2025 (HEARING), ACS 2020–2024 (B18102, B02001, B17001), CHR&R 2025 for 82 counties; linked `data-use-rules.md`; recorded Jake's data-use confirmation and the <11 suppression rule.
