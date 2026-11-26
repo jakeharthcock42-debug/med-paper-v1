@@ -96,6 +96,36 @@
 
 ---
 
+## Tier 1c — Added during Papers 02–05 (public)
+
+### 4c. State Cancer Profiles — detailed county extracts (NCI/CDC)
+- **Pulled**: Oral cavity & pharynx (code 003), colon & rectum (020), female breast (055), cervix (057), lung & bronchus (047); incidence (2019–2023, NPCR 2025 submission), mortality (2020–2024), late-stage incidence and % late stage; all races, White NH (07), Black NH (28), male/female for oral cavity.
+- **Access**: CSV export via the SCP table URL with `output=1` (e.g., `https://statecancerprofiles.cancer.gov/incidencerates/index.php?stateFIPS=28&areatype=county&cancer=003&race=00&sex=0&age=001&stage=999&year=0&type=incd&sortVariableName=rate&sortOrder=default&output=1`; mortality uses `/deathrates/` and `type=death`).
+- **Suppression**: SCP suppresses area-race-sex cells with fewer than 16 cases in 5 years. For oral cavity: all-race county incidence published for 54/82 counties, mortality 11, Black NH incidence 10. County race-specific analysis is not feasible for rare cancers.
+- **Saved**: `data/public/scp_all_long.csv`; scripts in `scripts/public-data/`.
+
+### 4d. County Health Rankings — March 2026 supplemental release
+- 2026 has **no annual release**; CHR&R published a supplemental release on 2026-03-25 (updated mortality 2021–2023, LBW and teen births 2018–2024, infant mortality 2017–2023, PCP 2022, mammography 2023, with White/Black values) and the website goes offline after Dec 2026 — download is already saved in the pipeline; re-download from https://www.countyhealthrankings.org/health-data/methodology-and-sources/data-documentation if needed.
+- Race-specific county values are published only where reliable. Raw files store rates as fractions; scale as in `scripts/public-data/build_master.py`.
+
+### 4e. USDA ERS Rural-Urban Continuum Codes 2023
+- https://www.ers.usda.gov/data-products/rural-urban-continuum-codes (metro = 1–3, nonmetro = 4–9). Used in Papers 02–05.
+
+### 4f. Delta Regional Authority (DRA) Mississippi county list
+- 47 DRA-designated counties (distressed + non-distressed). Sources: https://dra.gov/wp-content/uploads/2024/03/DRA-FY-2025-Buget-Justification-FINAL_Updated03072025.pdf (2024 designations) and https://dra.gov/wp-content/uploads/2022/04/Mississippi.pdf (2016–2019 plan; adds Jasper). DRA ≠ the narrow Mississippi Delta floodplain; label as "DRA (Delta region) county".
+
+### 4g. Notes on PLACES (all papers)
+- Dataset ids: county long format `swc5-untb`; GIS-friendly wide `i46a-9kgh` (2025 release; https://data.cdc.gov). Model-based (MRP; Greenlund 2022) with county poverty as an input, so PLACES–poverty correlations are partly built in.
+- **Data-quality flag**: the PLACES `DENTAL` measure ("visited dentist, past year", 2022) is 4.9–12.9% across MS counties, which is implausibly low for adults; excluded pending verification [PENDING].
+
+### 4h. Interactive or not yet scripted [PENDING]
+- **MSTAHRS** (https://mstahrs.msdh.ms.gov/): interactive query only; cells under 5 suppressed by MSTAHRS (we suppress under 11). Needed for cause-specific deaths by race/county, preterm birth, prenatal care.
+- **CDC WONDER**: API is national-only; county/race queries must be run in the web interface.
+- **HRSA** HPSA data (https://data.hrsa.gov/data/download), **AHRF** (https://data.hrsa.gov/topics/health-workforce/ahrf), **March of Dimes** maternity care deserts (https://www.marchofdimes.org/maternity-care-deserts-report), **CDC BRFSS Prevalence & Trends** (https://www.cdc.gov/brfss/brfssprevalence/): not yet pulled.
+- Census API requires a key (not used); ACS values reach the papers through CHR and the bulk files noted in 4b.
+
+---
+
 ## UMMC-Internal Resources
 
 ### Patient Cohort Explorer / Research Data Warehouse (RDW) — ACCESS CONFIRMED
@@ -168,3 +198,4 @@ Merge public data on county FIPS; use RDW for within-catchment clinical detail.
 - Created 2026-11-26 as initial catalog.  
 - Updated 2026-11-26: Confirmed student RDW access; added proposed query sets and hybrid analysis option.
 - 2026-11-26: Paper 01 pass: pulled CDC PLACES 2025 (HEARING), ACS 2020–2024 (B18102, B02001, B17001), CHR&R 2025 for 82 counties; linked `data-use-rules.md`; recorded Jake's data-use confirmation and the <11 suppression rule.
+- Updated 2026-11-26: added Tier 1c (SCP detailed extracts, CHR March 2026 supplement, RUCC, DRA list, PLACES notes, pending sources) for Papers 02–05.
