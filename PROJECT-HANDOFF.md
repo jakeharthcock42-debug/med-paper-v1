@@ -26,12 +26,16 @@ Key constraints and preferences:
 med-paper-v1/
 ├── README.md
 ├── data-sources.md                     ← living catalog of public + UMMC datasets
+├── data-use-rules.md                   ← Cohort Explorer user-guide rules, with page cites
 ├── PROJECT-HANDOFF.md                  ← this file
 └── papers/
     └── 01-hearing-loss-disparities/
-        ├── README.md                   ← status, aims, next actions
-        ├── draft-v1.md                 ← working manuscript (most developed file)
-        └── rdw-exploration-plan.md     ← detailed query & analysis plan
+        ├── README.md                   ← status, aims, hypotheses, next actions (Step 1 here)
+        ├── draft-v1.md                 ← working manuscript (most developed file; hypotheses in §2.2)
+        ├── county-analysis.md          ← county-level public-data results (82 MS counties)
+        ├── data/                       ← ms_county_merged.csv + build_and_analyze.py
+        ├── rdw-data-requests.md        ← prioritized list of UMMC Explorer numbers needed (active)
+        └── rdw-exploration-plan.md     ← original query plan (cohort/suppression superseded by banner)
 ```
 
 Future papers should follow the same pattern:
@@ -71,10 +75,17 @@ Other codes explored earlier (single-select only):
 - Results section contains ready-to-populate tables.
 - Early Discussion framing is present.
 
+### Status as of 2026-11-26 (late)
+- **Data use**: Data use confirmed by Jake Harthcock 2026-11-26 per Cohort Explorer guide ([`data-use-rules.md`](data-use-rules.md)). The guide does not mention IRB; whether the target conference needs an IRB determination is open.
+- **Suppression rule**: never record a UMMC RDW cell under 11 ("<11 (suppressed)"); app itself requires population >25 to view/export reports (guide p. 20). Public county data unaffected.
+- **Done**: hypotheses written (H-C1 to H-C5 county-level, H-U1 to H-U6 UMMC; `draft-v1.md` §2.2). County analysis done for all 82 MS counties with PLACES 2025 (BRFSS 2023), ACS 2020–2024, CHR&R 2025: rural counties higher (7.54% vs 6.91% age-adjusted, p = 1.5e-4); supported H-C1, H-C2 (negative), H-C4; not supported H-C3 (poverty); partial H-C5. Details: `county-analysis.md`.
+- **Waiting on Jake**: Step 1 (exact H90.3 total; click-by-click in the paper README), then R1 to R11 in `rdw-data-requests.md`. All UMMC results are [PENDING].
+
 ### Immediate Next Steps
+0. Step 1: confirm the exact H90.3 total with only H90.3 selected in Diagnosis Codes (see paper README), then Step 2 race breakdown (`rdw-data-requests.md` R1).
 1. With H90.3 still selected in Patient Cohort Explorer, extract the **Race** breakdown of the 15,612 patients.
 2. Determine how many of these patients have ever had an **Audiology** encounter and/or an **Otolaryngology (ENT)** encounter, stratified by race.
-3. Insert the numbers into `draft-v1.md`, calculate percentages, and draft the Results + Abstract.
+3. Insert the numbers into `draft-v1.md`, calculate percentages, and draft the Results + Abstract. Full prioritized list: `papers/01-hearing-loss-disparities/rdw-data-requests.md`.
 
 ---
 
@@ -85,6 +96,7 @@ Other codes explored earlier (single-select only):
 - Previous selections in the same box are replaced, not added.
 - User can combine selections *across different boxes*, but not multiple values inside one box.
 - This forced the pragmatic decision to proceed with a single high-yield code (H90.3) rather than the full H90 range.
+- Cell suppression: record nothing under 11 for UMMC data ("<11 (suppressed)"); see status above.
 
 When guiding Jake through the tool, give very concrete, sequential click-by-click instructions and ask him to report exact numbers or screenshots after each major step.
 
@@ -95,9 +107,9 @@ When guiding Jake through the tool, give very concrete, sequential click-by-clic
 Full living catalog is in `data-sources.md`. Key ones currently in play:
 
 - **UMMC Patient Cohort Explorer / RDW** (primary clinical data) — user runs all queries.
-- CDC PLACES (county-level model-based hearing disability estimates)
+- CDC PLACES (county-level model-based hearing disability estimates; 2025 release pulled)
 - County Health Rankings & Roadmaps
-- American Community Survey disability tables
+- American Community Survey disability tables (ACS 5-year 2020–2024 bulk files pulled; Census API needs a key)
 - MSTAHRS (Mississippi vital statistics)
 - State Cancer Profiles (for potential future papers)
 
