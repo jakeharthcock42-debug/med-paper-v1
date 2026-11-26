@@ -28,7 +28,13 @@ med-paper-v1/
 ├── data-sources.md                     ← living catalog of public + UMMC datasets
 ├── data-use-rules.md                   ← Cohort Explorer user-guide rules, with page cites
 ├── PROJECT-HANDOFF.md                  ← this file
+├── data/public/                        ← merged MS county public data + State Cancer Profiles extract (Papers 02–05)
+├── scripts/public-data/                ← pipeline + analysis scripts for Papers 02–05
 └── papers/
+    ├── 02-oral-pharynx-cancer-disparities/     ← README, draft-v1, results/ (public data first pass done)
+    ├── 03-primary-care-premature-mortality-gap/
+    ├── 04-maternal-infant-outcomes/
+    ├── 05-screening-gaps-cancer-stage/
     └── 01-hearing-loss-disparities/
         ├── README.md                   ← status, aims, hypotheses, next actions (Step 1 here)
         ├── draft-v1.md                 ← working manuscript (most developed file; hypotheses in §2.2)
@@ -86,6 +92,21 @@ Other codes explored earlier (single-select only):
 1. With H90.3 still selected in Patient Cohort Explorer, extract the **Race** breakdown of the 15,612 patients.
 2. Determine how many of these patients have ever had an **Audiology** encounter and/or an **Otolaryngology (ENT)** encounter, stratified by race.
 3. Insert the numbers into `draft-v1.md`, calculate percentages, and draft the Results + Abstract. Full prioritized list: `papers/01-hearing-loss-disparities/rdw-data-requests.md`.
+
+---
+
+## 3b. Papers 02–05 — public-data first pass (added 2026-11-26)
+
+Each folder has `README.md` (question, aims, hypotheses with planned tests and first-pass status, sources with years, limits, next actions, **ready-to-run UMMC RDW add-on**), `draft-v1.md` (cited intro skeleton, methods, empty results tables), and `results/` (full first-pass output + small county CSV). All numbers come from public aggregates (82 MS counties); nothing is estimated; unknowns are [PENDING]. UMMC add-ons are cleared by Jake (2026-11-26); UMMC cells under 11 are suppressed.
+
+| # | Topic | Strongest first-pass finding (public data) |
+|---|-------|--------------------------------------------|
+| 02 | Oral cavity & pharynx cancer by race/rurality (ENT-adjacent) | MS Black NH incidence 9.5 vs White NH 15.6 per 100k (RR 0.61) but mortality 3.7 vs 3.5 (RR 1.06); late stage 73.1% vs 64.8%. County rural vs metro: no difference (54 of 82 counties published) |
+| 03 | PCP supply, poverty, and the Black–White gap in premature mortality | Black higher than White premature mortality in 71 of 80 counties (median 742 vs 601 per 100k); PCP supply not independently associated once child poverty is in the model |
+| 04 | Maternal/infant outcomes (LBW, teen births, infant mortality) | Black LBW higher than White in 77 of 77 counties (median 17.9% vs 8.8%); gap uniform across county contexts |
+| 05 | Cancer screening gaps and stage (Delta/rural) | CHR Medicare mammography lower in Delta counties (40% vs 44%, p = 0.003) and higher with PCP supply; mammography inversely related to late-stage breast cancer (rho −0.331) |
+
+Recommended order: 02 or 04 for the cleanest abstract, 03 as a primary-care-audience paper, 05 as a follow-on (see each README). Pipeline: `scripts/public-data/README.md`.
 
 ---
 
