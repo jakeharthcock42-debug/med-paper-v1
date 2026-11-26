@@ -8,11 +8,17 @@ Mississippi county-level / UMMC health disparities research project (medical stu
 med-paper-v1/
 ├── README.md                 # this file
 ├── data-sources.md           # living catalog of public + UMMC datasets
+├── data/public/              # merged MS county public data + State Cancer Profiles extract
+├── scripts/public-data/      # pipeline + analysis scripts (Papers 02–05)
 └── papers/                   # one subfolder per potential paper
     ├── 01-hearing-loss-disparities/
     │   ├── README.md         # status, aims, notes
     │   ├── draft-v1.md       # working draft
     │   └── final.md          # (when ready)
+    ├── 02-oral-pharynx-cancer-disparities/   # README, draft-v1, results/
+    ├── 03-primary-care-premature-mortality-gap/
+    ├── 04-maternal-infant-outcomes/
+    ├── 05-screening-gaps-cancer-stage/
     └── (future papers...)
 ```
 
@@ -21,6 +27,10 @@ med-paper-v1/
 | # | Working title | Status | Folder |
 |---|---------------|--------|--------|
 | 01 | Hearing loss disparities (UMMC + county context) | Ideation / early draft | [papers/01-hearing-loss-disparities](papers/01-hearing-loss-disparities) |
+| 02 | Oral cavity & pharynx cancer by race and rurality | Public-data first pass done; draft skeleton | [papers/02-oral-pharynx-cancer-disparities](papers/02-oral-pharynx-cancer-disparities) |
+| 03 | Primary care supply, poverty, Black–White gap in premature mortality | Public-data first pass done; draft skeleton | [papers/03-primary-care-premature-mortality-gap](papers/03-primary-care-premature-mortality-gap) |
+| 04 | Maternal/infant outcomes (LBW, teen births, infant mortality) | Public-data first pass done; draft skeleton | [papers/04-maternal-infant-outcomes](papers/04-maternal-infant-outcomes) |
+| 05 | Cancer screening gaps and stage (Delta/rural) | Public-data first pass done; draft skeleton | [papers/05-screening-gaps-cancer-stage](papers/05-screening-gaps-cancer-stage) |
 
 ## Key shared resources
 
