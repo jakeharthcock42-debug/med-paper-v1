@@ -1,5 +1,7 @@
 # RDW Hearing Loss Exploration & Correlation Plan
 
+> **UPDATE 2026-11-26 — read first.** The cohort in this plan (H90 ± H91) is **superseded by ICD-10 H90.3 only** (approx. 15,612 patients), because the Explorer allows one selection per filter box. The active, prioritized list of queries is [`rdw-data-requests.md`](rdw-data-requests.md); hypotheses are in [`draft-v1.md`](draft-v1.md) §2.2. Suppression rule: never record a UMMC cell under 11 ("<11 (suppressed)"; this replaces the "<10" wording below); the Explorer itself only allows report view/export when the population is greater than 25 (guide p. 20). Data use confirmed by Jake Harthcock 2026-11-26 per [`../../data-use-rules.md`](../../data-use-rules.md). The text below is kept for the variable list and ICD-10 code reference.
+
 **Paper**: 01-hearing-loss-disparities  
 **Goal**: Generate the core descriptive and correlational findings needed for the abstract / paper using Patient Cohort Explorer / RDW.
 
@@ -109,7 +111,7 @@ Simple chi-square or logistic regression (race as predictor of “had specialty 
 5. Create the utilization crosstabs (hearing loss + specialty visit, stratified by race).
 6. If ZIP/county is available, repeat key stratifications by rural vs non-rural.
 
-**Output preference**: Aggregate counts and percentages. Suppress or note any cell < 10.
+**Output preference**: Aggregate counts and percentages. Suppress any cell < 11.
 
 ---
 
