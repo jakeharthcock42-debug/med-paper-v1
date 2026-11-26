@@ -1,11 +1,27 @@
 # med-paper-v1
 
-Mississippi county-level health disparities research project (medical student abstract / paper).
+Mississippi county-level / UMMC health disparities research project (medical student abstracts & papers).
 
-## Key files
+## Structure
 
-- **[data-sources.md](data-sources.md)** — Living catalog of public and UMMC-internal datasets relevant to disparities of care across MS counties, with notes on access, strengths, limitations, and ENT relevance.
+```
+med-paper-v1/
+├── README.md                 # this file
+├── data-sources.md           # living catalog of public + UMMC datasets
+└── papers/                   # one subfolder per potential paper
+    ├── 01-hearing-loss-disparities/
+    │   ├── README.md         # status, aims, notes
+    │   ├── draft-v1.md       # working draft
+    │   └── final.md          # (when ready)
+    └── (future papers...)
+```
 
-## Project goal
+## Active papers
 
-Author a paper or abstract on disparities of care in Mississippi counties that is submittable to a local/regional conference (e.g., MAFP, ACP Mississippi chapter, UMMC Research Day).
+| # | Working title | Status | Folder |
+|---|---------------|--------|--------|
+| 01 | Hearing loss disparities (UMMC + county context) | Ideation / early draft | [papers/01-hearing-loss-disparities](papers/01-hearing-loss-disparities) |
+
+## Key shared resources
+
+- **[data-sources.md](data-sources.md)** — Datasets (CHR, MSTAHRS, PLACES, State Cancer Profiles, RDW, etc.) with access notes and ENT relevance.
