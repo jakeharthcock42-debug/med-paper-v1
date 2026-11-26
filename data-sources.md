@@ -83,39 +83,71 @@
 
 ---
 
-## UMMC-Internal Resources (Not Public, but High-Value for This Project)
+## UMMC-Internal Resources
 
-### Patient Cohort Explorer / Research Data Warehouse (RDW)
-- ~750k patients, ~24M encounters; de-identified, date-shifted Epic data.
-- Designed for rapid cohort discovery by UMMC researchers.
-- **Potential**: True clinical ENT volumes, comorbidities, utilization patterns, race disparities within UMMC catchment.
-- Access: Through Center for Informatics and Analytics / mentor.
+### Patient Cohort Explorer / Research Data Warehouse (RDW) — ACCESS CONFIRMED
+- **Status**: Student has confirmed access and can run queries / export aggregate or de-identified results.
+- **What it provides**: De-identified, date-shifted data from Epic covering ~750,000 patients and ~24 million encounters (updated quarterly). Supports rapid cohort discovery by diagnosis, procedure, demographics, encounter type, etc.
+- **Potential for this project**:
+  - Race/ethnicity and (if available) patient residence ZIP or county → disparities within UMMC catchment.
+  - ENT-relevant cohorts: hearing loss, chronic otitis, chronic sinusitis, tonsil/adenoid disease, head & neck cancers, dysphagia, etc.
+  - Utilization patterns (ED vs outpatient vs inpatient), comorbidity burden, and simple outcome proxies.
+  - Ability to generate counts, demographic tables, and basic stratified rates that complement public county-level data.
+- **Access notes**: Queries run by the student; results can be shared as aggregate tables or limited exports that remain de-identified.
+- **Suggested early queries** (see dedicated section below).
 
 ### UMMC Biobank
 - Specimens + linked clinical data (application required).
 
 ---
 
+## Proposed RDW Queries (for student to run)
+
+These are designed to be low-burden exploratory queries that can quickly inform whether an ENT-focused or broader disparities abstract is feasible with UMMC data.
+
+**Query set A — Feasibility / Denominators**
+1. Total unique patients in RDW with any encounter in the last 5 years (or most recent available window).
+2. Breakdown of those patients by race/ethnicity and by sex.
+3. If ZIP or county of residence is available in the de-identified data: count of patients by Mississippi county (or by rural vs non-rural ZIP).
+
+**Query set B — ENT-relevant cohorts (pick 1–2 to start)**
+1. Patients with any diagnosis of hearing loss / sensorineural hearing loss / conductive hearing loss (use common ICD-10 codes or the Explorer’s diagnosis search).
+2. Patients with chronic sinusitis or chronic rhinosinusitis.
+3. Patients with head & neck cancer diagnoses (oral cavity, pharynx, larynx, etc.).
+4. For each of the above: age distribution, race/ethnicity distribution, and (if possible) proportion with at least one ENT specialty encounter or relevant procedure.
+
+**Query set C — Access / utilization signal**
+1. Among patients with a hearing-loss diagnosis, proportion who had an audiology or ENT encounter within 12 months of the first coded diagnosis (if timing is feasible).
+2. Simple comparison of ED utilization or inpatient admission rates for ENT-related diagnoses by race.
+
+**Output preference**: Aggregate counts and percentages in tables (no row-level data needed). Note any cell sizes <10 that require suppression.
+
+Once results from A + one of B are available, we can decide whether to lean into an ENT-specific abstract (e.g., disparities in documented hearing loss or head/neck cancer care at UMMC) or keep the broader county-level public-data frame and use RDW only for complementary local context.
+
+---
+
 ## Recommended Starter Stack for Current Project
 
-For a free, public-data, conference-ready abstract on **county-level disparities**:
+**Option 1 — Pure public data (fastest to abstract)**  
+CHR + MSTAHRS + PLACES (hearing disability) ± State Cancer Profiles.
 
-1. **County Health Rankings** → access metrics + premature death / preventable stays.
-2. **MSTAHRS** → race-stratified mortality or maternal/infant outcomes.
-3. **CDC PLACES** → hearing disability (ENT niche) or other condition prevalence.
-4. **State Cancer Profiles** → if pursuing oral cavity & pharynx / head-neck angle.
+**Option 2 — Hybrid (higher clinical specificity)**  
+Public county data for context + RDW-derived UMMC cohort tables for race/utilization disparities in one or two ENT conditions.
 
-Merge on county FIPS codes. Stratify by race (where available), rural-urban continuum, and access quintiles.
+Merge public data on county FIPS; use RDW for within-catchment clinical detail.
 
 ---
 
 ## Next Steps / Living Document Notes
 
+- [x] Confirm RDW / Patient Cohort Explorer access.
 - [ ] Download latest CHR Mississippi Excel and PLACES county file.
 - [ ] Run sample MSTAHRS queries for diabetes / CVD / infant mortality by race and county.
 - [ ] Check State Cancer Profiles for Oral Cavity & Pharynx rates in MS counties.
-- [ ] Decide primary outcome (hearing disability vs mortality vs cancer incidence vs preventable stays).
-- [ ] Identify UMMC mentor and confirm RDW access pathway.
+- [ ] Run RDW Query set A + at least one from set B and share aggregate results.
+- [ ] Decide primary outcome / niche (hearing disability vs mortality vs cancer incidence vs UMMC clinical cohort).
 - [ ] Draft specific aims once primary outcome chosen.
 
-**File history**: Created 2026-11-26 as initial catalog for med-paper-v1. Expand with download links, variable dictionaries, and analysis notes as work progresses.
+**File history**:  
+- Created 2026-11-26 as initial catalog.  
+- Updated 2026-11-26: Confirmed student RDW access; added proposed query sets and hybrid analysis option.
