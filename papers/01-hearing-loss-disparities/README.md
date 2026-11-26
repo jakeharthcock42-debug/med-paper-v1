@@ -18,11 +18,12 @@
 - Locally relevant given rural access barriers and known disparities in sensory impairment.
 
 ## Next actions
-- [ ] Run RDW Query set A (denominators) + hearing-loss cohort from Set B (see main data-sources.md).
-- [ ] Share aggregate tables here or in draft-v1.md.
+- [ ] Run the queries in [`rdw-exploration-plan.md`](rdw-exploration-plan.md) (H90 ± H91 cohort → Tables A/B/C).
+- [ ] Share aggregate tables here or in `draft-v1.md`.
 - [ ] Refine aims and decide pure-UMMC vs hybrid public+UMMC framing.
-- [ ] Draft abstract outline once core numbers are in hand.
+- [ ] Draft abstract once core numbers are in hand.
 
 ## File guide
+- [`rdw-exploration-plan.md`](rdw-exploration-plan.md) — detailed cohort definition, ICD codes, variables, correlation questions, and query sequence
 - `draft-v1.md` — working manuscript / abstract text, tables, notes
 - `final.md` — polished version for submission (create when ready)
