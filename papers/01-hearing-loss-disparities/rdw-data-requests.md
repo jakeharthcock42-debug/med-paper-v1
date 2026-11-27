@@ -20,16 +20,32 @@
 - Report: Patients; Encounters.
 - **Result**: Patients = **15,612** (0.94% of RDW). Encounters = **4,244,868** (5.79%). Data window: encounters between **1/1/2013** and **9/30/2026**.
 
-### R1. Race breakdown of the H90.3 cohort (Step 2) — H-U1, Table 1
-1. Keep H90.3 selected in Diagnosis Codes. Clear every other box.
-2. In the **Race** box, select the first value (for example Black or African American, using the exact label shown). Read **Patients** in the header. Write down the label and the number.
-3. Clear only the Race selection (H90.3 stays). Select the next Race value and read **Patients**. Repeat for every value listed in the Race box, including Unknown / Declined if shown.
-4. Do the same once in the **Ethnicity** box (Hispanic or Latino / not), with Race cleared.
-5. Note whether **Multi-Racial** is a separate box and its count when selected (one value at a time).
-6. Report as `Race value: Patients`. Counts under 11 as "<11 (suppressed)".
+### R1. Race breakdown of the H90.3 cohort (Step 2) — H-U1, Table 1 — **percentages recorded** (2026-11-26, screenshot); exact counts **[PENDING]**
+- Location confirmed: **Data Filters** page → **Patient Demographics** tab → Demographic Search list → **Race**. The dropdown shows each value’s percentage of the current (H90.3) cohort. Race is not on the Patient Filters (Diagnosis / Procedures / Medications / Labs) screen.
+- **Percentages, exactly as displayed** (H90.3, Patients = 15,612). Do not back-calculate counts. A displayed 0.0% implies fewer than 11 patients and is recorded as `<11 (suppressed)`.
+  - (blank/unlabeled row) 0.0% → `<11 (suppressed)`
+  - American Indian or Alaska Native 0.2%
+  - Asian 0.5%
+  - Asian Indian 0.0% → `<11 (suppressed)`
+  - Black or African American 47.1%
+  - Hispanic 0.2%
+  - MS Band Choctaw Indian 0.2%
+  - Multiracial 0.4%
+  - Native Hawaiian or Other Pacific Islander 0.0% → `<11 (suppressed)`
+  - Other 1.1%
+  - Patient Refused 0.1%
+  - Unknown 0.2%
+  - White or Caucasian 49.9%
+- Grayed out (no patients in this selection): Chinese, Filipino, Guamanian or Chamorro, Japanese, Korean, Native Hawaiian, Other Pacific Islander, Samoan, Vietnamese.
+- **Still needed — exact header counts (do this next):**
+  1. Keep H90.3 selected. On Data Filters → Patient Demographics, confirm the header still shows Patients = 15,612.
+  2. Click **Black or African American**. Report the **Patients** number in the header.
+  3. Click **White or Caucasian** (replaces the Black selection). Report the **Patients** number.
+  4. Reply as `Black or African American: Patients = ____ ; White or Caucasian: Patients = ____`. Counts under 11 as `<11 (suppressed)`.
+- Ethnicity (Hispanic or Latino / not) as a separate box, if present, remains **[PENDING]** (Hispanic also appears as a Race-list value at 0.2%).
 
-### R2. Sex and age of the H90.3 cohort — Table 1
-- Filters: H90.3 + **Sex** (Female, then Male; one at a time). Report Patients each.
+### R2. Sex and age of the H90.3 cohort — Table 1 — **sex percentages recorded** (2026-11-26, screenshot); exact counts and age **[PENDING]**
+- Sex pie chart on the Patient Demographics screen (same screenshot as R1): Female **54.84%**, Male **45.16%**. Exact Patients counts **[PENDING]**; do not back-calculate them. If needed later, click Female, then Male, and report the header Patients number for each.
 - Age: use the **Age** box to read counts for age bands (adult bands such as 18–39, 40–59, 60–74, 75 and older, or whatever the box offers; tell me the bands you used). One value or range at a time. Report Patients per band.
 
 ### R3. Denominator: all RDW patients by race — H-U1
@@ -78,8 +94,8 @@ R0 to R3 fill Table 1 and H-U1 (race distribution vs RDW). R4 to R6 fill Table 2
 
 ## Status checklist
 - [x] R0 total — Patients = 15,612 (0.94% of RDW); Encounters = 4,244,868 (5.79%); window 1/1/2013–9/30/2026 (screenshot, 2026-11-26)
-- [ ] R1 race
-- [ ] R2 sex and age
+- [x] R1 race percentages — recorded 2026-11-26 (Black or African American 47.1%; White or Caucasian 49.9%; full list under R1); exact header counts **[PENDING]**
+- [x] R2 sex percentages — Female 54.84%, Male 45.16% (pie chart, 2026-11-26); exact counts and age **[PENDING]**
 - [ ] R3 RDW race denominator
 - [ ] R4 audiology
 - [ ] R5 ENT
