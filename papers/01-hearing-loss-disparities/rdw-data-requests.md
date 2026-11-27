@@ -102,7 +102,7 @@ Field: Data Filters → Patient Demographics → “Enter Age, then Press Enter�
 | 45–64 | 6,956 | 3,128 | 143 | 3,543 | 178 |
 | 65+ | 8,991 | 3,225 | 243 | 5,428 | 550 |
 
-Black vs White RR (Katz 95% CI): 0–17 0.820 (0.678–0.992); 18–44 0.925 (0.692–1.236); 45–64 0.910 (0.734–1.128); 65+ 0.744 (0.644–0.859). Mantel-Haenszel RR = **0.812** (Greenland-Robins 95% CI **0.711–0.928**; CMH χ² = 18.29, p = 1.89e-5). Homogeneity (Breslow-Day / Tarone) p = 0.31. Sensitivity excluding 0–17: MH RR **0.810** (0.695–0.943). Band totals sum to 20,824 vs unique N = 15,612. The 0–17 Audiology encounter window was 3/2026–9/30/2026 (Black 3/26/2026, White 3/16/2026); adult Audiology windows begin mid/late 2014. Whether pediatric Audiology-department coding begins only in 2026 is **[PENDING]** verification. Computations: `data/r9_mh_analysis.py`.
+Black vs White RR (Katz 95% CI): 0–17 0.820 (0.678–0.992); 18–44 0.925 (0.692–1.236); 45–64 0.910 (0.734–1.128); 65+ 0.744 (0.644–0.859). Mantel-Haenszel RR = **0.812** (Greenland-Robins 95% CI **0.711–0.928**; CMH χ² = 18.29, p = 1.89e-5). Homogeneity (Breslow-Day / Tarone) p = 0.31. Sensitivity excluding 0–17: MH RR **0.810** (0.695–0.943). Band totals sum to 20,824 vs unique N = 15,612. A follow-up check with race cleared (H90.3 + AgeKey 0–17 + Audiology; 2026-11-26 screenshot) showed Patients = **401** (0.02% of RDW), Encounters = **868**, and an included-encounter window of **9/3/2015–9/30/2026**. Pediatric Audiology-department coding spans 2015–2026; the 3/2026 start previously seen with a race selected (Black 3/26/2026, White 3/16/2026) is a display artifact, not a coding window. The 0–17 band is retained in the primary Mantel-Haenszel estimate; the sensitivity excluding 0–17 is a concordance check. Computations: `data/r9_mh_analysis.py`.
 
 ## Priority 4 — optional covariates
 
@@ -113,7 +113,7 @@ Black vs White RR (Katz 95% CI): 0–17 0.820 (0.678–0.992); 18–44 0.925 (0.
 - H90.3 patients who ever had an ED encounter, by race. Report Patients each (only if time allows).
 
 ## How the numbers get used
-R9 is done (age-stratified audiology; MH RR 0.812, 95% CI 0.711–0.928). R0 to R3 fill Table 1 and H-S2 (formerly H-U1; race distribution vs RDW). R1 cohort race counts are in; R3 (RDW base-population race) is still needed to finish H-S2. R4 is done (H-U2, crude primary result). R5 is done and is retained as a descriptive finding (retired hypotheses H-U3 / H-U4; 96.74% had an Otolaryngology encounter). R6 is non-informative (≥96.74%) and optional. R7 enables H-S3 if the State/County field can classify rural vs non-rural. R8 (diagnosis origin / circularity) remains an important limitation check. R10 and R11 are optional covariates. A conference abstract v2 is in `draft-v1.md`. Next non-optional UMMC check: verify the pediatric Audiology coding window.
+R9 is done (age-stratified audiology; MH RR 0.812, 95% CI 0.711–0.928). R0 to R3 fill Table 1 and H-S2 (formerly H-U1; race distribution vs RDW). R1 cohort race counts are in; R3 (RDW base-population race) is still needed to finish H-S2. R4 is done (H-U2, crude primary result). R5 is done and is retained as a descriptive finding (retired hypotheses H-U3 / H-U4; 96.74% had an Otolaryngology encounter). R6 is non-informative (≥96.74%) and optional. R7 enables H-S3 if the State/County field can classify rural vs non-rural. R8 (diagnosis origin / circularity) remains an important limitation check. R10 and R11 are optional covariates. A conference abstract v2 is in `draft-v1.md`. The pediatric Audiology coding-window check is done (9/3/2015–9/30/2026 with race cleared). Remaining UMMC requests are optional: R3, R7, R8.
 
 ## Status checklist
 - [x] R0 total — Patients = 15,612 (0.94% of RDW); Encounters = 4,244,868 (5.79%); window 1/1/2013–9/30/2026 (screenshot, 2026-11-26)
@@ -125,6 +125,7 @@ R9 is done (age-stratified audiology; MH RR 0.812, 95% CI 0.711–0.928). R0 to 
 - [ ] R6 audiology or ENT — optional / non-informative (would be ≥96.74%)
 - [ ] R7 residence variable (State/County field seen; confirm name and usability for H-S3)
 - [ ] R8 diagnosis origin — circularity check
-- [x] R9 age-stratified audiology — done 2026-11-26 (AgeKey = age at encounter): MH RR 0.812 (0.711–0.928; CMH p = 1.89e-5); sensitivity excluding 0–17: 0.810 (0.695–0.943). Pediatric Audiology window 3/2026–9/30/2026 remains [PENDING] verification.
+- [x] R9 age-stratified audiology — done 2026-11-26 (AgeKey = age at encounter): MH RR 0.812 (0.711–0.928; CMH p = 1.89e-5); sensitivity excluding 0–17: 0.810 (0.695–0.943), concordance check only (0–17 kept in the primary MH).
+- [x] Pediatric Audiology window — done 2026-11-26 (race cleared; 0–17 + Audiology): Patients 401 (0.02%), Encounters 868, window 9/3/2015–9/30/2026. The 3/2026 header with race selected was a display artifact.
 - [ ] R10 payer
 - [ ] R11 ED use
