@@ -51,6 +51,7 @@ Reproducibility: `scripts/public-data/` (`p02.py`, `p02b.py`, `build_ahrf.py`, `
 Per Jake's 2026-11-27 decision, Papers 02–05 use public data only because UMMC pulls make him the bottleneck. The earlier UMMC Patient Cohort Explorer request (ICD-10 C01–C06, C09, C10 by race/sex/age; ENT/radiation/medical oncology encounters; tobacco documentation) is **not used**. It would add subsite detail (oral cavity vs oropharynx), local referral patterns and tobacco documentation that SCP cannot provide, and remains a possible follow-up if Jake later chooses.
 
 ## Next actions
+- [ ] Abstract trimmed to <=300 words (including section labels); Jake to review; 05 merge-into-02 vs drop pending Jake.
 - [ ] Re-verify SCP figures against live SCP pages immediately before any abstract submission (SCP updates yearly).
 - [ ] Optional: query MSTAHRS (https://mstahrs.msdh.ms.gov/) manually for oral cavity/pharynx death counts by race and region (interactive; suppress cells under 5 by source rule, and under 11 in anything we report).
 - [ ] Optional: US Cancer Statistics (https://gis.cdc.gov/Cancer/USCS/) manual query for MS subsite rates (oral cavity vs oropharynx) by race.

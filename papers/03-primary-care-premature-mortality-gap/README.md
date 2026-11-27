@@ -49,6 +49,7 @@ Reproducibility: `scripts/public-data/` (`p03.py`, `p03b.py`, `build_ahrf.py`, `
 Per Jake's 2026-11-27 decision, Papers 02–05 use public data only. The earlier UMMC Patient Cohort Explorer request (E11.x, I10 patients by race with ≥1 primary-care encounter; visit counts and A1c/BP control by race) is **not used**. It would show UMMC-clinic chronic-disease management by race, which public aggregates cannot, and remains a possible later extension.
 
 ## Next actions
+- [ ] Abstract trimmed to <=300 words (including section labels); Jake to review; 05 merge-into-02 vs drop pending Jake.
 - [ ] Jake: review/edit `draft-v1.md` abstract; decide whether the Lee 2026 overlap warrants reframing to emphasize the race-specific PCP finding.
 - [ ] Optional manual: CDC WONDER state-level premature deaths by race and cause; MSTAHRS county data (cells under 11 suppressed).
 - [ ] Optional: add NP/PA supply from AHRF (NPI-based variables `np_npi_23`) as a sensitivity analysis.
