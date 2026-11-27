@@ -1,7 +1,7 @@
 # Draft v1 — Hearing Loss Disparities
 
 **Last updated**: 2026-11-26  
-**Status**: Hypotheses written; county-level public-data tests done ([`county-analysis.md`](county-analysis.md)); UMMC cohort N and encounter total confirmed (H90.3 Patients = 15,612, 0.94% of RDW; Encounters = 4,244,868, 5.79%; window 1/1/2013–9/30/2026; screenshot 2026-11-26); remaining RDW numbers **[PENDING]** (next: R1 race breakdown in [`rdw-data-requests.md`](rdw-data-requests.md)). Data use confirmed by Jake Harthcock 2026-11-26 per Cohort Explorer guide ([`../../data-use-rules.md`](../../data-use-rules.md)).
+**Status**: Hypotheses written; county-level public-data tests done ([`county-analysis.md`](county-analysis.md)); UMMC cohort N and encounter total confirmed (H90.3 Patients = 15,612, 0.94% of RDW; Encounters = 4,244,868, 5.79%; window 1/1/2013–9/30/2026). R1 race percentages recorded (Black or African American 47.1%; White or Caucasian 49.9%; screenshot 2026-11-26); exact race and sex counts **[PENDING]** (next: click Black, then White). Data use confirmed by Jake Harthcock 2026-11-26 per Cohort Explorer guide ([`../../data-use-rules.md`](../../data-use-rules.md)).
 
 > **Numbers rule**: no number appears here unless it was obtained from a cited source. Anything not yet obtained is marked **[PENDING]**. UMMC RDW subgroup cells under 11 are never recorded; they appear as "<11 (suppressed)" (project rule). Separately, the Cohort Explorer itself only allows report view/export when the population is greater than 25 (guide p. 20).
 
@@ -18,7 +18,7 @@ Racial and Geographic Disparities in Documented Hearing Loss and Related Care at
 
 **Methods**: Retrospective analysis of de-identified aggregate data from the UMMC Research Data Warehouse / Patient Cohort Explorer. Patients with ICD-10 H90.3 (bilateral sensorineural hearing loss) were identified. Race and utilization of audiology or otolaryngology services were tabulated and compared (chi-square, risk difference, odds ratio). County-level context for all 82 Mississippi counties used CDC PLACES hearing-disability estimates (2025 release, BRFSS 2023), ACS 2020–2024, and County Health Rankings 2025, analyzed with Spearman correlation and rural vs non-rural comparison.
 
-**Results**: *County level*: age-adjusted adult hearing disability prevalence was higher in rural than non-rural counties (PLACES mean 7.54% vs 6.91%; Mann-Whitney p = 1.5e-4; n = 66 vs 16) and correlated with % rural (Spearman rho = 0.477), fewer primary care physicians (rho = −0.470), higher uninsured share (rho = 0.490) and lower county % Black (rho = −0.321); no association with county poverty (rho = 0.017). *UMMC cohort*: N = 15,612 patients (0.94% of RDW) and 4,244,868 encounters (5.79%) with ICD-10 H90.3 (Patient Cohort Explorer screenshot, 2026-11-26; data window 1/1/2013–9/30/2026). Race distribution and utilization by race **[PENDING]**.
+**Results**: *County level*: age-adjusted adult hearing disability prevalence was higher in rural than non-rural counties (PLACES mean 7.54% vs 6.91%; Mann-Whitney p = 1.5e-4; n = 66 vs 16) and correlated with % rural (Spearman rho = 0.477), fewer primary care physicians (rho = −0.470), higher uninsured share (rho = 0.490) and lower county % Black (rho = −0.321); no association with county poverty (rho = 0.017). *UMMC cohort*: N = 15,612 patients (0.94% of RDW) and 4,244,868 encounters (5.79%) with ICD-10 H90.3 (Patient Cohort Explorer screenshot, 2026-11-26; data window 1/1/2013–9/30/2026). Race (dropdown % of cohort): Black or African American 47.1%, White or Caucasian 49.9% (exact counts **[PENDING]**). Utilization by race **[PENDING]**.
 
 **Conclusions**: **[PENDING; write after RDW results]**.
 
@@ -89,7 +89,7 @@ Patients with at least one encounter carrying ICD-10 diagnosis **H90.3** (sensor
 The Explorer header states that the dataset includes encounters between **January 1, 2013** and **September 30, 2026** (same 2026-11-26 screenshot).
 
 ### Variables
-- Demographics: age, sex, race/ethnicity
+- Demographics: age, sex, race/ethnicity. Race is on the Data Filters page → Patient Demographics tab → Demographic Search list → Race (dropdown shows % of the current cohort). Sex percentages below are from the pie chart on that same screen.
 - Geography: ZIP or county of residence (if available in the de-identified data) → rural vs non-rural classification; the Explorer lists a State filter, others **[PENDING]**
 - Care processes: ≥1 audiology encounter; ≥1 otolaryngology (ENT) encounter; either
 - Optional: payer (Primary Financial Class), encounter setting, age band
@@ -123,11 +123,13 @@ Full tables, years, and caveats: [`county-analysis.md`](county-analysis.md).
 | Encounters                  | 4,244,868 (5.79% of RDW encounters; same screenshot) |
 | Data window                 | Encounters between 1/1/2013 and 9/30/2026 (same screenshot) |
 | Age                         | [PENDING] |
-| Female                      | [PENDING] |
-| Race/ethnicity              | [PENDING] |
-| &nbsp;&nbsp;Black           | [PENDING] |
-| &nbsp;&nbsp;White           | [PENDING] |
-| &nbsp;&nbsp;Other/Unknown   | [PENDING] (cells under 11 shown as "<11 (suppressed)") |
+| Sex                         | Pie chart on Patient Demographics (same screenshot). Exact counts **[PENDING]**; not back-calculated. |
+| &nbsp;&nbsp;Female          | 54.84% (exact count **[PENDING]**) |
+| &nbsp;&nbsp;Male            | 45.16% (exact count **[PENDING]**) |
+| Race/ethnicity              | % of H90.3 cohort from the Race dropdown (Data Filters → Patient Demographics → Demographic Search). Exact counts **[PENDING]**; not back-calculated. |
+| &nbsp;&nbsp;Black or African American | 47.1% (exact count **[PENDING]**) |
+| &nbsp;&nbsp;White or Caucasian | 49.9% (exact count **[PENDING]**) |
+| &nbsp;&nbsp;Other/multiple/unknown | Other 1.1%; Asian 0.5%; Multiracial 0.4%; American Indian or Alaska Native 0.2%; Hispanic 0.2%; MS Band Choctaw Indian 0.2%; Unknown 0.2%; Patient Refused 0.1% (exact counts **[PENDING]**). Blank/unlabeled row, Asian Indian, and Native Hawaiian or Other Pacific Islander each displayed as 0.0% and are shown as <11 (suppressed). Component percentages are listed as displayed and are not summed. |
 | Rural residence (if available) | [PENDING] |
 
 ### 4.3 Table 2. Specialty care utilization among patients with hearing-loss diagnosis
@@ -179,3 +181,4 @@ Findings can inform targeted screening, referral-pathway improvement, and outrea
 - 2026-11-26: Added pre-specified hypotheses (county-level and UMMC), switched cohort to H90.3, <11 suppression rule, county-level results (82 counties), RDW placeholders marked [PENDING].
 - 2026-11-26: Step 1 confirmed: H90.3 Patients = 15,612. Encounters still [PENDING]. Table 1 total and cohort definition updated.
 - 2026-11-26: Screenshot added Encounters = 4,244,868 (5.79%), patients as 0.94% of RDW, and data window 1/1/2013–9/30/2026. RDW denominators left [PENDING] (not back-calculated).
+- 2026-11-26: R1 race percentages from Data Filters → Patient Demographics → Race dropdown (Black or African American 47.1%; White or Caucasian 49.9%); sex pie chart Female 54.84%, Male 45.16%. Exact counts left [PENDING] (not back-calculated). 0.0% rows treated as <11 (suppressed).
