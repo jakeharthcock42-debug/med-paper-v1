@@ -2,7 +2,7 @@
 
 **Project context**: Supporting secondary data analysis for a medical student research paper/abstract on disparities of care across Mississippi counties (race, rural-urban, access). Target: local/regional conference abstract (e.g., MAFP, ACP MS chapter, UMMC Research Day).
 
-**Last updated**: 2026-11-26 (Paper 01 pediatric Audiology window resolved)  
+**Last updated**: 2026-11-27 (Paper 01 H-S1 sex-stratified audiology recorded)  
 **Maintainer notes**: Focus on publicly available or low-barrier datasets. UMMC internal resources noted separately for potential enrichment.
 
 ---
@@ -154,7 +154,7 @@
 ### Patient Cohort Explorer / Research Data Warehouse (RDW) — ACCESS CONFIRMED
 - **Data-use status**: Data use confirmed by Jake Harthcock 2026-11-26 per the Cohort Explorer guide. Extracted rules with page cites: [`data-use-rules.md`](data-use-rules.md). Jake runs all queries; AI tools have no direct access to the Explorer.
 - **Suppression rule (project)**: never record a UMMC RDW cell under 11 ("<11 (suppressed)"), with complementary suppression where a hidden cell could be backed out. The app itself only allows report view/export when the population is greater than 25 (guide p. 20). Public county data are unaffected.
-- **Active request list (Paper 01)**: `papers/01-hearing-loss-disparities/rdw-data-requests.md`. Recorded: R0 (N = 15,612), R1 (race), R4 (audiology), R5 (ENT, descriptive), R9 (age-stratified audiology; MH RR 0.812, 95% CI 0.711–0.928). Pediatric Audiology window resolved 2026-11-26 (9/3/2015–9/30/2026 with race cleared; 3/2026 header with race selected was a display artifact). Still open: R3, R7, R8.
+- **Active request list (Paper 01)**: `papers/01-hearing-loss-disparities/rdw-data-requests.md`. Recorded: R0 (N = 15,612), R1 (race), R4 (audiology), R5 (ENT, descriptive), R9 (age-stratified audiology; MH RR 0.812, 95% CI 0.711–0.928), H-S1 (sex-stratified audiology; MH RR 0.873, 95% CI 0.765–0.997). Pediatric Audiology window resolved 2026-11-26 (9/3/2015–9/30/2026 with race cleared; 3/2026 header with race selected was a display artifact). Still open: R3, R7, R8.
 - **Status**: Student has confirmed access and can run queries / export aggregate or de-identified results.
 - **What it provides**: De-identified, date-shifted data from Epic covering ~750,000 patients and ~24 million encounters (updated quarterly). Supports rapid cohort discovery by diagnosis, procedure, demographics, encounter type, etc.
 - **Potential for this project**:
@@ -213,7 +213,7 @@ Merge public data on county FIPS; use RDW for within-catchment clinical detail.
 - [x] Download latest CHR Mississippi data and PLACES county file (done 2026-11-26 for Paper 01: CHR 2025 analytic data, PLACES 2025 release; also ACS 2020–2024).
 - [ ] Run sample MSTAHRS queries for diabetes / CVD / infant mortality by race and county.
 - [ ] Check State Cancer Profiles for Oral Cavity & Pharynx rates in MS counties.
-- [x] Run Paper 01 UMMC aggregates for R0, R1, R4, R5, and R9 (`rdw-data-requests.md`). R3, R7, and R8 remain optional/open.
+- [x] Run Paper 01 UMMC aggregates for R0, R1, R4, R5, R9, and H-S1 (`rdw-data-requests.md`). R3, R7, and R8 remain optional/open.
 - [x] Decide primary outcome / niche for Paper 01: hearing loss (H90.3) at UMMC + county-level hearing disability context. Other niches: later papers.
 - [ ] Draft specific aims once primary outcome chosen.
 
@@ -224,3 +224,4 @@ Merge public data on county FIPS; use RDW for within-catchment clinical detail.
 - Updated 2026-11-26: added Tier 1c (SCP detailed extracts, CHR March 2026 supplement, RUCC, DRA list, PLACES notes, pending sources) for Papers 02–05.
 - 2026-11-26: Paper 01 R9 age-stratified audiology recorded (MH RR 0.812); see `papers/01-hearing-loss-disparities/data/r9_mh_results.md`.
 - 2026-11-26: Pediatric Audiology window check: 0–17 + Audiology with race cleared spans 9/3/2015–9/30/2026 (Patients 401, Encounters 868).
+- 2026-11-27: Paper 01 H-S1 sex-stratified audiology recorded (MH RR 0.873, 95% CI 0.765–0.997); see `papers/01-hearing-loss-disparities/data/hs1_sex_results.md`.
