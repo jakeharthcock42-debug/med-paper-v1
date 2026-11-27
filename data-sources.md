@@ -2,7 +2,7 @@
 
 **Project context**: Supporting secondary data analysis for a medical student research paper/abstract on disparities of care across Mississippi counties (race, rural-urban, access). Target: local/regional conference abstract (e.g., MAFP, ACP MS chapter, UMMC Research Day).
 
-**Last updated**: 2026-11-27 (official RDW citation, DOI, and human-protection boilerplate recorded)  
+**Last updated**: 2026-11-27 (Paper 01 draft-v2 literature sources logged; official RDW citation already recorded)  
 **Maintainer notes**: Focus on publicly available or low-barrier datasets. UMMC internal resources noted separately for potential enrichment.
 
 ---
@@ -210,6 +210,28 @@ Merge public data on county FIPS; use RDW for within-catchment clinical detail.
 
 ---
 
+
+## Literature sources — Paper 01 draft-v2 (2026-11-27)
+
+Verified for `papers/01-hearing-loss-disparities/draft-v2.md`. Each peer-reviewed item was checked against PubMed E-utilities (`esummary`) and has a PMID; DOIs are listed as registered. Publisher HTML often returned 403/500 from this network; PubMed/PMC records were treated as sufficient verification. Claims not supported by a verified source were left unstated (no invented references). Nieman et al. is cited only for age- and hearing-adjusted hearing-aid ORs, not for a fully income-adjusted model. The PubMed abstract of Atherton et al. contains a corrupted insurance OR and was not quoted. Chan et al. acquisition times (rural 25.7 vs urban 19.1 years) are from the Results body, not the swapped numbers in the PubMed abstract.
+
+| # | Citation | PMID | DOI |
+|---|---|---:|---|
+| 1 | Lin FR, Niparko JK, Ferrucci L. Arch Intern Med. 2011;171(20):1851-1852. | 22083573 | 10.1001/archinternmed.2011.506 |
+| 2 | Agrawal Y, Platz EA, Niparko JK. Arch Intern Med. 2008;168(14):1522-1530. | 18663164 | 10.1001/archinte.168.14.1522 |
+| 3 | Goman AM, Lin FR. Am J Public Health. 2016;106(10):1820-1822. | 27552261 | 10.2105/AJPH.2016.303299 |
+| 4 | Rein DB, et al. Lancet Reg Health Am. 2024;30:100670. | 38405031 | 10.1016/j.lana.2023.100670 |
+| 5 | Lin FR, Thorpe R, Gordon-Salant S, Ferrucci L. J Gerontol A Biol Sci Med Sci. 2011;66(5):582-590. | 21357188 | 10.1093/gerona/glr002 |
+| 6 | Chien W, Lin FR. Arch Intern Med. 2012;172(3):292-293. | 22332170 | 10.1001/archinternmed.2011.1408 |
+| 7 | Nieman CL, Marrone N, Szanton SL, Thorpe RJ Jr, Lin FR. J Aging Health. 2016;28(1):68-94. | 25953816 | 10.1177/0898264315585505 |
+| 8 | Planey AM. Soc Sci Med. 2019;222:216-224. | 30660682 | 10.1016/j.socscimed.2019.01.015 |
+| 9 | Chan S, Hixon B, Adkins M, Shinn JB, Bush ML. Laryngoscope. 2017;127(10):2362-2367. | 28144961 | 10.1002/lary.26490 |
+| 10 | Atherton KM, Poupore NS, Clemmens CS, Nietert PJ, Pecha PP. Otolaryngol Head Neck Surg. 2023;168(6):1289-1300. | 36939626 | 10.1002/ohn.221 |
+| 11 | Bush ML, Bianchi K, Lester C, Shinn JB, Gal TJ, Fardo DW, et al. J Pediatr. 2014;164(2):393-397. | 24183213 | 10.1016/j.jpeds.2013.09.047 |
+| 12 | Bush ML, Kaufman MR, McNulty BN. Curr Opin Otolaryngol Head Neck Surg. 2017;25(5):359-364. | 28665808 | 10.1097/MOO.0000000000000388 |
+| 13 | University of Mississippi Medical Center, Center for Informatics and Analytics (2020): Patient Cohort Explorer. figshare. Software. | — | 10.6084/m9.figshare.12252737 |
+| 14–16 | CDC PLACES 2025; ACS 5-year 2020–2024 (B18102, B02001, B17001); County Health Rankings 2025 (already catalogued above). | — | — |
+
 ## Next Steps / Living Document Notes
 
 - [x] Confirm RDW / Patient Cohort Explorer access.
@@ -229,3 +251,4 @@ Merge public data on county FIPS; use RDW for within-catchment clinical detail.
 - 2026-11-26: Pediatric Audiology window check: 0–17 + Audiology with race cleared spans 9/3/2015–9/30/2026 (Patients 401, Encounters 868).
 - 2026-11-27: Paper 01 H-S1 sex-stratified audiology recorded (MH RR 0.873, 95% CI 0.765–0.997); see `papers/01-hearing-loss-disparities/data/hs1_sex_results.md`.
 - 2026-11-27: Paper 05 merged into Paper 02 (Jake decision); no new sources. Sources for the merged paper (SCP, RUCC, AHRF, PLACES 2025 and 2023, CHR, DRA) are listed in `papers/02-oral-pharynx-cancer-disparities/README.md`. Abstract limit now ≤500 words incl. labels.
+- 2026-11-27: Paper 01 draft-v2 literature sources logged (12 PubMed-verified PMIDs; see section above). Official RDW citation and boilerplate were already recorded earlier the same day.
