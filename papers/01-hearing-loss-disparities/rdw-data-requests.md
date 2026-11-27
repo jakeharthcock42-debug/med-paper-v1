@@ -66,18 +66,19 @@
 - The 0.10%, 0.04%, 0.06%, and 0.01% of RDW figures are recorded as displayed; do not back-calculate an RDW denominator from them.
 - Caveats: Audiology department data appear only from mid-2014 (selected-window start 6/26/2014; 7/5/2014 for White), while the H90.3 cohort window starts 1/1/2013; “ever” audiology is a UMMC visit only; H90.3 may be coded at audiology visits (circularity; R8).
 
-### R5. ENT use among H90.3 patients — H-U3, Table 2 — **next** (exact Department Specialty label pending)
-- The **Department Specialty** field is confirmed (**Data Filters** → **Admissions & Visits** → Encounter Search; Current Selections label **DepartmentSpecialty**). Data Filters selections are encounter-level. The exact Otolaryngology / ENT value label is not yet confirmed. **Do not select a value until you have sent the exact label.**
-- Click-by-click:
-  1. Keep H90.3 selected. Clear any **FirstRace** selection and clear **Audiology** in Department Specialty so the header returns to Patients = 15,612 and Encounters = 4,244,868 (Current Selections: `Pt_Dx_Code ORMode H90.3` only).
-  2. Stay on **Data Filters** → **Admissions & Visits** → Encounter Search → **Department Specialty**.
-  3. Scroll the Department Specialty list and look for Otolaryngology, ENT, or a similar label. Write down each candidate’s exact name as it appears. Leave them unselected.
-  4. Reply with those exact label(s) before clicking any value. If more than one could be ENT, list them all and wait for confirmation.
-  5. After the label is confirmed: keep H90.3 selected; select that exact ENT label; report header **Patients** and **Encounters** (and the encounter window if shown). Then add FirstRace = **Black or African American**, then **White or Caucasian**, reporting Patients and Encounters each time. Counts under 11 as `<11 (suppressed)`.
+### R5. ENT use among H90.3 patients — H-U3, Table 2 — **DONE** (2026-11-26, screenshots)
+- Field confirmed: **Data Filters** → **Admissions & Visits** → Encounter Search → **Department Specialty** (Current Selections label **DepartmentSpecialty**), value **Otolaryngology**. Data Filters selections are encounter-level: header Patients = H90.3 patients with ≥1 Otolaryngology-department encounter. Encounter window with this selection: **1/1/2013–9/30/2026** (the full cohort window).
+- **Result**
+  - H90.3 + Otolaryngology: Patients = **15,103** (0.91% of RDW; 15,103 / 15,612 = **96.74%**), Encounters = **295,604** (0.40%).
+  - + FirstRace Black or African American: Patients = **6,062** (0.37%; 6,062 / 6,176 = **98.15%**), Encounters = **116,299** (0.16%); Sex Female **61.56%**, Male **38.44%**.
+  - + FirstRace White or Caucasian: Patients = **8,229** (0.50%; 8,229 / 8,597 = **95.72%**), Encounters = **164,567** (0.22%); Sex Female **51.06%**, Male **48.94%**.
+  - Other / unknown combined with Otolaryngology: Patients = **812** of 839 (**96.78%**), computed as 15,103 − 6,062 − 8,229. Reported as one combined row only.
+- Black vs White (2×2: Black 6,062 with / 114 without; White 8,229 with / 368 without). Risk difference (Black − White) = **+2.43** percentage points (Wald 95% CI **1.89 to 2.98**). Risk ratio = **1.025** (Katz log-Wald 95% CI **1.020–1.031**). Pearson χ²(1) = **67.50**, p = **2.11e-16**. Odds ratio = **2.378** (Woolf 95% CI **1.922–2.942**). The pre-specified alternative (lower in Black patients) is not supported (direction is opposite). This is **not a valid access measure**: 96.74% had ≥1 Otolaryngology encounter, so “ever ENT” is near-universal by construction (H90.3 predominantly coded or diagnosed within Otolaryngology; circularity; R8). Audiology (H-U2) is the primary utilization outcome.
+- The 0.91%, 0.37%, 0.50%, 0.40%, 0.16%, and 0.22% of RDW figures are recorded as displayed; do not back-calculate an RDW denominator from them.
 
-### R6. Audiology **or** ENT among H90.3 patients — H-U4 (primary outcome), Table 2
-- The guide says the Patient Filters support advanced AND/OR/NOT searches at the patient level (pp. 5–6). If available, set Diagnosis = H90.3 AND (Audiology OR Otolaryngology). Report Patients overall and by race (Black, White, then others).
-- If the OR search is not available: report R4 and R5, plus the number of H90.3 patients with **both** (select the audiology and ENT labels in two different patient-level boxes if two exist), and tell me what you did. Or report the "neither" count using a NOT search.
+### R6. Audiology **or** ENT among H90.3 patients — H-U4 — **optional / non-informative**
+- H-U4 is non-informative without a new query: 15,103/15,612 (96.74%) already had ≥1 Otolaryngology encounter, so a patient-level Audiology OR Otolaryngology count would be **≥96.74%** (and at most 100%) and is not a useful access measure. H-U2 (audiology) is the primary utilization outcome.
+- A formal OR search remains optional if a precise combined count is wanted. The guide says the Patient Filters support advanced AND/OR/NOT searches at the patient level (pp. 5–6). If used, set Diagnosis = H90.3 AND (Audiology OR Otolaryngology) and report Patients overall and by race.
 
 ## Priority 2 — geography and access (needed for the rural hypothesis)
 
@@ -91,8 +92,8 @@
 ### R8. Where is H90.3 diagnosed? — threat to H-U2 to H-U6
 - H90.3 is often coded at an audiology/ENT visit, which would make "ever seen audiology/ENT" high for everyone. Using the **Encounter Filters** (all criteria on the same encounter), report the number of patients with H90.3 on an encounter in Audiology, in ENT, and in neither (Primary care / ED / other). Report overall and, if counts allow, for Black and White. If the Explorer cannot do this, tell me and I will note it as a limitation.
 
-### R9. Age-stratified utilization — adjusts H-U4 for age
-- For two or three age bands: H90.3 + age band + Race (Black, White) + (Audiology or ENT) as in R6. Report Patients per cell. Skip any band where a cell would be under 11.
+### R9. Age-stratified utilization — adjusts H-U2 (audiology) for age — **optional**
+- H-U2 is the primary utilization outcome. For two or three age bands: H90.3 + age band + Race (Black, White) + Department Specialty = **Audiology**. Report Patients per cell. Skip any band where a cell would be under 11. Do not use audiology-or-ENT (that outcome is near-universal).
 
 ## Priority 4 — optional covariates
 
@@ -103,18 +104,18 @@
 - H90.3 patients who ever had an ED encounter, by race. Report Patients each (only if time allows).
 
 ## How the numbers get used
-R0 to R3 fill Table 1 and H-U1 (race distribution vs RDW). R1 cohort race counts are in; R3 (RDW base-population race) is still needed to finish H-U1. R4 is done (H-U2). R5 and R6 fill the rest of Table 2 and H-U3 to H-U4. R7 enables H-U5 and H-U6. R8 and R9 are the main robustness checks. R10 and R11 are optional covariates. Send results as plain text, one request at a time (**R5 is next**: report the exact Department Specialty label for Otolaryngology / ENT first, before selecting a value).
+R0 to R3 fill Table 1 and H-U1 (race distribution vs RDW). R1 cohort race counts are in; R3 (RDW base-population race) is still needed to finish H-U1 and is optional next work. R4 is done (H-U2, primary utilization outcome). R5 is done (H-U3: not a valid access measure; 96.74% had an Otolaryngology encounter). R6/H-U4 is non-informative (≥96.74%) and optional. R7 enables H-U5 and H-U6. R8 (diagnosis origin / circularity) and R9 (age-stratified audiology) are the main remaining robustness checks and are optional next work. R10 and R11 are optional covariates. A conference abstract v1 is in `draft-v1.md`.
 
 ## Status checklist
 - [x] R0 total — Patients = 15,612 (0.94% of RDW); Encounters = 4,244,868 (5.79%); window 1/1/2013–9/30/2026 (screenshot, 2026-11-26)
 - [x] R1 race exact counts — done 2026-11-26 (FirstRace): White or Caucasian Patients = 8,597 (55.1% of 15,612), Encounters = 2,119,544; Black or African American Patients = 6,176 (39.6%), Encounters = 2,000,250; other/unknown combined = 839 (15,612 − 8,597 − 6,176). Dropdown 47.1% / 49.9% are encounter shares, not patient shares.
 - [x] R2 sex percentages — overall Female 54.84%, Male 45.16% (pie chart, no race selected; likely patient-based, basis unconfirmed); sex by race recorded with R1 (White F 50.81% / M 49.19%; Black F 61.33% / M 38.67%); exact counts and age **[PENDING]**
-- [ ] R3 RDW race denominator (still required to finish H-U1)
-- [x] R4 audiology — done 2026-11-26 (Department Specialty = Audiology): Patients 1,730/15,612 (11.08%); Black 630/6,176 (10.20%); White 996/8,597 (11.59%); other/unknown 104/839 (12.40%; 1,730 − 630 − 996). RD −1.38 pp (95% CI −2.40 to −0.37); RR 0.880 (0.801–0.968); Pearson χ²(1) = 7.03, p = 0.008
-- [ ] R5 ENT — next: report the exact Department Specialty label before selecting
-- [ ] R6 audiology or ENT
+- [ ] R3 RDW race denominator (optional next; still required to finish H-U1)
+- [x] R4 audiology — done 2026-11-26 (Department Specialty = Audiology): Patients 1,730/15,612 (11.08%); Black 630/6,176 (10.20%); White 996/8,597 (11.59%); other/unknown 104/839 (12.40%; 1,730 − 630 − 996). RD −1.38 pp (95% CI −2.40 to −0.37); RR 0.880 (0.801–0.968); Pearson χ²(1) = 7.03, p = 0.008. Primary utilization outcome.
+- [x] R5 ENT — done 2026-11-26 (Department Specialty = Otolaryngology): Patients 15,103/15,612 (96.74%); Black 6,062/6,176 (98.15%); White 8,229/8,597 (95.72%); other/unknown 812/839 (96.78%; 15,103 − 6,062 − 8,229). RD +2.43 pp (95% CI 1.89 to 2.98); RR 1.025 (1.020–1.031); Pearson χ²(1) = 67.50, p = 2.11e-16. Opposite direction; not a valid access measure.
+- [ ] R6 audiology or ENT — optional / non-informative (would be ≥96.74%)
 - [ ] R7 residence variable
-- [ ] R8 diagnosis origin
-- [ ] R9 age-stratified
+- [ ] R8 diagnosis origin — optional next (circularity check)
+- [ ] R9 age-stratified audiology — optional next
 - [ ] R10 payer
 - [ ] R11 ED use
