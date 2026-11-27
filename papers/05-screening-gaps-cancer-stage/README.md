@@ -47,6 +47,7 @@ Reproducibility: `scripts/public-data/` (`p05.py`, `p05b.py`, `build_places2020.
 Per Jake's 2026-11-27 decision, Papers 02–05 use public data only. The earlier UMMC Patient Cohort Explorer request (screening procedure codes for mammography, colonoscopy/FIT, and Pap/HPV by race and primary-care encounter; stage at diagnosis from tumor registry) is **not used**. It would link screening completion to stage at the patient level, which public aggregates cannot; it remains a possible later extension.
 
 ## Next actions
+- [ ] Abstract trimmed to <=300 words (including section labels); Jake to review; 05 merge-into-02 vs drop pending Jake.
 - [ ] Jake: decide whether to merge this with Paper 02 as a cancer-disparities series or drop it.
 - [ ] Optional manual: CDC BRFSS Mississippi state-level screening by race (SMART/BRFSS prevalence tool) to add a race-specific screening comparison without MRP smoothing.
 

@@ -52,6 +52,7 @@ Reproducibility: `scripts/public-data/` (`p04.py`, `p04b.py`, `build_ahrf.py`, `
 Per Jake's 2026-11-27 decision, Papers 02–05 use public data only. The earlier UMMC Patient Cohort Explorer request (delivery encounters by method and race; hypertensive disorders O10–O16, gestational diabetes O24, postpartum hemorrhage O72, preterm labor O60; postpartum visit within 12 weeks; insurance) is **not used**. It would add UMMC-only clinical outcomes and care-use patterns that public aggregates cannot show; it remains a possible later extension.
 
 ## Next actions
+- [ ] Abstract trimmed to <=300 words (including section labels); Jake to review; 05 merge-into-02 vs drop pending Jake.
 - [ ] Jake: review and edit the `draft-v1.md` abstract; choose venue (MAFP / Research Day).
 - [ ] Optional manual: CDC WONDER natality (state level by race: preterm, prenatal care timing) and MSTAHRS county birth/infant death counts; suppress cells under 11.
 - [ ] Optional: replace AHRF preterm variable with CDC WONDER county-group data for validation.
