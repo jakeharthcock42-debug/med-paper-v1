@@ -37,10 +37,10 @@ med-paper-v1/
     ├── 05-screening-gaps-cancer-stage/
     └── 01-hearing-loss-disparities/
         ├── README.md                   ← status, aims, hypotheses, next actions
-        ├── draft-v1.md                 ← working manuscript (hypotheses in §2.2; abstract v2; Tables 1–4)
+        ├── draft-v1.md                 ← working manuscript (hypotheses in §2.2; abstract v2; Tables 1–5)
         ├── county-analysis.md          ← county-level public-data results (82 MS counties)
-        ├── data/                       ← county files; r9_mh_analysis.py / r9_mh_results.md; hs1_sex_analysis.py / hs1_sex_results.md
-        ├── rdw-data-requests.md        ← prioritized list of UMMC Explorer numbers (R0, R1, R4, R5, R9, H-S1 done)
+        ├── data/                       ← county files; r9_mh_*; hs1_sex_*; hs2_r3_analysis.py / hs2_r3_results.md
+        ├── rdw-data-requests.md        ← prioritized list of UMMC Explorer numbers (R0, R1, R3–R5, R9, H-S1, H-S2 done)
         └── rdw-exploration-plan.md     ← original query plan (cohort/suppression superseded by banner)
 ```
 
@@ -76,21 +76,22 @@ Other codes explored earlier (single-select only):
 
 ### Manuscript Status (`papers/01-hearing-loss-disparities/draft-v1.md`)
 - Hypotheses tightened 2026-11-26 (Jake approved): one primary (H-U2, including persistence after age stratification); secondary H-S1, H-S2, H-S3; county associations are ecological context; ENT hypotheses H-U3/H-U4 retired after observing 96.74% Otolaryngology contact (revision log in §2.2).
-- Conference abstract v2 (300 words) is in the draft. Tables 1–4 are populated for the completed UMMC pulls, including H-S1 (Table 4).
-- Formal citations and the IRB question for the target conference remain [PENDING].
+- Conference abstract v2 is in the draft (under the ≤500-word project standard). Tables 1–5 are populated for the completed UMMC pulls, including H-S1 (Table 4) and H-S2 / R3 (Table 5).
+- Formal citations remain [PENDING]. Research with this patient database was determined not to require IRB approval per [PENDING exact determination wording/source] (Jake Harthcock, 2026-11-27).
 
 ### Status as of 2026-11-27
-- **Data use**: Data use confirmed by Jake Harthcock 2026-11-26 per Cohort Explorer guide ([`data-use-rules.md`](data-use-rules.md)). The guide does not mention IRB; whether the target conference needs an IRB determination is open.
+- **Data use**: Data use confirmed by Jake Harthcock 2026-11-26 per Cohort Explorer guide ([`data-use-rules.md`](data-use-rules.md)). Research with this patient database was determined not to require IRB approval per [PENDING exact determination wording/source] (Jake Harthcock, 2026-11-27).
 - **Suppression rule**: never record a UMMC RDW cell under 11 ("<11 (suppressed)"); app itself requires population >25 to view/export reports (guide p. 20). Public county data unaffected. The repo is public; committed UMMC aggregates are publicly readable.
 - **Done (UMMC)**: R0 (N = 15,612; 4,244,868 encounters); R1 (FirstRace: White 8,597, Black 6,176, other/unknown 839); R4 Audiology (1,730/15,612, 11.08%; Black 630/6,176, 10.20% vs White 996/8,597, 11.59%; crude RR 0.880, 0.801–0.968, p = 0.008); R5 Otolaryngology 15,103/15,612 (96.74%), treated as a descriptive finding; R9 age-stratified Audiology (AgeKey = age at encounter). Mantel-Haenszel RR **0.812** (Greenland-Robins 95% CI 0.711–0.928; CMH p = 1.89e-5); sensitivity excluding 0–17: 0.810 (0.695–0.943). Details: `draft-v1.md` Table 3, `data/r9_mh_results.md`.
 - **H-S1 (2026-11-27)**: sex-stratified Audiology (clicked counts; no age filter). Female 393/3,788 (10.37%) vs 532/4,368 (12.18%), RR 0.852 (0.753–0.963); Male 237/2,388 (9.92%) vs 464/4,229 (10.97%), RR 0.905 (0.780–1.049). Sex-stratified MH RR **0.873** (0.765–0.997; CMH p = 0.00485); homogeneity p = 0.53. H-S1 supported. Female all = 8,562 (other/unknown 406); Male all [PENDING] (not captured; not back-calculated; not required). Race-adjusted female vs male MH RR 1.085 (0.952–1.237). Details: `draft-v1.md` Table 4, `data/hs1_sex_results.md`.
+- **R3 / H-S2 (2026-11-27)**: unfiltered RDW (no filters; clicked counts; window 1/1/2013–9/30/2026). All patients **1,658,574** (encounters **73,271,189**); Black **684,322** (41.26%; encounters 39,081,291); White **699,367** (42.17%; encounters 30,228,243); other/unknown combined **274,885** (16.57%; 1,658,574 − 684,322 − 699,367). Pie Unknown 6.04% and Other 2.73% are encounter shares, not used as patient counts. Crude ever-diagnosed H90.3 prevalence: Black 6,176/684,322 (0.902%) vs White 8,597/699,367 (1.229%); RR **0.734** (Katz 95% CI 0.711–0.758); RD −0.327 pp (−0.361 to −0.293); Pearson χ²(1) = 349.63, p = 5.11e-78. Cohort vs base share: Black 39.6% vs 41.26%; White 55.1% vs 42.17% (White over-representation partly the counterpart of other/unknown 5.4% vs 16.57%). H-S2 **supported (crude)**; not age-adjusted. Previously displayed 0.94%, 0.52%, 0.37%, and 5.79% of RDW figures confirmed. Details: `draft-v1.md` Table 5, `data/hs2_r3_results.md`.
 - **Done (public)**: county analysis for all 82 MS counties (PLACES 2025, ACS 2020–2024, CHR&R 2025): rural 7.54% vs 6.91%, p = 1.5e-4; see `county-analysis.md`. These are ecological context, not confirmatory.
 - **Pediatric window**: resolved 2026-11-26. With race cleared, H90.3 + AgeKey 0–17 + Audiology: Patients 401 (0.02%), Encounters 868, window 9/3/2015–9/30/2026. Coding spans 2015–2026; the 3/2026 header with race selected was a display artifact. The 0–17 band stays in the primary MH estimate.
-- **Still [PENDING]**: R3 (RDW base-population race, to finish H-S2); R7 (State/County field usability); R8 (diagnosis origin); formal citations; IRB for the target conference.
+- **Still [PENDING]**: R7 (State/County field usability); R8 (diagnosis origin); formal citations; exact IRB determination wording/source (the determination itself is recorded: not required). Optional: age-stratified unfiltered RDW base counts for an age-adjusted H-S2 prevalence comparison.
 
 ### Immediate Next Steps
-1. Optional UMMC pulls: R3, R8, and R7 field name.
-2. Then draft-v2: Jake reviews the abstract; add formal citations; confirm IRB needs.
+1. **draft-v2** with formal citations (Jake reviews the abstract).
+2. Optional UMMC pulls: R8 (diagnosis origin), R7 field name, and age-stratified unfiltered RDW base counts.
 
 ---
 
@@ -120,13 +121,13 @@ Added public sources (see `data-sources.md` Tier 1d): HRSA AHRF 2024–2025 (OB-
 | 03 | PCP supply and Black–White premature mortality | Black > White premature mortality in 71/80 counties (742 vs 601); PCP/10k −10.0 (−17.0, −2.9) for White vs +3.6 (−6.1, 13.3) for Black | **Partial overlap**: Lee 2026 (Prev Chronic Dis) covers MS county YPLL trends |
 | 05 | Screening and stage (breast, CRC) | MS vs US CRC mortality 17.5 vs 12.7; Black/White breast mortality RR 1.43; county screening not associated with late stage after adjustment; PCP supply is | **Weak / low novelty**; several MS CRC and breast papers exist **Merged into 02 on 2026-11-27** (see 3d) |
 
-Each paper folder now has `README.md` (re-scoped aims, hypotheses with results, sources with data years, limits, Deferred section), `draft-v1.md` (conference-style abstract, intro, methods, results tables, discussion outline, verified references), and `results/` (including `*b_results.md`). All abstracts are draft-v1 for Jake's review; IRB/RDW determination still [PENDING].
+Each paper folder now has `README.md` (re-scoped aims, hypotheses with results, sources with data years, limits, Deferred section), `draft-v1.md` (conference-style abstract, intro, methods, results tables, discussion outline, verified references), and `results/` (including `*b_results.md`). All abstracts are draft-v1 for Jake's review. Research with the UMMC patient database was determined not to require IRB approval per [PENDING exact determination wording/source] (Jake, 2026-11-27). Papers 02–04 use public data only.
 
 ## 3d. Merge of Paper 05 into Paper 02; abstract word-limit standard (2026-11-27)
 - **Project standard (Jake, 2026-11-27): conference abstracts are ≤500 words including section labels** (previously 300). This applies to all papers; existing abstracts (all ≤300) are within it and may be expanded up to 500 without adding unsourced numbers.
 - **Merge (Jake decision, 2026-11-27):** Paper 05 (screening and stage) is folded into Paper 02 as a cancer-disparities pair: Part A oral cavity & pharynx; Part B breast and colorectal (hypotheses B1–B7). `papers/05-screening-gaps-cancer-stage/` is kept for provenance and marked "Merged into 02". Combined paper: `papers/02-oral-pharynx-cancer-disparities/` (README with merged aims, hypotheses, sources, limits, Deferred section; `draft-v1.md` with merged abstract, 358 words incl. labels).
 - Headline (public data): Black vs White NH oral cavity/pharynx incidence 9.5 vs 15.6/100k, mortality 3.7 vs 3.5, late stage 73.1% vs 64.8%; breast mortality 29.5 vs 20.7 (RR 1.43), CRC 21.8 vs 15.8 (RR 1.38) with Medicare mammography 42% vs 41%; county dentist and PCP supply track late-stage share (rho −0.51 and −0.45; n = 34); screening not associated with breast late-stage after adjustment (secondary finding).
-- Still [PENDING]: IRB/RDW determination; live-SCP re-check before submission; optional manual MSTAHRS/USCS/BRFSS pulls.
+- Still [PENDING]: exact IRB determination wording/source (Jake confirmed 2026-11-27 that research with this patient database does not require IRB approval); live-SCP re-check before submission; optional manual MSTAHRS/USCS/BRFSS pulls.
 
 ---
 
@@ -169,7 +170,7 @@ Full living catalog is in `data-sources.md`. Key ones currently in play:
 
 ## 7. Current Priority (as of 2026-11-27)
 
-**Highest priority:** Paper 01 abstract v2 is drafted with the crude, age-stratified, and sex-stratified audiology results (H-S1 done; MH RR 0.873). Next: optional R3/R8/R7, then draft-v2 (Jake review, citations, IRB question).
+**Highest priority:** Paper 01 R3/H-S2 is done (crude prevalence RR 0.734, 0.711–0.758; not age-adjusted). Abstract v2 includes the crude, age-stratified, and sex-stratified audiology results plus the base-population comparison. Next: **draft-v2** with formal citations; optional R8/R7; optional age-stratified base counts. IRB: determined not to require IRB approval per [PENDING exact determination wording/source] (Jake, 2026-11-27).
 
 Secondary priorities:
 - Keep `data-sources.md` and this handoff file updated.
