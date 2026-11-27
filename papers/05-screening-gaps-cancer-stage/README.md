@@ -1,7 +1,9 @@
+> **MERGED INTO PAPER 02 (2026-11-27, Jake decision).** See [`../02-oral-pharynx-cancer-disparities/README.md`](../02-oral-pharynx-cancer-disparities/README.md) and its `draft-v1.md` for the merged aims, hypotheses (Part B = B1–B7), results tables, and abstract. Files below are kept for provenance.
+
 # 05 — Cancer Screening and Stage at Diagnosis (Breast, Colorectal, Cervical) in Mississippi
 
 **Working title**: Cancer Screening, Primary Care Supply, and Late-Stage Diagnosis of Breast and Colorectal Cancer Across Mississippi Counties: a Public-Data Ecological Analysis  
-**Status**: **Public-data analysis complete; abstract draft-v1 written (2026-11-27). WEAK / LOW-NOVELTY — see flag.** Public-data-only by Jake's decision (2026-11-27); no UMMC pull needed.  
+**Status**: **Merged into 02 on 2026-11-27 (Jake decision).** Folded into `papers/02-oral-pharynx-cancer-disparities` as a cancer-disparities pair (Part B of that paper). This folder is kept unchanged otherwise, for provenance; do not delete. Abstract limit (project standard, Jake 2026-11-27): ≤500 words including section labels; the merged abstract lives in Paper 02.  
 **Natural fit**: Family medicine / internal medicine; MAFP and ACP Mississippi.  
 **Novelty check (PubMed, 2026-11-27) — FLAG**: Mississippi breast and colorectal cancer screening and disparities have been published several times (Hall 2004 Delta screening; Zahnd 2019 Delta breast subtypes; Whatley 2014 GI cancers; Koutha 2025 and Vijayakumar 2025 colorectal cancer/screening in Mississippi; Barsha 2025 breast cancer research gaps). Our county-level screening → stage result is a null finding using model-based or Medicare-only screening measures. Recommend this be a secondary or merged abstract (e.g., combined with Paper 02 as a cancer-disparities series) rather than a standalone priority.
 
@@ -47,8 +49,7 @@ Reproducibility: `scripts/public-data/` (`p05.py`, `p05b.py`, `build_places2020.
 Per Jake's 2026-11-27 decision, Papers 02–05 use public data only. The earlier UMMC Patient Cohort Explorer request (screening procedure codes for mammography, colonoscopy/FIT, and Pap/HPV by race and primary-care encounter; stage at diagnosis from tumor registry) is **not used**. It would link screening completion to stage at the patient level, which public aggregates cannot; it remains a possible later extension.
 
 ## Next actions
-- [ ] Abstract trimmed to <=300 words (including section labels); Jake to review; 05 merge-into-02 vs drop pending Jake.
-- [ ] Jake: decide whether to merge this with Paper 02 as a cancer-disparities series or drop it.
+- [x] Merged into Paper 02 on 2026-11-27 (Jake decision: fold 05 into 02 as a cancer pair). No further work in this folder.
 - [ ] Optional manual: CDC BRFSS Mississippi state-level screening by race (SMART/BRFSS prevalence tool) to add a race-specific screening comparison without MRP smoothing.
 
 ## Files
