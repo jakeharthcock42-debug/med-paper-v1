@@ -225,3 +225,4 @@ Merge public data on county FIPS; use RDW for within-catchment clinical detail.
 - 2026-11-26: Paper 01 R9 age-stratified audiology recorded (MH RR 0.812); see `papers/01-hearing-loss-disparities/data/r9_mh_results.md`.
 - 2026-11-26: Pediatric Audiology window check: 0–17 + Audiology with race cleared spans 9/3/2015–9/30/2026 (Patients 401, Encounters 868).
 - 2026-11-27: Paper 01 H-S1 sex-stratified audiology recorded (MH RR 0.873, 95% CI 0.765–0.997); see `papers/01-hearing-loss-disparities/data/hs1_sex_results.md`.
+- 2026-11-27: Paper 05 merged into Paper 02 (Jake decision); no new sources. Sources for the merged paper (SCP, RUCC, AHRF, PLACES 2025 and 2023, CHR, DRA) are listed in `papers/02-oral-pharynx-cancer-disparities/README.md`. Abstract limit now ≤500 words incl. labels.

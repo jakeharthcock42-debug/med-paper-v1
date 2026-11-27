@@ -118,9 +118,15 @@ Added public sources (see `data-sources.md` Tier 1d): HRSA AHRF 2024–2025 (OB-
 | 02 | Oral cavity & pharynx cancer by race/rurality | Black NH incidence 9.5 vs White 15.6/100k (RR 0.61) but mortality 3.7 vs 3.5 (RR 1.06), late stage 73.1% vs 64.8%; fewer dentists per 10k tracks higher late-stage share (rho −0.51, n = 34) | Moderate: no MS-specific oral cancer disparity paper found |
 | 04 | Birth outcomes and obstetric access | Black LBW > White in 77/77 counties (median 17.9% vs 8.8%); 67% of counties have no obstetric hospital (37.5% of births); no adjusted association with preterm/LBW | Moderate: no county-level MS obstetric access analysis found |
 | 03 | PCP supply and Black–White premature mortality | Black > White premature mortality in 71/80 counties (742 vs 601); PCP/10k −10.0 (−17.0, −2.9) for White vs +3.6 (−6.1, 13.3) for Black | **Partial overlap**: Lee 2026 (Prev Chronic Dis) covers MS county YPLL trends |
-| 05 | Screening and stage (breast, CRC) | MS vs US CRC mortality 17.5 vs 12.7; Black/White breast mortality RR 1.43; county screening not associated with late stage after adjustment; PCP supply is | **Weak / low novelty**; several MS CRC and breast papers exist |
+| 05 | Screening and stage (breast, CRC) | MS vs US CRC mortality 17.5 vs 12.7; Black/White breast mortality RR 1.43; county screening not associated with late stage after adjustment; PCP supply is | **Weak / low novelty**; several MS CRC and breast papers exist **Merged into 02 on 2026-11-27** (see 3d) |
 
 Each paper folder now has `README.md` (re-scoped aims, hypotheses with results, sources with data years, limits, Deferred section), `draft-v1.md` (conference-style abstract, intro, methods, results tables, discussion outline, verified references), and `results/` (including `*b_results.md`). All abstracts are draft-v1 for Jake's review; IRB/RDW determination still [PENDING].
+
+## 3d. Merge of Paper 05 into Paper 02; abstract word-limit standard (2026-11-27)
+- **Project standard (Jake, 2026-11-27): conference abstracts are ≤500 words including section labels** (previously 300). This applies to all papers; existing abstracts (all ≤300) are within it and may be expanded up to 500 without adding unsourced numbers.
+- **Merge (Jake decision, 2026-11-27):** Paper 05 (screening and stage) is folded into Paper 02 as a cancer-disparities pair: Part A oral cavity & pharynx; Part B breast and colorectal (hypotheses B1–B7). `papers/05-screening-gaps-cancer-stage/` is kept for provenance and marked "Merged into 02". Combined paper: `papers/02-oral-pharynx-cancer-disparities/` (README with merged aims, hypotheses, sources, limits, Deferred section; `draft-v1.md` with merged abstract, 358 words incl. labels).
+- Headline (public data): Black vs White NH oral cavity/pharynx incidence 9.5 vs 15.6/100k, mortality 3.7 vs 3.5, late stage 73.1% vs 64.8%; breast mortality 29.5 vs 20.7 (RR 1.43), CRC 21.8 vs 15.8 (RR 1.38) with Medicare mammography 42% vs 41%; county dentist and PCP supply track late-stage share (rho −0.51 and −0.45; n = 34); screening not associated with breast late-stage after adjustment (secondary finding).
+- Still [PENDING]: IRB/RDW determination; live-SCP re-check before submission; optional manual MSTAHRS/USCS/BRFSS pulls.
 
 ---
 
@@ -168,7 +174,7 @@ Full living catalog is in `data-sources.md`. Key ones currently in play:
 Secondary priorities:
 - Keep `data-sources.md` and this handoff file updated.
 - Jake has not yet picked which of Papers 02–05 to start next (02, then 04, was recommended).
-- Papers 02–05 draft-v1 abstracts (public data only) are ready for Jake's review (priority 02, 04; 03 has a novelty overlap; 05 is weak). See section 3c.
+- Papers 02–05 draft-v1 abstracts (public data only) are ready for Jake's review (priority 02, 04; 03 has a novelty overlap; 05 is weak and has been merged into 02 as a cancer pair; abstract limit is now ≤500 words). See sections 3c and 3d.
 
 ---
 
