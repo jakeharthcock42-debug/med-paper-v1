@@ -1,64 +1,56 @@
-# 05 — Cancer Screening Gaps and Stage at Diagnosis in Mississippi Counties
+# 05 — Cancer Screening and Stage at Diagnosis (Breast, Colorectal, Cervical) in Mississippi
 
-**Working title**: County-Level Cancer Screening, Primary Care Access, and Late-Stage Colorectal and Breast Cancer in Mississippi: Delta and Rural Patterns  
-**Status**: First-pass public-data analysis done (2026-11-26); draft skeleton in `draft-v1.md`; UMMC add-on requests ready to run  
-**Target**: MAFP, ACP Mississippi, UMMC Research Day (preventive care angle)  
-**Public-data sufficiency**: Yes for colorectal and breast (65–80 counties with published outcomes). Cervical cancer is too sparse at county level (12 counties with incidence).
+**Working title**: Cancer Screening, Primary Care Supply, and Late-Stage Diagnosis of Breast and Colorectal Cancer Across Mississippi Counties: a Public-Data Ecological Analysis  
+**Status**: **Public-data analysis complete; abstract draft-v1 written (2026-11-27). WEAK / LOW-NOVELTY — see flag.** Public-data-only by Jake's decision (2026-11-27); no UMMC pull needed.  
+**Natural fit**: Family medicine / internal medicine; MAFP and ACP Mississippi.  
+**Novelty check (PubMed, 2026-11-27) — FLAG**: Mississippi breast and colorectal cancer screening and disparities have been published several times (Hall 2004 Delta screening; Zahnd 2019 Delta breast subtypes; Whatley 2014 GI cancers; Koutha 2025 and Vijayakumar 2025 colorectal cancer/screening in Mississippi; Barsha 2025 breast cancer research gaps). Our county-level screening → stage result is a null finding using model-based or Medicare-only screening measures. Recommend this be a secondary or merged abstract (e.g., combined with Paper 02 as a cancer-disparities series) rather than a standalone priority.
 
 ## Research question
-Are county screening rates (colorectal, mammography) lower in Delta and rural counties and where primary care supply is lower, and do counties with higher screening show less late-stage disease and lower mortality?
+In Mississippi, how do breast, colorectal, and cervical cancer incidence, mortality, and late-stage share compare with the US and by race, and are county screening rates and primary care supply associated with late-stage diagnosis?
 
-## Specific aims
-1. Describe county screening measures and compare DRA (Delta) vs non-DRA and nonmetro vs metro counties.
-2. Test associations of screening with PCP supply, uninsurance, poverty, and racial composition.
-3. Test ecological associations between screening and colorectal/breast stage and mortality, favoring claims-based screening (CHR mammography) over model-based PLACES.
-4. Describe Black–White differences in Medicare mammography and flu vaccination, and in cancer incidence/mortality (state level).
+## Specific aims (all public)
+1. Compare Mississippi with the US and Black with White non-Hispanic residents for incidence, mortality, and late-stage share (SCP).
+2. Describe county variation in screening (PLACES model-based; CHR Medicare mammography) by Delta (DRA) and rurality, and relate screening to PCP supply.
+3. Test whether county screening and PCP supply are associated with county late-stage share (breast n=69, colorectal n=75 counties with published values).
 
-## Hypotheses and planned tests (with first-pass status)
-| # | Hypothesis | Planned test | First-pass result |
+## Hypotheses and results
+| # | Hypothesis | Test | Result |
 |---|---|---|---|
-| H1 | Screening is lower in DRA (Delta) and nonmetro counties | Mann-Whitney | **Mixed.** CHR Medicare mammography: DRA median 40% vs 44% (p = 0.003), nonmetro 42% vs metro 39.5% (p = 0.304). PLACES CRC screening: 54.7% vs 55.1% (p = 0.174); nonmetro 54.8% vs 55.4% (p = 0.111). PLACES mammography: 72.6% vs 72.4% (p = 0.925) |
-| H2 | Screening rises with PCP supply and falls with uninsurance and poverty | Spearman; OLS (HC3) | **Supported.** CRC screening vs PCP rho 0.390 (p < 0.001), uninsured −0.294 (p = 0.007), child poverty −0.442 (p < 0.001). CHR mammography vs PCP rho 0.402 (p < 0.001); OLS (n = 79, R2 = 0.39): PCP +0.69 points per +1 PCP/10,000 (95% CI 0.28–1.11), nonmetro +3.07 (1.13–5.02), DRA −1.89 (−3.93 to 0.15) |
-| H3 | Higher screening is associated with lower late-stage share and mortality | Spearman | **Mixed.** CHR mammography vs breast % late: rho −0.331 (p = 0.006, n = 69); vs breast mortality −0.349 (p = 0.016, n = 47); vs breast M:I ratio −0.521 (p < 0.001, n = 47). PLACES CRC screening vs CRC % late: rho −0.037 (p = 0.754, n = 75); vs CRC mortality −0.477 (p < 0.001, n = 65); vs CRC incidence −0.384 (p < 0.001, n = 80) |
-| H4 | Black women have lower Medicare mammography than White women | Paired Wilcoxon | **Not supported.** Median 42.0% vs 41.0% (n = 81; p = 0.408). Flu vaccination is lower for Black beneficiaries: 31% vs 37% median, Black lower in 71 of 81 counties (p = 7.7e-12) |
+| H1 | Mississippi has higher mortality and late-stage share than the US for breast, colorectal, and cervical cancer | SCP state rows | **Supported.** CRC incidence 45.7 vs 36.9, mortality 17.5 vs 12.7, late 63.0% vs 60.2%. Breast incidence 125.9 vs 133.0 (lower), mortality 23.6 vs 18.9, late 35.1% vs 30.7%. Cervix incidence 9.0 vs 7.5, mortality 3.6 vs 2.1, late 55.7% vs 53.3% |
+| H2 | Black mortality exceeds White, with incidence similar | Rate ratios from published CIs | **Supported.** Breast mortality 29.5 vs 20.7 (RR 1.43, 1.31–1.55) with incidence RR 1.04; CRC mortality 21.8 vs 15.8 (RR 1.38, 1.28–1.49), CRC incidence 51.2 vs 44.0 |
+| H3 | Delta (DRA) and nonmetro counties have lower screening | Mann-Whitney | **Mixed.** Medicare mammography (CHR) DRA median 40% vs 44% (p = 0.003); nonmetro vs metro 42% vs 39.5% (p = 0.30). PLACES mammography and CRC screening differ by <1 point. Medicare flu vaccination lower in nonmetro (34% vs 37%, p = 0.006) |
+| H4 | PCP supply is associated with screening | Spearman; OLS (HC3) | **Supported.** Medicare mammography +0.77 percentage points per additional PCP/10k (0.40–1.14; n = 82; R² = 0.37); nonmetro +2.9; CRC screening rho 0.39 with PCP per 100k |
+| H5 | Counties with higher screening have lower late-stage share | Spearman; adjusted OLS/WLS | **Not supported after adjustment.** Breast late-stage vs Medicare mammography rho −0.33 (p = 0.006, n = 69) but adjusted coefficient −0.04 per point (−0.35, 0.27) after child poverty and PCP. PLACES mammography rho +0.10; PLACES CRC screening vs CRC late-stage rho −0.04 (n = 75); adjusted +0.14 (−0.70, 0.99); PLACES 2020 sensitivity −0.21 (−0.92, 0.50) |
+| H6 (exploratory) | PCP supply is associated with lower late-stage share | OLS (HC3) | **Supported.** Breast late-stage −0.48 percentage points per PCP/10k (−0.86 to −0.10), p = 0.013; CRC −0.91 (−1.55 to −0.27), p = 0.005. Child poverty +2.8 pp per 10 points for breast late-stage (1.2–4.5) |
+| H7 (descriptive) | Black–White Medicare mammography differs | Paired Wilcoxon (CHR, n = 81) | **No difference.** Median 42% (Black) vs 41% (White), p = 0.41; flu vaccination 31% vs 37% (p = 8e-12) |
 
-Primary tests for the abstract: H2 (CHR mammography model) and H3 (CHR mammography vs breast stage). Others exploratory. PLACES findings are descriptive (see caveat).
-
-## Statewide context (State Cancer Profiles)
-Mississippi vs US (age-adjusted per 100k): colorectal incidence 45.7 vs 36.9; colorectal mortality 17.5 vs 12.7; breast mortality 23.6 vs 18.9; cervical mortality 3.6 vs 2.1. Black NH vs White NH in Mississippi: colorectal mortality 21.8 vs 15.8 (RR 1.38; 1.28–1.49); breast mortality 29.5 vs 20.7 (RR 1.43; 1.31–1.55) with similar incidence (130.6 vs 125.5). Late-stage share: colorectal 63.0% (US 60.2%); breast 35.1% (US 30.7%); cervical 55.7% (US 53.3%). Full tables: `results/p05_results.md`.
-
-## Data sources (public; aggregates only)
+## Data sources (all public; aggregates only)
 | Source | URL | Years | Use |
 |---|---|---|---|
-| CDC PLACES county data, 2025 release | https://data.cdc.gov/d/swc5-untb | CRC screening and mammography 2022; cholesterol screening, checkup 2023 (BRFSS, model-based) | Screening prevalence |
-| County Health Rankings supplemental release (25 Mar 2026) | https://www.countyhealthrankings.org/health-data/methodology-and-sources/data-documentation | Mammography (Medicare FFS 65–74) 2023, flu vaccination 2023, race-specific; PCP 2022; uninsured 2023 | Claims-based screening; access |
-| State Cancer Profiles: colon & rectum (020), breast female (055), cervix (057), lung (047) | https://statecancerprofiles.cancer.gov/ | Incidence & stage 2019–2023; mortality 2020–2024 | Stage and mortality outcomes |
-| USDA RUCC 2023; DRA list | https://www.ers.usda.gov/data-products/rural-urban-continuum-codes ; https://dra.gov/wp-content/uploads/2022/04/Mississippi.pdf | 2023 / 2016–2024 | Rural/Delta |
-| HRSA HPSA data | https://data.hrsa.gov/data/download | latest | [PENDING] shortage designations |
-| MSTAHRS cancer deaths by race/county | https://mstahrs.msdh.ms.gov/ | through 2024 | [PENDING] |
+| State Cancer Profiles (NPCR/CDC + NCHS): breast (055), colorectal (020), cervix (057) | https://statecancerprofiles.cancer.gov/ | Incidence/late stage 2019–2023; mortality 2020–2024 | Rates, % late stage, by county and (state) race |
+| CDC PLACES 2025 release | https://data.cdc.gov/d/swc5-untb | BRFSS 2022: CRC screening (45–75), mammography (50–74); 2023: cholesterol screening, checkup | Model-based screening |
+| CDC PLACES 2023 release | https://data.cdc.gov/d/h3ej-a9ec | BRFSS 2020: CRC screening (50–75), mammography | Sensitivity |
+| County Health Rankings 2025 and 25 Mar 2026 supplement | https://www.countyhealthrankings.org/health-data/methodology-and-sources/data-documentation | Mammography screening 2023 (Medicare FFS women 65–74; Mapping Medicare Disparities Tool); flu vaccination 2023 | Observed (non-modeled) screening, race-specific |
+| HRSA AHRF 2024–2025 | https://data.hrsa.gov/data/download?data=AHRF | PCP (MD+DO) 2023; primary-care HPSA 2025 | Access |
+| USDA RUCC 2023; Delta Regional Authority list | see `data-sources.md` | | Rurality, Delta |
 
-## Feasibility notes and limits
-- **PLACES caveat**: PLACES estimates are model-based (multilevel regression and poststratification using age, sex, race/ethnicity, education, and county poverty; Greenlund 2022). PLACES-vs-covariate correlations are partly built in; the CHR Medicare mammography measure is claims-based but covers only fee-for-service women 65–74 and is not representative of all Mississippi women.
-- PLACES "dental visit" excluded: published values 4.9–12.9% are implausible and need verification [PENDING].
-- County cancer outcomes are suppressed where fewer than 16 cases in 5 years; stage analyses cover 65–80 counties, biased toward larger counties.
-- Ecological; screening is measured in a different population (age and payer) than the cancer outcomes.
-- Colorectal screening measure is age 45–75 (PLACES 2022), spanning a recommendation change in 2021 (USPSTF lowered start age to 45; Grade B for 45–49) — interpret trend vs prior eras carefully.
+Reproducibility: `scripts/public-data/` (`p05.py`, `p05b.py`, `build_places2020.py`, `build_ahrf.py`, `build_master.py`, `scp_build.py`) and `results/` here.
+
+## Limits
+- PLACES screening estimates are model-based (MRP) and strongly smoothed (county ranges: CRC 49.6–62.7%, mammography 67.0–77.4%), so ecological screening–stage tests have limited power and are partly circular with demographic and poverty covariates.
+- CRC screening definitions differ between PLACES releases (ages 45–75 in 2022 vs 50–75 in 2020), so levels are not comparable (median 55.0% vs 67.6%).
+- CHR mammography is Medicare fee-for-service women 65–74 only; it excludes younger women and Medicare Advantage.
+- SCP county late-stage % available for 69 (breast) and 75 (CRC) counties; cervical county data too sparse (incidence for 12 counties). Stage is defined as regional plus distant.
+- Ecological design; screening and stage are measured in different populations and periods; no individual-level inference.
+
+## Deferred / not used (UMMC RDW)
+Per Jake's 2026-11-27 decision, Papers 02–05 use public data only. The earlier UMMC Patient Cohort Explorer request (screening procedure codes for mammography, colonoscopy/FIT, and Pap/HPV by race and primary-care encounter; stage at diagnosis from tumor registry) is **not used**. It would link screening completion to stage at the patient level, which public aggregates cannot; it remains a possible later extension.
 
 ## Next actions
-- [ ] [PENDING] BRFSS state-level screening by race (CDC BRFSS Prevalence & Trends: https://www.cdc.gov/brfss/brfssprevalence/) to complement county data.
-- [ ] [PENDING] Cervical screening (Pap/HPV) county measure: no county measure available in PLACES 2025; check CHR/other.
-- [ ] [PENDING] HRSA HPSA and FQHC (UDS) screening quality measures for Mississippi health centers.
-- [ ] Add lung cancer incidence/mortality and smoking for a tobacco-linked sub-analysis (data already pulled).
-- [ ] Draft abstract around H2/H3 with CHR mammography.
-
-## Optional UMMC RDW add-on (data-use cleared by Jake 2026-11-26; ready to run)
-Aggregates only; suppress cells under 11; one selection per box.
-1. Colorectal: Procedure code **45378** (diagnostic colonoscopy) and, separately, **82274** (fecal immunochemical test) / **Z12.11** (encounter for screening for malignant neoplasm of colon): patients and by race, age group (45–54, 55–64, 65–75).
-2. Breast: Procedure **77067** (screening mammography, bilateral) / **Z12.31**: patients, by race and age group (40–49, 50–59, 60–74).
-3. Cervical: **Z12.4** (encounter for screening for malignant neoplasm of cervix): patients by race and age group (21–29, 30–64).
-4. Denominator: patients with ≥1 Family Medicine or Internal Medicine outpatient encounter in the last 24 months, by race and age group (use the Explorer's encounter/department filters if present).
-5. Cancers found: **C18.x/C20** (colorectal), **C50.x** (breast), by race, with stage if the Explorer exposes it (otherwise [PENDING]).
-Use: screening-completion proportions among UMMC primary care patients by race, to complement county patterns.
+- [ ] Jake: decide whether to merge this with Paper 02 as a cancer-disparities series or drop it.
+- [ ] Optional manual: CDC BRFSS Mississippi state-level screening by race (SMART/BRFSS prevalence tool) to add a race-specific screening comparison without MRP smoothing.
 
 ## Files
-- `draft-v1.md`, `results/p05_results.md`, `results/p05_county_dataset.csv`
+- `draft-v1.md` — abstract (draft-v1), intro, methods, results tables, discussion, references
+- `results/p05_results.md` — first-pass results; `results/p05b_results.md` — adjusted and sensitivity models
+- `results/p05_county_dataset.csv`, `results/p05b_county_dataset.csv` — county aggregates (82 rows)
