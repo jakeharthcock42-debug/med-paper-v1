@@ -28,12 +28,16 @@ RD is Black minus White, in percentage points. Pearson χ² is uncorrected, 1 df
 
 The primary association p-value reported in the manuscript is the uncorrected CMH p.
 
-## Sensitivity: exclude 0–17
+## Sensitivity: exclude 0–17 (concordance check)
 
-Motivated by the 0–17 Audiology selection showing an encounter window of
-3/2026–9/30/2026 (Black 3/26/2026, White 3/16/2026), which may mean pediatric
-Audiology-department coding only begins in 2026 ([PENDING] verification).
-Adult bands show Audiology encounters from mid/late 2014.
+A follow-up check with race cleared (H90.3 + AgeKey 0–17 + Audiology;
+screenshot 2026-11-26) showed Patients = 401 (0.02% of RDW), Encounters = 868,
+and an included-encounter window of 9/3/2015–9/30/2026. Pediatric
+Audiology-department coding spans 2015–2026; the 3/2026 start previously seen
+with a race selected (Black 3/26/2026, White 3/16/2026) is a display artifact,
+not a coding window. The 0–17 band is retained in the primary MH estimate;
+this sensitivity is a concordance check only. Adult bands show Audiology
+encounters from mid/late 2014.
 
 - MH RR = **0.810** (Greenland-Robins 95% CI **0.695–0.943**)
 - Wald z (ln RR) = -2.706, p = 0.00682
