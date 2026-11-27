@@ -1,7 +1,7 @@
 # Draft v1 — Hearing Loss Disparities
 
 **Last updated**: 2026-11-26  
-**Status**: Hypotheses written; county-level public-data tests done ([`county-analysis.md`](county-analysis.md)); UMMC RDW numbers **[PENDING]** (requests in [`rdw-data-requests.md`](rdw-data-requests.md)). Data use confirmed by Jake Harthcock 2026-11-26 per Cohort Explorer guide ([`../../data-use-rules.md`](../../data-use-rules.md)).
+**Status**: Hypotheses written; county-level public-data tests done ([`county-analysis.md`](county-analysis.md)); UMMC cohort N confirmed (H90.3 Patients = 15,612, 2026-11-26); remaining RDW numbers **[PENDING]** (next: R1 race breakdown in [`rdw-data-requests.md`](rdw-data-requests.md)). Data use confirmed by Jake Harthcock 2026-11-26 per Cohort Explorer guide ([`../../data-use-rules.md`](../../data-use-rules.md)).
 
 > **Numbers rule**: no number appears here unless it was obtained from a cited source. Anything not yet obtained is marked **[PENDING]**. UMMC RDW subgroup cells under 11 are never recorded; they appear as "<11 (suppressed)" (project rule). Separately, the Cohort Explorer itself only allows report view/export when the population is greater than 25 (guide p. 20).
 
@@ -18,7 +18,7 @@ Racial and Geographic Disparities in Documented Hearing Loss and Related Care at
 
 **Methods**: Retrospective analysis of de-identified aggregate data from the UMMC Research Data Warehouse / Patient Cohort Explorer. Patients with ICD-10 H90.3 (bilateral sensorineural hearing loss) were identified. Race and utilization of audiology or otolaryngology services were tabulated and compared (chi-square, risk difference, odds ratio). County-level context for all 82 Mississippi counties used CDC PLACES hearing-disability estimates (2025 release, BRFSS 2023), ACS 2020–2024, and County Health Rankings 2025, analyzed with Spearman correlation and rural vs non-rural comparison.
 
-**Results**: *County level*: age-adjusted adult hearing disability prevalence was higher in rural than non-rural counties (PLACES mean 7.54% vs 6.91%; Mann-Whitney p = 1.5e-4; n = 66 vs 16) and correlated with % rural (Spearman rho = 0.477), fewer primary care physicians (rho = −0.470), higher uninsured share (rho = 0.490) and lower county % Black (rho = −0.321); no association with county poverty (rho = 0.017). *UMMC cohort*: **[PENDING: N, race distribution, and utilization by race, from RDW]**.
+**Results**: *County level*: age-adjusted adult hearing disability prevalence was higher in rural than non-rural counties (PLACES mean 7.54% vs 6.91%; Mann-Whitney p = 1.5e-4; n = 66 vs 16) and correlated with % rural (Spearman rho = 0.477), fewer primary care physicians (rho = −0.470), higher uninsured share (rho = 0.490) and lower county % Black (rho = −0.321); no association with county poverty (rho = 0.017). *UMMC cohort*: N = 15,612 patients with ICD-10 H90.3 (Patient Cohort Explorer, 2026-11-26; Encounters **[PENDING]**). Race distribution and utilization by race **[PENDING]**.
 
 **Conclusions**: **[PENDING; write after RDW results]**.
 
@@ -83,7 +83,7 @@ Known threat to H-U2 to H-U6: H90.3 is often assigned **at** an audiology or ENT
 - **County context (public)**: CDC PLACES County Data, 2025 release (BRFSS 2023); ACS 5-year 2020–2024 (B18102, B02001, B17001); County Health Rankings & Roadmaps 2025 analytic data (PCP 2021, uninsured 2022, % rural 2020). URLs and variable definitions in [`county-analysis.md`](county-analysis.md).
 
 ### Cohort Definition
-Patients with at least one encounter carrying ICD-10 diagnosis **H90.3** (sensorineural hearing loss, bilateral), approximately 15,612 patients as seen in the Explorer; exact total to be confirmed (Step 1 in [`README.md`](README.md)). The Explorer permits one selection per filter box, so a single code was chosen over the broader H90 range; this is a limitation (unilateral, mixed, and conductive loss are excluded). Other single-code counts seen earlier: H90.5 ≈ 6,856; H90.0 ≈ 4,029.
+Patients with at least one encounter carrying ICD-10 diagnosis **H90.3** (sensorineural hearing loss, bilateral): **15,612** patients, confirmed 2026-11-26 in the Patient Cohort Explorer with only H90.3 selected in Diagnosis Codes (Step 1 in [`README.md`](README.md)). Encounters **[PENDING]**. The Explorer permits one selection per filter box, so a single code was chosen over the broader H90 range; this is a limitation (unilateral, mixed, and conductive loss are excluded). Other single-code counts seen earlier: H90.5 ≈ 6,856; H90.0 ≈ 4,029.
 
 ### Variables
 - Demographics: age, sex, race/ethnicity
@@ -116,7 +116,7 @@ Full tables, years, and caveats: [`county-analysis.md`](county-analysis.md).
 
 | Characteristic              | N (%) or mean (SD) |
 |-----------------------------|--------------------|
-| Total patients              | ≈15,612 (seen in Explorer; exact total **[PENDING]**) |
+| Total patients              | 15,612 (Patient Cohort Explorer, Diagnosis Codes = H90.3 only; confirmed 2026-11-26). Encounters **[PENDING]** |
 | Age                         | [PENDING] |
 | Female                      | [PENDING] |
 | Race/ethnicity              | [PENDING] |
@@ -172,3 +172,4 @@ Findings can inform targeted screening, referral-pathway improvement, and outrea
 - 2026-11-26: Initial outline.
 - 2026-11-26: Expanded with literature-backed background, refined aims/methods, and structured results placeholders.
 - 2026-11-26: Added pre-specified hypotheses (county-level and UMMC), switched cohort to H90.3, <11 suppression rule, county-level results (82 counties), RDW placeholders marked [PENDING].
+- 2026-11-26: Step 1 confirmed: H90.3 Patients = 15,612. Encounters still [PENDING]. Table 1 total and cohort definition updated.
