@@ -2,7 +2,7 @@
 
 **For**: Jake Harthcock (runs all queries; pastes aggregate numbers back).  
 **Status**: **ACTIVE.** Data use confirmed by Jake Harthcock 2026-11-26 per Cohort Explorer guide ([`../../data-use-rules.md`](../../data-use-rules.md)).  
-**Cohort**: ICD-10 **H90.3** (sensorineural hearing loss, bilateral), **15,612** patients (confirmed 2026-11-26). Encounters **[PENDING]**.  
+**Cohort**: ICD-10 **H90.3** (sensorineural hearing loss, bilateral), **15,612** patients (0.94% of RDW) and **4,244,868** encounters (5.79%), confirmed from a 2026-11-26 screenshot (Pt Diagnosis Codes (OR) = H90.3 only; Current Selections: `Pt_Dx_Code ORMode H90.3`). Data window: encounters between **1/1/2013** and **9/30/2026**.  
 **Last updated**: 2026-11-26.
 
 ## Rules for every request
@@ -15,10 +15,10 @@
 
 ## Priority 1 — core Tables 1 and 2 (needed for the abstract)
 
-### R0. Cohort total (Step 1) — H-U1, Table 1 — **DONE** (2026-11-26)
-- Filters: Diagnosis Codes = H90.3 only.
+### R0. Cohort total (Step 1) — H-U1, Table 1 — **DONE** (2026-11-26, screenshot)
+- Filters: **Pt Diagnosis Codes (OR)** = H90.3 only. Current Selections: `Pt_Dx_Code ORMode H90.3`.
 - Report: Patients; Encounters.
-- **Result**: Patients = **15,612**. Encounters **[PENDING]** (not reported).
+- **Result**: Patients = **15,612** (0.94% of RDW). Encounters = **4,244,868** (5.79%). Data window: encounters between **1/1/2013** and **9/30/2026**.
 
 ### R1. Race breakdown of the H90.3 cohort (Step 2) — H-U1, Table 1
 1. Keep H90.3 selected in Diagnosis Codes. Clear every other box.
@@ -33,9 +33,10 @@
 - Age: use the **Age** box to read counts for age bands (adult bands such as 18–39, 40–59, 60–74, 75 and older, or whatever the box offers; tell me the bands you used). One value or range at a time. Report Patients per band.
 
 ### R3. Denominator: all RDW patients by race — H-U1
-- Filters: clear **everything** (no diagnosis). Report total Patients.
+- Filters: clear **everything** (no diagnosis). Report total Patients (and, if shown, total Encounters).
 - Then Race one value at a time (same method as R1), report Patients per value. Optionally repeat with the same age bands as R2 so the comparison can be age-matched.
 - Why: tests whether Black patients are over- or under-represented in the H90.3 cohort relative to the population the RDW draws from.
+- Note: the R0 header shows the H90.3 cohort as **0.94%** of RDW patients (and **5.79%** of encounters). Those percentages imply denominators exist on the unfiltered view, but the exact totals stay **[PENDING]** until you report them from the cleared-filter header. Do not back-calculate them from the percentages.
 
 ### R4. Audiology use among H90.3 patients — H-U2, Table 2
 - Find the box that holds the clinic, department, or provider specialty (look under Patient Filters, Encounter Filters, and the standard data filters; send me the box names you see). Select **Audiology** (use the exact label; if there are several audiology labels, report each one separately, never combined by guesswork).
@@ -76,7 +77,7 @@
 R0 to R3 fill Table 1 and H-U1 (race distribution vs RDW). R4 to R6 fill Table 2 and H-U2 to H-U4. R7 enables H-U5 and H-U6. R8 and R9 are the main robustness checks. R10 and R11 are optional covariates. Send results as plain text, one request at a time (R1 is next).
 
 ## Status checklist
-- [x] R0 total — Patients = 15,612 (2026-11-26); Encounters **[PENDING]**
+- [x] R0 total — Patients = 15,612 (0.94% of RDW); Encounters = 4,244,868 (5.79%); window 1/1/2013–9/30/2026 (screenshot, 2026-11-26)
 - [ ] R1 race
 - [ ] R2 sex and age
 - [ ] R3 RDW race denominator
