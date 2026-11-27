@@ -1,7 +1,7 @@
 # Draft v1 — Hearing Loss Disparities
 
 **Last updated**: 2026-11-26  
-**Status**: Hypotheses written; county-level public-data tests done ([`county-analysis.md`](county-analysis.md)); UMMC cohort N and encounter total confirmed (H90.3 Patients = 15,612, 0.94% of RDW; Encounters = 4,244,868, 5.79%; window 1/1/2013–9/30/2026). R1 race percentages recorded (Black or African American 47.1%; White or Caucasian 49.9%; screenshot 2026-11-26); exact race and sex counts **[PENDING]** (next: click Black, then White). Data use confirmed by Jake Harthcock 2026-11-26 per Cohort Explorer guide ([`../../data-use-rules.md`](../../data-use-rules.md)).
+**Status**: Hypotheses written; county-level public-data tests done ([`county-analysis.md`](county-analysis.md)); UMMC cohort N and encounter total confirmed (H90.3 Patients = 15,612, 0.94% of RDW; Encounters = 4,244,868, 5.79%; window 1/1/2013–9/30/2026). R1 exact counts recorded (FirstRace; screenshots 2026-11-26): White or Caucasian 8,597 (55.1% of 15,612), Black or African American 6,176 (39.6%), other/unknown combined 839 (5.4%; 15,612 − 8,597 − 6,176). Race dropdown percentages (Black 47.1%, White 49.9%) are encounter shares, not patient shares. H-U1 partial (cohort race split in; RDW base-population race, R3, still [PENDING]). Next: R4/R5 (audiology/ENT by race). Data use confirmed by Jake Harthcock 2026-11-26 per Cohort Explorer guide ([`../../data-use-rules.md`](../../data-use-rules.md)).
 
 > **Numbers rule**: no number appears here unless it was obtained from a cited source. Anything not yet obtained is marked **[PENDING]**. UMMC RDW subgroup cells under 11 are never recorded; they appear as "<11 (suppressed)" (project rule). Separately, the Cohort Explorer itself only allows report view/export when the population is greater than 25 (guide p. 20).
 
@@ -18,7 +18,7 @@ Racial and Geographic Disparities in Documented Hearing Loss and Related Care at
 
 **Methods**: Retrospective analysis of de-identified aggregate data from the UMMC Research Data Warehouse / Patient Cohort Explorer. Patients with ICD-10 H90.3 (bilateral sensorineural hearing loss) were identified. Race and utilization of audiology or otolaryngology services were tabulated and compared (chi-square, risk difference, odds ratio). County-level context for all 82 Mississippi counties used CDC PLACES hearing-disability estimates (2025 release, BRFSS 2023), ACS 2020–2024, and County Health Rankings 2025, analyzed with Spearman correlation and rural vs non-rural comparison.
 
-**Results**: *County level*: age-adjusted adult hearing disability prevalence was higher in rural than non-rural counties (PLACES mean 7.54% vs 6.91%; Mann-Whitney p = 1.5e-4; n = 66 vs 16) and correlated with % rural (Spearman rho = 0.477), fewer primary care physicians (rho = −0.470), higher uninsured share (rho = 0.490) and lower county % Black (rho = −0.321); no association with county poverty (rho = 0.017). *UMMC cohort*: N = 15,612 patients (0.94% of RDW) and 4,244,868 encounters (5.79%) with ICD-10 H90.3 (Patient Cohort Explorer screenshot, 2026-11-26; data window 1/1/2013–9/30/2026). Race (dropdown % of cohort): Black or African American 47.1%, White or Caucasian 49.9% (exact counts **[PENDING]**). Utilization by race **[PENDING]**.
+**Results**: *County level*: age-adjusted adult hearing disability prevalence was higher in rural than non-rural counties (PLACES mean 7.54% vs 6.91%; Mann-Whitney p = 1.5e-4; n = 66 vs 16) and correlated with % rural (Spearman rho = 0.477), fewer primary care physicians (rho = −0.470), higher uninsured share (rho = 0.490) and lower county % Black (rho = −0.321); no association with county poverty (rho = 0.017). *UMMC cohort*: N = 15,612 patients (0.94% of RDW) and 4,244,868 encounters (5.79%) with ICD-10 H90.3 (Patient Cohort Explorer screenshot, 2026-11-26; data window 1/1/2013–9/30/2026). Race (FirstRace; patient counts): White or Caucasian 8,597 (55.1% of 15,612), Black or African American 6,176 (39.6%), other/unknown combined 839 (5.4%; 15,612 − 8,597 − 6,176). Black patients had more encounters per person than White patients (323.9 vs 246.5; 2,000,250 / 6,176 vs 2,119,544 / 8,597). Sex among White patients: 50.81% female; among Black patients: 61.33% female (pie chart with FirstRace selected; exact counts **[PENDING]**). Utilization by race **[PENDING]**. Comparison of the cohort race mix to the RDW base population **[PENDING, R3]**.
 
 **Conclusions**: **[PENDING; write after RDW results]**.
 
@@ -61,11 +61,11 @@ Mississippi’s combination of high rurality, elevated overall disability burden
 
 The five primary Spearman tests use PLACES age-adjusted prevalence and are Holm-corrected as one family (Holm p = 2.4e-5, 0.0066, 0.88, 2.5e-5, 1.5e-5 for H-C1 to H-C5). Exploratory: multivariable OLS with HC3 robust SE. Caveat: PLACES is model-based and uses ACS inputs, so associations with race, poverty, and insurance are partly built in.
 
-**B. UMMC cohort hypotheses (need RDW aggregates; all results [PENDING])**
+**B. UMMC cohort hypotheses (H-U1 partial; H-U2 to H-U6 and the H-U1 test still [PENDING])**
 
 | ID | Null (H0) | Alternative (H1) | Data needed | Planned test | Result |
 |---|---|---|---|---|---|
-| H-U1 | The share of Black patients in the H90.3 cohort equals their share of the overall RDW patient population | Differs (predicted lower, matching lower measured prevalence in Black adults; age structure must be considered) | H90.3 patients by race; all RDW patients by race | Chi-square goodness-of-fit / two-proportion z-test; age-band stratified descriptives | **[PENDING]** |
+| H-U1 | The share of Black patients in the H90.3 cohort equals their share of the overall RDW patient population | Differs (predicted lower, matching lower measured prevalence in Black adults; age structure must be considered) | H90.3 patients by race; all RDW patients by race | Chi-square goodness-of-fit / two-proportion z-test; age-band stratified descriptives | **Partial**: cohort race split recorded (FirstRace; screenshots 2026-11-26): White 8,597 (55.1% of 15,612), Black 6,176 (39.6%), other/unknown combined 839 (5.4%; 15,612 − 8,597 − 6,176). Comparison to the RDW base-population race distribution remains **[PENDING]** (request R3). |
 | H-U2 | Among H90.3 patients, proportion with ≥1 audiology encounter is equal for Black and White patients | Lower in Black patients | H90.3 × race × audiology (ever) | Chi-square; risk difference with 95% CI; odds ratio | **[PENDING]** |
 | H-U3 | Proportion with ≥1 ENT encounter is equal for Black and White patients | Lower in Black patients | H90.3 × race × ENT (ever) | Same as H-U2 | **[PENDING]** |
 | H-U4 (primary) | Proportion with ≥1 audiology **or** ENT encounter is equal for Black and White patients | Lower in Black patients | H90.3 × race × (audiology or ENT) | Same as H-U2 | **[PENDING]** |
@@ -89,7 +89,7 @@ Patients with at least one encounter carrying ICD-10 diagnosis **H90.3** (sensor
 The Explorer header states that the dataset includes encounters between **January 1, 2013** and **September 30, 2026** (same 2026-11-26 screenshot).
 
 ### Variables
-- Demographics: age, sex, race/ethnicity. Race is on the Data Filters page → Patient Demographics tab → Demographic Search list → Race (dropdown shows % of the current cohort). Sex percentages below are from the pie chart on that same screen.
+- Demographics: age, sex, race/ethnicity. Race is the **FirstRace** field (Current Selections label), on the Data Filters page → Patient Demographics tab → Demographic Search list → Race. Patient race shares are computed from header Patients counts with H90.3 + one FirstRace value selected. The Race dropdown percentages are encounter shares of the current selection, not patient shares, and are not used as the Table 1 race distribution. Overall-cohort sex percentages are from the pie chart on that same screen with no race selected (likely patient-based; pie chart basis unconfirmed). Sex by race is from the same pie chart with one FirstRace value selected.
 - Geography: ZIP or county of residence (if available in the de-identified data) → rural vs non-rural classification; the Explorer lists a State filter, others **[PENDING]**
 - Care processes: ≥1 audiology encounter; ≥1 otolaryngology (ENT) encounter; either
 - Optional: payer (Primary Financial Class), encounter setting, age band
@@ -121,15 +121,16 @@ Full tables, years, and caveats: [`county-analysis.md`](county-analysis.md).
 |-----------------------------|--------------------|
 | Total patients              | 15,612 (0.94% of RDW; Patient Cohort Explorer, Pt Diagnosis Codes (OR) = H90.3 only; Current Selections: `Pt_Dx_Code ORMode H90.3`; screenshot 2026-11-26) |
 | Encounters                  | 4,244,868 (5.79% of RDW encounters; same screenshot) |
+| Encounters per patient (descriptive) | Overall 271.9 (4,244,868 / 15,612). By FirstRace: White 246.5 (2,119,544 / 8,597); Black 323.9 (2,000,250 / 6,176). |
 | Data window                 | Encounters between 1/1/2013 and 9/30/2026 (same screenshot) |
 | Age                         | [PENDING] |
-| Sex                         | Pie chart on Patient Demographics (same screenshot). Exact counts **[PENDING]**; not back-calculated. |
+| Sex (overall; no race selected) | Pie chart on Patient Demographics (H90.3 only). Likely patient-based; pie chart basis unconfirmed. Exact counts **[PENDING]**; not back-calculated. |
 | &nbsp;&nbsp;Female          | 54.84% (exact count **[PENDING]**) |
 | &nbsp;&nbsp;Male            | 45.16% (exact count **[PENDING]**) |
-| Race/ethnicity              | % of H90.3 cohort from the Race dropdown (Data Filters → Patient Demographics → Demographic Search). Exact counts **[PENDING]**; not back-calculated. |
-| &nbsp;&nbsp;Black or African American | 47.1% (exact count **[PENDING]**) |
-| &nbsp;&nbsp;White or Caucasian | 49.9% (exact count **[PENDING]**) |
-| &nbsp;&nbsp;Other/multiple/unknown | Other 1.1%; Asian 0.5%; Multiracial 0.4%; American Indian or Alaska Native 0.2%; Hispanic 0.2%; MS Band Choctaw Indian 0.2%; Unknown 0.2%; Patient Refused 0.1% (exact counts **[PENDING]**). Blank/unlabeled row, Asian Indian, and Native Hawaiian or Other Pacific Islander each displayed as 0.0% and are shown as <11 (suppressed). Component percentages are listed as displayed and are not summed. |
+| Race/ethnicity (FirstRace)  | Patient counts from the header with H90.3 + one FirstRace value selected (Data Filters → Patient Demographics → Race; Current Selections: FirstRace; screenshots 2026-11-26). Percentages are patient-based (count / 15,612), rounded to one decimal (and therefore sum to 100.1%). The Race dropdown percentages (Black 47.1%, White 49.9%) are encounter shares of the 4,244,868 cohort encounters, not patient shares, and are not used here as the race distribution. Small-group dropdown percentages are encounter shares only and are not converted to patient counts. The 0.52% and 0.37% of RDW figures are recorded as displayed; the exact RDW denominator stays **[PENDING]** (R3) and is not back-calculated. |
+| &nbsp;&nbsp;White or Caucasian | 8,597 (55.1% of 15,612; 0.52% of RDW). Encounters 2,119,544 (2.89% of RDW; 49.9% of 4,244,868 cohort encounters = 2,119,544 / 4,244,868). Encounters per patient 246.5 (2,119,544 / 8,597). Sex: Female 50.81%, Male 49.19% (pie chart with this FirstRace selected; exact counts **[PENDING]**). |
+| &nbsp;&nbsp;Black or African American | 6,176 (39.6% of 15,612; 0.37% of RDW). Encounters 2,000,250 (2.73% of RDW; 47.1% of 4,244,868 = 2,000,250 / 4,244,868). Encounters per patient 323.9 (2,000,250 / 6,176). Sex: Female 61.33%, Male 38.67% (pie chart with this FirstRace selected; exact counts **[PENDING]**). |
+| &nbsp;&nbsp;Other/unknown (combined) | 839 (5.4% of 15,612), computed as 15,612 − 8,597 − 6,176. Reported as one combined row only; not further broken into patient counts. |
 | Rural residence (if available) | [PENDING] |
 
 ### 4.3 Table 2. Specialty care utilization among patients with hearing-loss diagnosis
@@ -141,7 +142,7 @@ Full tables, years, and caveats: [`county-analysis.md`](county-analysis.md).
 | ≥1 Audiology or ENT encounter   | [PENDING] | [PENDING] | [PENDING] | [PENDING] | [PENDING] |
 
 ### 4.4 Additional planned analyses
-- Racial distribution of the H90.3 cohort vs overall RDW population (H-U1) **[PENDING]**.
+- Racial distribution of the H90.3 cohort vs overall RDW population (H-U1): cohort split recorded (White 8,597, 55.1%; Black 6,176, 39.6%; other/unknown 839, 5.4%); comparison to the RDW base population remains **[PENDING]** (R3).
 - Optional: UMMC patterns beside PLACES estimates for the UMMC catchment region (needs a residence variable) **[PENDING]**.
 
 ---
@@ -182,3 +183,4 @@ Findings can inform targeted screening, referral-pathway improvement, and outrea
 - 2026-11-26: Step 1 confirmed: H90.3 Patients = 15,612. Encounters still [PENDING]. Table 1 total and cohort definition updated.
 - 2026-11-26: Screenshot added Encounters = 4,244,868 (5.79%), patients as 0.94% of RDW, and data window 1/1/2013–9/30/2026. RDW denominators left [PENDING] (not back-calculated).
 - 2026-11-26: R1 race percentages from Data Filters → Patient Demographics → Race dropdown (Black or African American 47.1%; White or Caucasian 49.9%); sex pie chart Female 54.84%, Male 45.16%. Exact counts left [PENDING] (not back-calculated). 0.0% rows treated as <11 (suppressed).
+- 2026-11-26: R1 exact counts (FirstRace; screenshots). White 8,597 (55.1% of 15,612), Black 6,176 (39.6%), other/unknown combined 839 (5.4%; 15,612 − 8,597 − 6,176). Dropdown 47.1% / 49.9% are encounter shares (2,000,250 / 4,244,868 and 2,119,544 / 4,244,868), not patient shares; small-group dropdown % not converted to patient counts; prior 0.0% → <11 reading from the dropdown withdrawn. Sex by race and encounters per patient (White 246.5; Black 323.9) added to Table 1. H-U1 marked partial (R3 still pending).
