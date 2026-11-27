@@ -1,64 +1,59 @@
-# 03 — Primary Care Supply, Poverty, and the Black–White Gap in Premature Mortality Across Mississippi Counties
+# 03 — Primary Care Supply and the Black–White Premature Mortality Gap Across Mississippi Counties
 
-**Working title**: Primary Care Physician Supply, Socioeconomic Context, and the Black–White Gap in Premature Mortality and Chronic Disease Burden Across 82 Mississippi Counties  
-**Status**: First-pass public-data analysis done (2026-11-26); draft skeleton in `draft-v1.md`; UMMC add-on requests ready to run  
-**Target**: MAFP, ACP Mississippi, UMMC Research Day (primary care / internal medicine audience)  
-**Public-data sufficiency**: Yes. All 82 counties; race-specific outcomes published for 80 counties.
+**Working title**: Primary Care Physician Supply and the Black–White Gap in Premature Mortality Across Mississippi's 82 Counties: a Public-Data Ecological Analysis  
+**Status**: **Public-data analysis complete; abstract draft-v1 written (2026-11-27).** Public-data-only by Jake's decision (2026-11-27); no UMMC pull needed.  
+**Natural fit**: Family medicine / internal medicine (MAFP, ACP Mississippi).  
+**Novelty check (PubMed, 2026-11-27) — PARTIAL OVERLAP, FLAG**: Lee JE et al., *Prev Chronic Dis* 2026;23:E32 (PMID 42594183) modeled county premature mortality (YPLL) in Mississippi 2015–2025 from the same County Health Rankings source, with spatial models and socioeconomic drivers, but not race-specific rates, primary care supply, or the Black–White gap. No Mississippi paper on primary care supply by race and premature mortality was found. The contribution here is the race-stratified PCP–mortality association and gap analysis; the descriptive Black–White gap is not new in itself. Moderate-to-low novelty; best as an MAFP/ACP abstract.
 
 ## Research question
-Across Mississippi counties, how large is the Black–White gap in premature mortality, and how much of county variation in premature mortality, the racial gap, and chronic disease prevalence is related to primary care physician (PCP) supply versus poverty, insurance, rurality, and Delta-region location?
+Across Mississippi's counties, is primary care physician supply associated with premature mortality, and does the association (and the Black–White gap in premature mortality) differ by race and county context?
 
-## Specific aims
-1. Quantify the Black–White gap in premature death (YPLL <75), age-adjusted premature mortality, and life expectancy across counties with both values published.
-2. Test whether PCP supply is associated with county premature mortality independent of child poverty, uninsurance, rurality, racial composition, and Delta-region (DRA) status.
-3. Test whether the Black–White gap is larger in counties with more residential segregation, lower PCP supply, or higher poverty.
-4. Compare diabetes, coronary heart disease, stroke, hypertension, and obesity prevalence between DRA/non-DRA and nonmetro/metro counties.
+## Specific aims (all public)
+1. Quantify the Black–White gap in age-adjusted premature mortality, years of potential life lost (YPLL), and life expectancy in counties where both are published.
+2. Test the association of primary care supply (AHRF MD+DO per 10,000; CHR PCP rate) with premature mortality overall and separately for White and Black residents, adjusting for child poverty, uninsurance, rurality, and % Black.
+3. Test whether the Black–White gap varies with PCP supply, child poverty, % Black, and residential segregation.
+4. Describe chronic-disease prevalence (PLACES; model-based) by Delta (DRA) and rurality, and its relation to PCP supply.
 
-## Hypotheses and planned tests (with first-pass status)
-| # | Hypothesis | Planned test | First-pass result |
+## Hypotheses and results
+| # | Hypothesis | Test | Result |
 |---|---|---|---|
-| H1 | Black premature mortality exceeds White in nearly all counties | Paired Wilcoxon across counties with both values | **Supported.** Median age-adjusted premature mortality 742 vs 601 per 100k (median county difference 148); Black higher in 71 of 80 counties; p = 3.0e-12. YPLL median 16,569 vs 12,377 (diff 4,391), 73 of 80 counties. Life expectancy median 70.0 vs 72.5 y; Black lower in 64 of 75 |
-| H2 | Lower PCP supply is associated with higher premature mortality after adjusting for child poverty | OLS, HC3 robust SE | **Not supported.** PCP alone: −8.4 per 10 PCP/100k (95% CI −19.6 to 2.8), p = 0.142 (see note below); with child poverty: PCP −1.9 (95% CI −10.2 to 6.4), p = 0.66; child poverty +83.0 per 10 pts (24.6 to 141.4), p = 0.005; n = 79 |
-| H3 | Black–White gap is larger where segregation is higher and PCP supply lower | Spearman; OLS | **Not supported for segregation or PCP.** Segregation rho −0.004 (p = 0.972); PCP rho 0.198 (p = 0.085). Gap rises with child poverty: rho 0.369 (p = 0.001); OLS +64.8 per 10 pts (29.3 to 100.3), p < 0.001, n = 77, R2 = 0.21 |
-| H4 | Chronic disease prevalence is higher in DRA and nonmetro counties | Mann-Whitney | **Supported for DRA.** Diabetes median 15.3% vs 13.5% (p = 0.00015); CHD 7.1% vs 6.6% (p = 0.0007); stroke 4.5% vs 3.9% (p = 9e-5); hypertension 44.3% vs 41.3% (p = 4e-5). Nonmetro vs metro: diabetes p = 0.073; CHD p = 0.009; stroke p = 0.027 |
+| H1 | Black premature mortality exceeds White in nearly all counties | Paired Wilcoxon (CHR 2021–23) | **Supported.** Median age-adjusted premature mortality 742 vs 601 per 100k; Black higher in 71 of 80 counties; p = 3e-12. YPLL median 16,569 vs 12,377 (73/80). Life expectancy median 70.0 vs 72.5 years (Black lower in 64/75). State: 715 vs 550 per 100k (ratio 1.30); life expectancy 70.3 vs 73.6 |
+| H2 | Higher PCP supply is associated with lower overall premature mortality after adjustment | OLS (HC3), n = 82 | **Not supported.** AHRF PCP per 10k −3.6 (95% CI −13.9 to 6.7) per 100k, p = 0.49. Unadjusted rho −0.10. CHR-based first pass: −1.9 (−10.2 to 6.4) |
+| H3 | The PCP association differs by race | Race-specific OLS; gap model (Black − White) | **Supported (exploratory).** White premature mortality −10.0 per 100k per additional PCP/10k (−17.0 to −2.9), p = 0.006 (WLS −10.3, −19.7 to −0.9); Black +3.6 (−6.1 to 13.3), p = 0.47. Gap model (n = 80): PCP +11.4 per 10k (0.8 to 22.0), p = 0.035, i.e. more PCPs per capita goes with a wider gap |
+| H4 | Child poverty is the dominant correlate of mortality and of the gap | OLS | **Supported.** Child poverty +83.0 per 100k per 10 points (24.6–141.4), p = 0.005 (first pass, n = 79); in race-specific models Black +109 (67–151), White +50 (23–78); gap +64 (32–97) per 10 points. Segregation not associated (rho −0.004) |
+| H5 | Chronic disease prevalence is higher in Delta (DRA) counties and where PCPs are scarce | Mann-Whitney; Spearman (PLACES BRFSS 2023, model-based) | **Supported, descriptive.** Diabetes DRA 15.3% vs 13.5% (p = 0.00015); CHD 7.1 vs 6.6; stroke 4.5 vs 3.9; hypertension 44.3 vs 41.3. PCP/10k vs CHD rho −0.36, stroke −0.27, diabetes −0.23 |
 
-Note on units in H2: PCP coefficient is per 10 additional PCPs per 100,000 residents (PCP rate 2022; median county rate 35.6 per 100k). Exact model tables are in `results/p03_results.md`.
+H2–H5 exploratory; unadjusted p-values; H3 is the key finding to treat cautiously (race-specific county rates are published for larger counties only; PCP supply tracks urbanicity and affluence).
 
-Primary tests for the abstract: H1 and H2. Others exploratory.
-
-## Data sources (public; aggregates only)
+## Data sources (all public; aggregates only)
 | Source | URL | Years | Use |
 |---|---|---|---|
-| County Health Rankings supplemental release (25 Mar 2026) | https://www.countyhealthrankings.org/health-data/methodology-and-sources/data-documentation | Premature death, premature age-adjusted mortality, life expectancy 2021–2023 (NCHS), race-specific; PCP 2022 (AHRF/AMA); uninsured 2023 (SAHIE); preventable stays 2023 (Medicare) | Outcomes, access |
-| CHR 2025 annual release (analytic_data2025_v3.csv) | same page | Child poverty, % Black NH, residential segregation, median income, % rural (measure-level years per CHR 2025 documentation) [year-by-measure PENDING] | Covariates |
-| CDC PLACES county 2025 release | https://data.cdc.gov/d/swc5-untb | BRFSS 2023 | Diabetes, CHD, stroke, hypertension, obesity |
-| USDA ERS RUCC 2023 | https://www.ers.usda.gov/data-products/rural-urban-continuum-codes | 2023 | Metro/nonmetro |
-| Delta Regional Authority list | https://dra.gov/wp-content/uploads/2022/04/Mississippi.pdf | 2016–2024 | DRA indicator (47 counties) |
-| MSTAHRS | https://mstahrs.msdh.ms.gov/ | 2023–2024 available | [PENDING] cause-specific (diabetes, heart disease) death counts by race/county |
+| County Health Rankings 2025 annual and 25 Mar 2026 supplement | https://www.countyhealthrankings.org/health-data/methodology-and-sources/data-documentation | Premature death (YPLL), age-adjusted premature mortality, life expectancy 2021–2023 (NCHS); PCP 2022 and dentists 2023 (AHRF); uninsured 2023; preventable hospital stays 2023 (Medicare); children in poverty 2023 (SAIPE); unemployment 2023 (BLS); segregation 2019–2023 (ACS) | Outcomes and covariates (race-specific where published) |
+| HRSA AHRF 2024–2025 | https://data.hrsa.gov/data/download?data=AHRF | PCP (MD+DO non-federal, excl. residents) 2023; primary-care HPSA 2025; population 2023 | Primary exposure |
+| CDC PLACES 2025 release | https://data.cdc.gov/d/swc5-untb | BRFSS 2023 | Chronic-disease prevalence (model-based; MRP circularity with demographics/poverty) |
+| USDA RUCC 2023; Delta Regional Authority list | see `data-sources.md` | | Rurality, Delta |
 
-## Feasibility notes and limits
-- Ecological design; county associations do not imply individual effects.
-- **PLACES caveat**: PLACES models include county-level poverty (Greenlund 2022), so PLACES–poverty correlations (e.g., diabetes vs child poverty rho 0.915) are partly built-in. Use CHR/NCHS mortality (not modeled) as the primary outcome; treat PLACES results as descriptive.
-- Race-specific CHR values are published only where reliable; gap analysis is restricted to counties with both values (n = 80), which favors larger counties.
-- PCP supply is an imperfect access measure (2022 AMA/AHRF data; excludes NP/PA; 1 county has a rate of 0; 3 counties missing). `otherpcp_per100k` is available in the county dataset for a sensitivity analysis [PENDING].
-- Segregation index direction/definition per CHR (Black/White index of dissimilarity) [verify definition before reporting].
-- MSTAHRS cause-specific mortality would sharpen the diabetes/CVD angle but is interactive (not scripted) [PENDING].
+CHR measure years are taken from the CHR 2025 technical documentation and the supplement codebook (previous [PENDING] resolved).
+
+Reproducibility: `scripts/public-data/` (`p03.py`, `p03b.py`, `build_ahrf.py`, `build_master.py`) and `results/` here.
+
+## Limits
+- Ecological; county race-specific premature mortality is published for 80–81 of 82 counties but with wide uncertainty in small counties.
+- AHRF PCP counts are physician counts (not FTE, no NPs/PAs); correlated with urbanicity and affluence (AHRF vs CHR PCP rate rho = 0.97).
+- Primary-care HPSA code definitions (0/1/2) were not in the downloaded AHRF technical documentation (2023–24 edition); used descriptively only.
+- PLACES is model-based; PLACES–poverty and demographic associations are partly circular. Premature-mortality outcomes come from NCHS vital statistics (not modeled).
+- Overlap with Lee 2026 (same CHR premature death data; county spatial trends).
+- CDC WONDER county mortality by race, cause, and age is not accessible by API (national-only per CDC) and was not used.
+
+## Deferred / not used (UMMC RDW)
+Per Jake's 2026-11-27 decision, Papers 02–05 use public data only. The earlier UMMC Patient Cohort Explorer request (E11.x, I10 patients by race with ≥1 primary-care encounter; visit counts and A1c/BP control by race) is **not used**. It would show UMMC-clinic chronic-disease management by race, which public aggregates cannot, and remains a possible later extension.
 
 ## Next actions
-- [ ] Add NP/PA ("other primary care providers") sensitivity model.
-- [ ] [PENDING] HRSA HPSA primary care designations by county (https://data.hrsa.gov/data/download) as an alternative access measure.
-- [ ] [PENDING] MSTAHRS: diabetes (E10–E14) and heart disease deaths by race and county/region, 2020–2024.
-- [ ] Spatial sensitivity (Delta vs non-Delta stratified models).
-- [ ] Draft abstract around H1 + H2 + the poverty finding.
-
-## Optional UMMC RDW add-on (data-use cleared by Jake 2026-11-26; ready to run)
-Aggregates only; suppress cells under 11; one selection per box.
-1. Diagnosis code **E11.9** (type 2 diabetes without complications) and, separately, **E11.65** (with hyperglycemia): total patients; by race (Black / White / other); by age group (<45, 45–64, 65+).
-2. Within each: patients with ≥1 Family Medicine or Internal Medicine outpatient encounter (use Encounter/Department filters if available) vs none, by race.
-3. If the Lab box permits: patients with HbA1c result ≥9.0% vs <9.0%, by race.
-4. Same structure for **I10** (essential hypertension): total, by race, with/without a primary care encounter.
-5. ED encounters: patients with E11.9 and ≥1 ED encounter, by race.
-Use: UMMC clinical-population corroboration of the county-level Black–White gap and primary care contact.
+- [ ] Jake: review/edit `draft-v1.md` abstract; decide whether the Lee 2026 overlap warrants reframing to emphasize the race-specific PCP finding.
+- [ ] Optional manual: CDC WONDER state-level premature deaths by race and cause; MSTAHRS county data (cells under 11 suppressed).
+- [ ] Optional: add NP/PA supply from AHRF (NPI-based variables `np_npi_23`) as a sensitivity analysis.
 
 ## Files
-- `draft-v1.md`, `results/p03_results.md`, `results/p03_county_dataset.csv`
+- `draft-v1.md` — abstract (draft-v1), intro, methods, results tables, discussion, references
+- `results/p03_results.md` — CHR/PLACES first pass; `results/p03b_results.md` — AHRF PCP analyses by race
+- `results/p03_county_dataset.csv`, `results/p03b_county_dataset.csv` — county aggregates (82 rows)
