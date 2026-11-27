@@ -14,7 +14,7 @@ Extracted from the 24-page *Patient Cohort Explorer* user guide (PowerPoint PDF)
 - Pages: 24
 - No version number, document date, or formal policy title appears on the slides themselves.
 
-This document is a how-to user guide, not a standalone data-use policy or IRB determination. Several topics that matter for conference abstracts are simply not addressed (see the lists at the end).
+This document is a how-to user guide, not a standalone data-use policy or IRB determination. Several topics that matter for conference abstracts are simply not addressed in the guide itself (see the lists at the end). Official citation and human-protection language from a separate UMMC internal page are recorded in the addendum below (provided by Jake Harthcock, 2026-11-27).
 
 ---
 
@@ -42,7 +42,19 @@ Data domains listed on page 4: Demographic, Diagnosis, Lab, Medication, Procedur
 
 ## 2. IRB approval or determination
 
-**The guide is silent.** It never mentions the IRB, an IRB determination, protocol review, or any approval required before querying, reporting, presenting, or publishing.
+**The user guide is silent.** It never mentions the IRB, an IRB determination, protocol review, or any approval required before querying, reporting, presenting, or publishing.
+
+**Addendum (UMMC internal guidance, not from the user guide).** On 2026-11-27, Jake Harthcock provided the official citation and the suggested human-protection boilerplate from the UMMC Center for Informatics and Analytics internal Patient Cohort Explorer page. The DOI `https://doi.org/10.6084/m9.figshare.12252737` resolved (HTTP 302) to the figshare software record `https://figshare.com/articles/software/Patient_Cohort_Explorer/12252737` (figshare API: title “Patient Cohort Explorer (PCE)”; published 2020-09-15; unversioned DOI as cited below). This is the standard citation and manuscript language for any RDW / Patient Cohort Explorer paper in this project.
+
+**Citation (use this form):**
+
+University of Mississippi Medical Center, Center for Informatics and Analytics (2020): Patient Cohort Explorer. figshare. Software. https://doi.org/10.6084/m9.figshare.12252737
+
+**Suggested boilerplate (quote verbatim when a human-protection statement is required):**
+
+> The data warehouse from which the information for this study is derived has been de-identified and date-shifted so that it does not include any protected health information (PHI). Pursuant to 45 CFR 46, use of this database does not meet the definition of human subjects’ research and does not require IRB review.
+
+The boilerplate states that the warehouse is de-identified and date-shifted and contains no PHI, and that use of the database is not human subjects’ research and does not require IRB review. Because the data are date-shifted, displayed calendar dates and windows may not correspond to true calendar dates. Do not claim that within-patient intervals are preserved unless a source states that.
 
 ---
 
@@ -171,7 +183,7 @@ The only storage instruction is the U: Drive step in the REDCap data-request wor
 
 ## 11. Citation or acknowledgment
 
-**The guide is silent.** It does not provide a required citation, acknowledgment, or disclaimer for abstracts, posters, or papers.
+**The user guide is silent.** It does not provide a required citation, acknowledgment, or disclaimer for abstracts, posters, or papers. The official citation and human-protection boilerplate from the UMMC internal page are in the section 2 addendum.
 
 Developer credited on page 3 (not framed as a citation requirement):
 
@@ -281,7 +293,7 @@ Pages 9–18, 19, and 22 are navigation and report-building how-to (color scheme
 
 The guide is silent on all of the following:
 
-- Whether IRB approval or an IRB determination is required before querying, using, presenting, or publishing Cohort Explorer counts
+- Whether IRB approval or an IRB determination is required before querying, using, presenting, or publishing Cohort Explorer counts — **the user guide is silent; the 2026-11-27 internal-page boilerplate (section 2 addendum) states that use of this database does not meet the definition of human subjects’ research and does not require IRB review**
 - Whether aggregate counts from the Explorer may appear in a conference abstract, poster, talk, or paper
 - Any distinction among feasibility use, research use, and publication/presentation use of counts taken *from the Explorer itself* (the Research vs. Non-Research buttons apply only to REDCap requests for data outside its scope)
 - Small-cell suppression for on-screen header counts, or for individual cells in a breakdown (race, sex, age, etc.)
@@ -291,7 +303,7 @@ The guide is silent on all of the following:
 - Where ordinary notes, pasted counts, or exports may be stored, other than the U: Drive step in the REDCap data-request workflow
 - Sharing data or counts with collaborators, people outside UMMC, or systems off the UMMC network (including email, cloud storage, or a GitHub repository)
 - Use of outside computers, cloud tools, or AI assistants
-- Required citation, acknowledgment, or disclaimer language
+- Required citation, acknowledgment, or disclaimer language — **the user guide is silent; the official citation and boilerplate are in the section 2 addendum**
 - Off-campus or VPN access, account eligibility, or login/credential rules
 - Whether counts or exports may leave the UMMC intranet
 - A formal data-use policy, terms of use, or user attestation
@@ -302,9 +314,9 @@ The guide is silent on all of the following:
 
 Ask the Patient Cohort Explorer Team (`CIA-RDWTeam@umc.edu`) and, as needed, the UMMC IRB. This user guide alone does not answer them.
 
-1. **Conference abstracts and papers.** May a student investigator put Patient Cohort Explorer aggregate counts (for example, an H90.3 cohort total and a race breakdown of audiology/ENT use) into a local conference abstract, poster, or paper? Is that treated as feasibility only, or as research requiring IRB review or a determination first?
+1. **Conference abstracts and papers.** May a student investigator put Patient Cohort Explorer aggregate counts (for example, an H90.3 cohort total and a race breakdown of audiology/ENT use) into a local conference abstract, poster, or paper? Is that treated as feasibility only, or as research requiring IRB review or a determination first? **Update 2026-11-27:** the internal page provides suggested human-protection language “for the manuscript” and for “the journal in which you are publishing,” which contemplates publication. It does not separately name conference abstracts. The boilerplate states that use of the database is not human subjects’ research and does not require IRB review.
 
-2. **IRB path.** If review is required, what is the correct path (not human-subjects research; exempt; expedited; full board)? Does the “de-identified data” statement on page 3 change that?
+2. **IRB path.** If review is required, what is the correct path (not human-subjects research; exempt; expedited; full board)? Does the “de-identified data” statement on page 3 change that? **Answered 2026-11-27 (internal page, section 2 addendum):** use of this database does not meet the definition of human subjects’ research and does not require IRB review (45 CFR 46).
 
 3. **Cell size.** The application blocks report view/export unless the patient population is greater than 25. Does a cell-size rule also apply to header counts, to subgroup cells (race, etc.), and to numbers written into an abstract? Is there a different threshold (including 11) in a policy this guide does not include?
 
@@ -314,7 +326,7 @@ Ask the Patient Cohort Explorer Team (`CIA-RDWTeam@umc.edu`) and, as needed, the
 
 6. **Row-level exports.** Page 21 shows a “Patient Details” table with Pt. Key, EncounterKey, Age, Sex, and clinical fields, which can be printed or sent to Excel when n > 25. Are those exports still considered de-identified, and may they leave the UMMC network? (The current project plan is to use aggregate counts only, not row-level exports.)
 
-7. **Citation.** Is there required acknowledgment language for the Research Data Warehouse, Patient Cohort Explorer, or Center for Informatics and Analytics?
+7. **Citation.** Is there required acknowledgment language for the Research Data Warehouse, Patient Cohort Explorer, or Center for Informatics and Analytics? **Answered 2026-11-27 (internal page, section 2 addendum):** University of Mississippi Medical Center, Center for Informatics and Analytics (2020): Patient Cohort Explorer. figshare. Software. https://doi.org/10.6084/m9.figshare.12252737
 
 8. **Other policy documents.** Page 5 points to additional information and training guides on the intranet Patient Cohort Explorer site. Is there a formal data-use policy, SOP, or attestation that sits above this user guide?
 
