@@ -1,62 +1,63 @@
-# 04 — Maternal and Infant Outcome Disparities in Mississippi Counties
+# 04 — Maternal and Infant Outcomes: Black–White Gaps and Obstetric Access Across Mississippi Counties
 
-**Working title**: Racial Disparities in Low Birth Weight, Teen Births, and Infant Mortality Across Mississippi Counties: The Role of Poverty, Rurality, Delta Region, and Primary Care Access  
-**Status**: First-pass public-data analysis done (2026-11-26); draft skeleton in `draft-v1.md`; UMMC add-on requests ready to run  
-**Target**: UMMC Research Day, MAFP (family medicine/OB), ACP Mississippi  
-**Public-data sufficiency**: Yes for low birth weight and teen births (80+ counties). Infant mortality is published for only 37 counties overall (20 Black, 12 White), so it is a secondary outcome.
+**Working title**: Black–White Differences in Birth Outcomes and Obstetric Care Access Across Mississippi's 82 Counties: a Public-Data Ecological Analysis  
+**Status**: **Public-data analysis complete; abstract draft-v1 written (2026-11-27).** Public-data-only by Jake's decision (2026-11-27); no UMMC pull needed.  
+**Natural fit**: OB/GYN, pediatrics, family medicine; MAFP and Research Day.  
+**Novelty check (PubMed, 2026-11-27)**: Mississippi birth-outcome papers exist (e.g., Eudy 2009, Lower Delta infant mortality; Smith 2014, Delta maternal mortality; Sandlin 2015, Delta fetal mortality), but no county-level analysis linking Mississippi obstetric-service availability to Black–White birth outcomes was found. Moderate novelty; the state-level Black–White gaps are well known, so the contribution is the county-level gap uniformity and the obstetric access mapping.
 
 ## Research question
-How large are Black–White differences in low birth weight (LBW), teen births, and infant mortality across Mississippi counties, and are county LBW levels and the racial gap related to poverty, % Black population, rurality, Delta region, PCP supply, and residential segregation?
+How large are Black–White differences in low birth weight, teen births, and infant mortality across Mississippi counties, how are they related to county socioeconomic context, and how are obstetric hospital and OB-GYN availability distributed and related to county preterm birth and low birth weight?
 
-## Specific aims
-1. Describe Black vs White LBW, teen birth rate, and infant mortality statewide and across counties.
-2. Model county LBW on poverty, PCP supply, racial composition, rurality, and DRA status.
-3. Test whether the Black–White LBW gap varies with segregation, Black child poverty, PCP supply, or rurality.
-4. (Optional UMMC add-on) Describe delivery and pregnancy-complication counts by race at UMMC.
+## Specific aims (all public)
+1. Quantify Black vs White differences in low birth weight (LBW), teen birth rate, and infant mortality at county level (where published) and statewide, and add state preterm and infant mortality figures by race from NCHS/MSDH/March of Dimes sources.
+2. Test whether the Black–White LBW gap varies with county poverty, segregation, primary care supply, or rurality.
+3. Map obstetric access (hospitals with obstetric care, OB-GYN physicians, APN midwives) and the share of births in counties without it; test association with preterm birth and LBW after adjustment.
 
-## Hypotheses and planned tests (with first-pass status)
-| # | Hypothesis | Planned test | First-pass result |
+## Hypotheses and results
+| # | Hypothesis | Test | Result |
 |---|---|---|---|
-| H1 | Black LBW exceeds White LBW in essentially every county | Paired Wilcoxon (counties with both values) | **Supported.** Median 17.9% vs 8.8% (median difference 8.96 points); Black higher in 77 of 77 counties; p = 2.5e-14. State (CHR, 2018–2024): 17.65% vs 8.65% |
-| H2 | Teen birth rate is higher among Black than White females | Paired Wilcoxon | **Supported.** Median 33.4 vs 26.9 per 1,000; Black higher in 50 of 71 counties; p = 9.8e-5. State: 31.62 vs 21.08 |
-| H3 | Infant mortality is higher for Black infants | Paired Wilcoxon (n small) | **Supported but tiny n.** 9 counties with both values: medians 11.5 vs 6.37 per 1,000; Black higher in 9 of 9; p = 0.0039. State (2017–2023): 11.95 vs 6.37 |
-| H4 | County LBW rises with child poverty and falls with PCP supply | OLS (HC3) | **Poverty supported; PCP not.** Poverty +2.31 points per 10 points child poverty (95% CI 1.85–2.77); PCP coefficient positive (+0.21 per +1 PCP/10,000; p = 0.001) in the simple model; in the full model (n = 78, R2 = 0.73) poverty +0.42 (p = 0.35), % Black +0.92 per 10 points (95% CI 0.54–1.29), PCP +0.07 (p = 0.31) |
-| H5 | The Black–White LBW gap is larger where segregation is higher or Black child poverty is higher | Spearman; OLS | **Not supported.** Segregation rho −0.020 (p = 0.862); Black child poverty rho −0.003 (p = 0.982); OLS R2 = 0.04. The gap is roughly uniform across county contexts |
+| H1 | Black LBW exceeds White LBW in most counties | Paired Wilcoxon, counties with both values (CHR 2018–24) | **Supported.** Black higher in 77 of 77 counties; median 17.9% vs 8.78%; p = 2.5e-14. State: 17.65% vs 8.65% |
+| H2 | Black teen birth rate exceeds White | Paired Wilcoxon | **Supported.** Black higher in 50 of 71 counties; median 33.4 vs 26.9 per 1,000; p = 9.8e-5. State 31.62 vs 21.08 |
+| H3 | The Black–White LBW gap is larger in poorer, more segregated, or less-served counties | Spearman; OLS (HC3), n = 74 | **Not supported.** Gap uncorrelated with segregation (rho −0.02), Black child poverty (−0.003), PCP supply (−0.03); R² = 0.04. The gap is a near-uniform ~9 percentage points |
+| H4 | Counties without a hospital offering obstetric care have higher preterm and LBW rates after adjustment | OLS and birth-weighted WLS (HC3) adjusting child poverty, % Black, nonmetro | **Not supported.** Preterm: OB hospital −0.08 pp (−0.93 to 0.77) OLS; WLS +0.26 (−0.54 to 1.06). LBW: +0.29 (−0.33 to 0.92) OLS; WLS +0.42 (−0.06 to 0.89). Unadjusted medians equal (preterm 17.0 vs 17.3%) |
+| H5 (descriptive) | Obstetric services are concentrated in a minority of counties | Counts | **Supported.** 55 of 82 counties (67%) have no hospital with obstetric care and hold 37.5% of births; 42 (51%) have neither an obstetric hospital nor an OB-GYN, with 23.7% of births (76% nonmetro) |
+| H6 (exploratory) | Teen birth rate is lower where an obstetric hospital exists | Mann-Whitney | **Supported unadjusted.** 29.2 vs 33.1 per 1,000; p = 0.0135 |
+| State | Mississippi infant mortality and preterm birth exceed the US, with a Black–White gap | Published NCHS, MSDH and March of Dimes values | IMR 2022 9.11 (highest of any state; NVSR); Black 12.1 vs White 7.2 (MSDH, RR 1.68); preterm 2022–24 Black 18.5% vs White 12.7% (RR 1.46) |
 
-Primary tests for the abstract: H1 and H4. Others exploratory.
+County LBW tracks child poverty (rho 0.73) and % Black (rho 0.84); the % Black association is largely compositional (the county rate averages a high-LBW Black group and a lower-LBW White group), so it is not evidence of a county-level causal effect. County poverty alone: +2.31 pp LBW per 10 pp child poverty (1.85–2.77), R² = 0.62; adding % Black, poverty is no longer significant (+0.42; −0.46 to 1.31) while % Black is +0.92 per 10 pp (0.54–1.29), R² = 0.73.
 
-## Data sources (public; aggregates only)
+## Data sources (all public; aggregates only)
 | Source | URL | Years | Use |
 |---|---|---|---|
-| County Health Rankings supplemental release (25 Mar 2026): Low Birth Weight (v037), Teen Births (v014), Infant Mortality (v129) with White/Black values | https://www.countyhealthrankings.org/health-data/methodology-and-sources/data-documentation | LBW 2018–2024, teen births 2018–2024 (NCHS natality), infant mortality 2017–2023 | Outcomes |
-| CHR 2025 annual release | same | Child poverty (overall and Black), % Black NH, segregation, income, education (measure years per CHR 2025 documentation) [year-by-measure PENDING] | Covariates |
-| CDC PLACES 2025 | https://data.cdc.gov/d/swc5-untb | BRFSS 2022–2023 | Context |
-| USDA ERS RUCC 2023; DRA list | https://www.ers.usda.gov/data-products/rural-urban-continuum-codes ; https://dra.gov/wp-content/uploads/2022/04/Mississippi.pdf | 2023 / 2016–2024 | Rural/Delta |
-| MSTAHRS (births by race/county/age; infant deaths; pregnancy outcomes) | https://mstahrs.msdh.ms.gov/ | through 2024 | [PENDING] preterm birth, prenatal care, cesarean by race/county (interactive; cells <5 suppressed by MSTAHRS, we suppress <11) |
-| CDC WONDER natality | https://wonder.cdc.gov/natality.html | 2016–2024 | [PENDING] county-level data suppressed for small counties; interactive; API is national-only |
-| HRSA Area Health Resource File (OB-GYN supply, hospitals with obstetrics) | https://data.hrsa.gov/topics/health-workforce/ahrf | latest | [PENDING] OB access measure |
-| March of Dimes maternity care deserts | https://www.marchofdimes.org/maternity-care-deserts-report | latest report | [PENDING] verify and download |
+| County Health Rankings 2025 and supplement (25 Mar 2026): NCHS natality and linked files | https://www.countyhealthrankings.org/health-data/methodology-and-sources/data-documentation | LBW and teen births 2018–2024; infant mortality 2017–2023 | County and race-specific outcomes (published counties only) |
+| HRSA AHRF 2024–2025 | https://data.hrsa.gov/data/download?data=AHRF | OB-GYN MDs (AMA masterfile 2023); hospitals with obstetric care (AHA 2023); APN midwives with NPI 2023; 3-yr average births and preterm births 2021–23 (NCHS natality); population 2023 | Obstetric access, preterm births |
+| NCHS NVSR 73(5), Infant Mortality in the US, 2022 | https://www.cdc.gov/nchs/data/nvsr/nvsr73/nvsr73-05.pdf | 2022 | State IMR (MS 9.11) |
+| Mississippi State Department of Health, Child Death Review 2021–2022 | https://msdh.ms.gov/resources/media/21025.pdf | 2022; 2013–2022 | IMR by race (Black 12.1, White 7.2) |
+| March of Dimes PeriStats (NCHS final natality) | https://www.marchofdimes.org/peristats/data?obj=1&reg=99&slev=4&sreg=28&stop=63&top=3 | 2022–2024 average | Preterm by race (Black 18.5%, White 12.7%) |
+| NCHS VSRR 35, Births: Provisional Data for 2023 | https://www.cdc.gov/nchs/data/vsrr/vsrr035.pdf | 2023 | US preterm by race (Black 14.65%, White 9.45%); MS 14.95% |
+| USDA RUCC 2023; Delta Regional Authority list; CDC PLACES 2025 | see `data-sources.md` | | Rurality, Delta indicator |
 
-## Feasibility notes and limits
-- County LBW and teen births are published for ~80 counties. Infant mortality is too sparse for a county-level paper; use state-level and the 9 paired counties only descriptively.
-- LBW is strongly correlated with % Black NH (rho 0.844) and child poverty (0.732); the full model shows % Black retains a large coefficient after poverty, but this is ecological and cannot separate individual-level factors. Avoid interpreting % Black as an individual race effect; discuss structural racism (Bailey 2017).
-- The positive PCP coefficient in the simple model reflects confounding (high-need counties); do not interpret causally.
-- Preterm birth, prenatal care timing, cesarean, and maternal morbidity/mortality need MSTAHRS/WONDER or UMMC data [PENDING].
-- Public county race-specific values exclude unreliable cells, so they over-represent larger counties.
+Reproducibility: `scripts/public-data/` (`p04.py`, `p04b.py`, `build_ahrf.py`, `build_master.py`) and `results/` here.
+
+## Limits
+- CHR race-specific county values are published only for larger counties (infant mortality: only 37 counties overall, 9 with both Black and White), so county results over-represent larger counties and infant mortality county analysis is not feasible.
+- Ecological; compositional effects; no individual-level adjustment (age, parity, insurance, risk factors).
+- AHRF county preterm % (births with gestation <37 weeks, 3-yr average 2021–23) gives a birth-weighted statewide figure of 16.9% vs the official NCHS state preterm rate of 14.95% (2023); definitions may differ, so the county preterm variable is used only for within-state comparisons.
+- "Obstetric access" here is hospital obstetric care (AHA survey 2023), OB-GYN physicians (AMA masterfile) and NPI midwives; it excludes family physicians who deliver, birth centers, and distance to care, so it is narrower than the March of Dimes "maternity care desert" definition.
+- State race comparisons use different periods (MSDH 2022; PeriStats 2022–24; US 2023) and are descriptive.
+- CDC WONDER natality county/state queries are not available by API (national-only per CDC), and MSTAHRS is interactive; neither was scripted. [PENDING if Jake wants them done manually]
+- PRAMS Mississippi data are not in the public data.cdc.gov PRAMStat files (2011 and earlier only); not used.
+
+## Deferred / not used (UMMC RDW)
+Per Jake's 2026-11-27 decision, Papers 02–05 use public data only. The earlier UMMC Patient Cohort Explorer request (delivery encounters by method and race; hypertensive disorders O10–O16, gestational diabetes O24, postpartum hemorrhage O72, preterm labor O60; postpartum visit within 12 weeks; insurance) is **not used**. It would add UMMC-only clinical outcomes and care-use patterns that public aggregates cannot show; it remains a possible later extension.
 
 ## Next actions
-- [ ] [PENDING] MSTAHRS queries (Jake or a later worker): births by race and county region — preterm (<37 wk), LBW, prenatal care first trimester, cesarean; 2019–2024. Suppress cells under 11.
-- [ ] [PENDING] HRSA AHRF / March of Dimes OB access measure by county.
-- [ ] Sensitivity: add Medicaid/uninsured women measure [PENDING source].
-- [ ] Run UMMC add-on if a local delivery-service angle is wanted.
-
-## Optional UMMC RDW add-on (data-use cleared by Jake 2026-11-26; ready to run)
-Aggregates only; suppress cells under 11; one selection per box.
-1. Diagnosis **O80** (single full-term spontaneous delivery) or **Z37.0** (single live birth): total patients and by race (Black / White / other), age group (<20, 20–34, 35+).
-2. Preterm and complication counts, one code per query, by race: **O60.1x** (preterm labor with preterm delivery), **O14.x** (pre-eclampsia; run O14.90 and O14.00 separately), **O24.4x** (gestational diabetes), **O99.0x** (anemia complicating pregnancy), **O10.x** (pre-existing hypertension).
-3. Newborn: **P07.1x** (low birth weight) and **P07.3x** (other preterm) by maternal race if the Explorer links; otherwise infant race.
-4. Postpartum: **Z39.2** (routine postpartum follow-up) as a proxy for postpartum visit; counts by race.
-Use: UMMC-specific disparity table for obstetric complications that complements the county LBW findings.
+- [ ] Jake: review and edit the `draft-v1.md` abstract; choose venue (MAFP / Research Day).
+- [ ] Optional manual: CDC WONDER natality (state level by race: preterm, prenatal care timing) and MSTAHRS county birth/infant death counts; suppress cells under 11.
+- [ ] Optional: replace AHRF preterm variable with CDC WONDER county-group data for validation.
 
 ## Files
-- `draft-v1.md`, `results/p04_results.md`, `results/p04_county_dataset.csv`
+- `draft-v1.md` — abstract (draft-v1), intro, methods, results tables, discussion, references
+- `results/p04_results.md` — CHR county Black–White analyses
+- `results/p04b_results.md` — AHRF obstetric access analyses
+- `results/p04_county_dataset.csv`, `results/p04_county_dataset_ahrf.csv` — county aggregates (82 rows)
