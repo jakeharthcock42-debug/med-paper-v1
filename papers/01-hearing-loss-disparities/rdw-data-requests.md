@@ -3,7 +3,7 @@
 **For**: Jake Harthcock (runs all queries; pastes aggregate numbers back).  
 **Status**: **ACTIVE.** Data use confirmed by Jake Harthcock 2026-11-26 per Cohort Explorer guide ([`../../data-use-rules.md`](../../data-use-rules.md)).  
 **Cohort**: ICD-10 **H90.3** (sensorineural hearing loss, bilateral), **15,612** patients (0.94% of RDW) and **4,244,868** encounters (5.79%), confirmed from a 2026-11-26 screenshot (Pt Diagnosis Codes (OR) = H90.3 only; Current Selections: `Pt_Dx_Code ORMode H90.3`). Data window: encounters between **1/1/2013** and **9/30/2026**. Race uses the **FirstRace** field (Data Filters → Patient Demographics → Race). Audiology/ENT use uses **Department Specialty** (Data Filters → Admissions & Visits → Encounter Search; Current Selections label **DepartmentSpecialty**); Data Filters selections are encounter-level.  
-**Last updated**: 2026-11-26.
+**Last updated**: 2026-11-27.
 
 ## Rules for every request
 1. **One selection per box.** Selecting a second value in the same box replaces the first. Different boxes can combine (AND). To get counts for several values of one box (for example each Race value), select one value, read the count, clear that box, then select the next.
@@ -44,9 +44,10 @@
 - Grayed out (no patients in this selection, as previously observed): Chinese, Filipino, Guamanian or Chamorro, Japanese, Korean, Native Hawaiian, Other Pacific Islander, Samoan, Vietnamese.
 - Ethnicity (Hispanic or Latino / not) as a separate box, if present, remains **[PENDING]** (Hispanic also appears as a Race-list value at 0.2% encounter share).
 
-### R2. Sex and age of the H90.3 cohort — Table 1 — **sex percentages recorded** (2026-11-26, screenshot); exact counts and age **[PENDING]**
-- Overall-cohort sex pie chart on the Patient Demographics screen (H90.3, no race selected): Female **54.84%**, Male **45.16%**. This is likely patient-based; the pie chart basis is unconfirmed. Exact Patients counts **[PENDING]**; do not back-calculate them. If needed later, click Female, then Male, and report the header Patients number for each.
-- Sex by race was captured with the R1 FirstRace clicks (pie chart with one race selected): White Female **50.81%**, Male **49.19%**; Black Female **61.33%**, Male **38.67%**. Exact by-race sex counts **[PENDING]**; not back-calculated.
+### R2. Sex and age of the H90.3 cohort — Table 1 — **partially updated by H-S1** (clicked counts 2026-11-27); Male all still **[PENDING]**
+- Overall-cohort sex pie chart on the Patient Demographics screen (H90.3, no race selected): Female **54.84%**, Male **45.16%**. This is likely patient-based; the pie chart basis is unconfirmed.
+- Clicked header Patients (2026-11-27, H-S1; no age filter): Female all = **8,562** (8,562 / 15,612 = 54.84%). Male all-patients was not captured (duplicate screenshot) and remains **[PENDING]**; do not back-calculate it.
+- Sex by race, clicked (2026-11-27): Black Female **3,788**, Male **2,388** (3,788 + 2,388 = 6,176); White Female **4,368**, Male **4,229** (4,368 + 4,229 = 8,597). Earlier pie-chart percentages (R1): White Female **50.81%**, Male **49.19%**; Black Female **61.33%**, Male **38.67%**.
 - Age: Data Filters → Patient Demographics, **“Enter Age, then Press Enter”** (Current Selections **AgeKey**). R9 confirmed this is age at encounter. Band totals (0–17: 2,185; 18–44: 2,692; 45–64: 6,956; 65+: 8,991) are recorded with R9; they sum to more than 15,612 because a patient can appear in more than one band.
 
 ### R3. Denominator: all RDW patients by race — H-S2 (formerly H-U1)
@@ -104,6 +105,16 @@ Field: Data Filters → Patient Demographics → “Enter Age, then Press Enter�
 
 Black vs White RR (Katz 95% CI): 0–17 0.820 (0.678–0.992); 18–44 0.925 (0.692–1.236); 45–64 0.910 (0.734–1.128); 65+ 0.744 (0.644–0.859). Mantel-Haenszel RR = **0.812** (Greenland-Robins 95% CI **0.711–0.928**; CMH χ² = 18.29, p = 1.89e-5). Homogeneity (Breslow-Day / Tarone) p = 0.31. Sensitivity excluding 0–17: MH RR **0.810** (0.695–0.943). Band totals sum to 20,824 vs unique N = 15,612. A follow-up check with race cleared (H90.3 + AgeKey 0–17 + Audiology; 2026-11-26 screenshot) showed Patients = **401** (0.02% of RDW), Encounters = **868**, and an included-encounter window of **9/3/2015–9/30/2026**. Pediatric Audiology-department coding spans 2015–2026; the 3/2026 start previously seen with a race selected (Black 3/26/2026, White 3/16/2026) is a display artifact, not a coding window. The 0–17 band is retained in the primary Mantel-Haenszel estimate; the sensitivity excluding 0–17 is a concordance check. Computations: `data/r9_mh_analysis.py`.
 
+### H-S1. Sex-stratified audiology by race — secondary hypothesis — **DONE** (2026-11-27, screenshots)
+Clicked header Patients counts; no age filter. Sex on Patient Demographics; FirstRace and Department Specialty = **Audiology** as in R4. Pie-chart percentages were not used to back-calculate cells. All reported 2×2 cells ≥11 (no suppression). Male all-patients (Sex = Male, race and Audiology cleared) was not captured (duplicate screenshot) and is **[PENDING]**; it is not required for H-S1 and is not back-calculated. Female all = **8,562**; other/unknown among females = **406** (8,562 − 3,788 − 4,368).
+
+| Sex | All | Black | Black, ≥1 Audiology | White | White, ≥1 Audiology |
+|---|---:|---:|---:|---:|---:|
+| Female | 8,562 | 3,788 | 393 | 4,368 | 532 |
+| Male | [PENDING] | 2,388 | 237 | 4,229 | 464 |
+
+Black vs White RR (Katz 95% CI): Female 0.852 (0.753–0.963), RD −1.80 pp (−3.18 to −0.43), χ² = 6.57, p = 0.010; Male 0.905 (0.780–1.049), RD −1.05 pp (−2.57 to 0.48), χ² = 1.77, p = 0.18. Mantel-Haenszel RR = **0.873** (Greenland-Robins 95% CI **0.765–0.997**; CMH χ² = 7.93, p = 0.00485). Homogeneity (Breslow-Day / Tarone) p = 0.53. Consistent with R1/R4: 3,788 + 2,388 = 6,176; 4,368 + 4,229 = 8,597; 393 + 237 = 630; 532 + 464 = 996. Race-adjusted female vs male MH RR = 1.085 (0.952–1.237; CMH p = 0.084). Computations: `data/hs1_sex_analysis.py`.
+
 ## Priority 4 — optional covariates
 
 ### R10. Payer by race (Admissions & Visits tab)
@@ -113,12 +124,12 @@ Black vs White RR (Katz 95% CI): 0–17 0.820 (0.678–0.992); 18–44 0.925 (0.
 - H90.3 patients who ever had an ED encounter, by race. Report Patients each (only if time allows).
 
 ## How the numbers get used
-R9 is done (age-stratified audiology; MH RR 0.812, 95% CI 0.711–0.928). R0 to R3 fill Table 1 and H-S2 (formerly H-U1; race distribution vs RDW). R1 cohort race counts are in; R3 (RDW base-population race) is still needed to finish H-S2. R4 is done (H-U2, crude primary result). R5 is done and is retained as a descriptive finding (retired hypotheses H-U3 / H-U4; 96.74% had an Otolaryngology encounter). R6 is non-informative (≥96.74%) and optional. R7 enables H-S3 if the State/County field can classify rural vs non-rural. R8 (diagnosis origin / circularity) remains an important limitation check. R10 and R11 are optional covariates. A conference abstract v2 is in `draft-v1.md`. The pediatric Audiology coding-window check is done (9/3/2015–9/30/2026 with race cleared). Remaining UMMC requests are optional: R3, R7, R8.
+R9 is done (age-stratified audiology; MH RR 0.812, 95% CI 0.711–0.928). R0 to R3 fill Table 1 and H-S2 (formerly H-U1; race distribution vs RDW). R1 cohort race counts are in; R3 (RDW base-population race) is still needed to finish H-S2. R4 is done (H-U2, crude primary result). R5 is done and is retained as a descriptive finding (retired hypotheses H-U3 / H-U4; 96.74% had an Otolaryngology encounter). R6 is non-informative (≥96.74%) and optional. R7 enables H-S3 if the State/County field can classify rural vs non-rural. R8 (diagnosis origin / circularity) remains an important limitation check. R10 and R11 are optional covariates. A conference abstract v2 is in `draft-v1.md`. The pediatric Audiology coding-window check is done (9/3/2015–9/30/2026 with race cleared). H-S1 is done (sex-stratified MH RR 0.873, 95% CI 0.765–0.997). Remaining UMMC requests are optional: R3, R7, R8.
 
 ## Status checklist
 - [x] R0 total — Patients = 15,612 (0.94% of RDW); Encounters = 4,244,868 (5.79%); window 1/1/2013–9/30/2026 (screenshot, 2026-11-26)
 - [x] R1 race exact counts — done 2026-11-26 (FirstRace): White or Caucasian Patients = 8,597 (55.1% of 15,612), Encounters = 2,119,544; Black or African American Patients = 6,176 (39.6%), Encounters = 2,000,250; other/unknown combined = 839 (15,612 − 8,597 − 6,176). Dropdown 47.1% / 49.9% are encounter shares, not patient shares.
-- [x] R2 sex percentages — overall Female 54.84%, Male 45.16% (pie chart, no race selected; likely patient-based, basis unconfirmed); sex by race recorded with R1 (White F 50.81% / M 49.19%; Black F 61.33% / M 38.67%); exact counts and age **[PENDING]**
+- [x] R2 sex — pie chart Female 54.84%, Male 45.16% (2026-11-26). Clicked (2026-11-27, H-S1): Female all = 8,562; Male all [PENDING] (not captured; not back-calculated). Sex by race, clicked: Black F 3,788 / M 2,388; White F 4,368 / M 4,229. Age bands recorded in R9.
 - [ ] R3 RDW race denominator (still required to finish H-S2 / formerly H-U1)
 - [x] R4 audiology — done 2026-11-26 (Department Specialty = Audiology): Patients 1,730/15,612 (11.08%); Black 630/6,176 (10.20%); White 996/8,597 (11.59%); other/unknown 104/839 (12.40%; 1,730 − 630 − 996). RD −1.38 pp (95% CI −2.40 to −0.37); RR 0.880 (0.801–0.968); Pearson χ²(1) = 7.03, p = 0.008. Crude primary result; age-stratified MH RR 0.812 (0.711–0.928) recorded in R9.
 - [x] R5 ENT — done 2026-11-26 (Department Specialty = Otolaryngology): Patients 15,103/15,612 (96.74%); Black 6,062/6,176 (98.15%); White 8,229/8,597 (95.72%); other/unknown 812/839 (96.78%; 15,103 − 6,062 − 8,229). RD +2.43 pp (95% CI 1.89 to 2.98); RR 1.025 (1.020–1.031); Pearson χ²(1) = 67.50, p = 2.11e-16. Descriptive finding (retired hypotheses H-U3 / H-U4): H90.3 is diagnosed almost entirely in Otolaryngology.
@@ -127,5 +138,6 @@ R9 is done (age-stratified audiology; MH RR 0.812, 95% CI 0.711–0.928). R0 to 
 - [ ] R8 diagnosis origin — circularity check
 - [x] R9 age-stratified audiology — done 2026-11-26 (AgeKey = age at encounter): MH RR 0.812 (0.711–0.928; CMH p = 1.89e-5); sensitivity excluding 0–17: 0.810 (0.695–0.943), concordance check only (0–17 kept in the primary MH).
 - [x] Pediatric Audiology window — done 2026-11-26 (race cleared; 0–17 + Audiology): Patients 401 (0.02%), Encounters 868, window 9/3/2015–9/30/2026. The 3/2026 header with race selected was a display artifact.
+- [x] H-S1 sex-stratified audiology — done 2026-11-27 (no age filter): Female 393/3,788 vs 532/4,368, RR 0.852 (0.753–0.963); Male 237/2,388 vs 464/4,229, RR 0.905 (0.780–1.049); MH RR 0.873 (0.765–0.997; CMH p = 0.00485). Male all [PENDING] (not required).
 - [ ] R10 payer
 - [ ] R11 ED use
