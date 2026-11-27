@@ -185,6 +185,13 @@ Secondary priorities:
 - Keep `data-sources.md` and this handoff file updated.
 - Jake has not yet picked which of Papers 02–05 to start next (02, then 04, was recommended).
 - Papers 02–05 draft-v1 abstracts (public data only) are ready for Jake's review (priority 02, 04; 03 has a novelty overlap; 05 is weak and has been merged into 02 as a cancer pair; abstract limit is now ≤500 words). See sections 3c and 3d.
+- Conference abstract deadlines: see [`papers/conference-targets.md`](papers/conference-targets.md).
+
+---
+
+## 8. Conference targets (added 2026-11-27)
+
+A living table of late-2026 and 2027 abstract deadlines, with sources, is in [`papers/conference-targets.md`](papers/conference-targets.md). Researched 2026-11-27. Dates that were not posted are labeled as such; no dates were invented.
 
 ---
 
