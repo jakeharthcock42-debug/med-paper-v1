@@ -1,10 +1,10 @@
 # 01 — Hearing Loss Disparities
 
 **Working title**: Racial and Geographic Disparities in Documented Hearing Loss and Related Care at UMMC / Across Mississippi Counties  
-**Status**: Hypotheses written; county-level public-data tests complete; Step 1 done (H90.3 Patients = 15,612). Next: Step 2 / R1 race breakdown. Encounters **[PENDING]**.  
+**Status**: Hypotheses written; county-level public-data tests complete; Step 1 done (H90.3 Patients = 15,612, 0.94% of RDW; Encounters = 4,244,868, 5.79%; data window 1/1/2013–9/30/2026). Next: Step 2 / R1 race breakdown.  
 **Data use**: Data use confirmed by Jake Harthcock 2026-11-26 per Cohort Explorer guide ([`../../data-use-rules.md`](../../data-use-rules.md)). The guide does not mention IRB review; whether the target conference requires an IRB determination is open (Jake to confirm).  
 **Suppression rule**: never record a UMMC RDW cell under 11; write it as "<11 (suppressed)" (project rule), and hide any other cell that could be recovered by subtraction. The Explorer itself only allows report view/export when the population is greater than 25 (guide p. 20). Public county data are unaffected.  
-**Cohort**: ICD-10 **H90.3** (sensorineural, bilateral), **15,612** patients (confirmed 2026-11-26, Diagnosis Codes = H90.3 only). Encounters **[PENDING]**. The Explorer allows one selection per filter box, so one code is used.  
+**Cohort**: ICD-10 **H90.3** (sensorineural, bilateral), **15,612** patients (0.94% of RDW) and **4,244,868** encounters (5.79%), confirmed from a 2026-11-26 Cohort Explorer screenshot with only H90.3 selected in **Pt Diagnosis Codes (OR)** (Current Selections: `Pt_Dx_Code ORMode H90.3`). The dataset includes encounters between **1/1/2013** and **9/30/2026**. The Explorer allows one selection per filter box, so one code is used.  
 **Primary data**: UMMC Patient Cohort Explorer / RDW (Jake runs all queries and pastes aggregates) + public county data (CDC PLACES, ACS, County Health Rankings)  
 **Target**: Local/regional conference abstract (MAFP, ACP MS chapter, UMMC Research Day) → possible full paper later
 
@@ -39,7 +39,7 @@
 Caution: H90.3 is often coded at an audiology/ENT visit, so "ever seen audiology/ENT" may be high for everyone by construction. See requests R8 and R9 in [`rdw-data-requests.md`](rdw-data-requests.md).
 
 ## Next actions
-- [x] **Step 1**: H90.3 Patients = **15,612** (Jake, 2026-11-26, Diagnosis Codes = H90.3 only). Encounters **[PENDING]**.
+- [x] **Step 1**: H90.3 Patients = **15,612** (0.94% of RDW); Encounters = **4,244,868** (5.79%); window 1/1/2013–9/30/2026 (screenshot, 2026-11-26; Pt Diagnosis Codes (OR) = H90.3 only). The 0.94% figure implies an RDW patient denominator; that exact total stays **[PENDING]** until R3 (do not back-calculate it).
 - [ ] **Step 2 (Jake, now)**: race breakdown of the H90.3 cohort (R1). Click-by-click below and in [`rdw-data-requests.md`](rdw-data-requests.md).
 - [ ] Work through the prioritized request list in [`rdw-data-requests.md`](rdw-data-requests.md) (active; R0 to R11).
 - [ ] Fill Tables 1 and 2 in `draft-v1.md`, run the H-U tests, write the abstract Results and Conclusions.
@@ -48,15 +48,21 @@ Caution: H90.3 is often coded at an audiology/ENT visit, so "ever seen audiology
 - [x] Pull and test public county data (PLACES, ACS, CHR&R; 82 counties) (2026-11-26).
 - [x] Replace the old H90 ± H91 plan with H90.3 (the older plan text in `rdw-exploration-plan.md` is superseded by the banner at its top).
 
-### Step 1 — done (2026-11-26)
-Patients = **15,612** with Diagnosis Codes = H90.3 only. Encounters **[PENDING]** (optional; report the Encounters number from the same header if you still have the selection up).
+### Step 1 — done (2026-11-26, screenshot)
+- Patients = **15,612** (0.94% of RDW).
+- Encounters = **4,244,868** (5.79%).
+- Selection: only H90.3 in **Pt Diagnosis Codes (OR)**; Current Selections showed `Pt_Dx_Code ORMode H90.3`.
+- Data window shown on screen: encounters between **1/1/2013** and **9/30/2026**.
+- The 0.94% (and 5.79%) figures imply RDW denominators; the exact unfiltered totals stay **[PENDING]** until Jake reports them in R3. Do not back-calculate them.
+
+The Patient Filters screen in that screenshot shows **Diagnosis / Procedures / Medications / Labs** tabs. The **Race** box location is not yet confirmed on that screen (it may sit on another tab or panel). If you do not see a Race box, tell me the exact tab and filter names you do see; do not guess.
 
 ### Step 2 — race breakdown (R1; do this next)
 Keep H90.3 selected. Use only what you see on screen; if a box is named differently, tell me the name you see. Never report a count under 11; write `<11 (suppressed)`.
-1. Confirm **Diagnosis Codes** still has only **H90.3** selected, and that the header still shows Patients = 15,612. Clear every other box.
-2. In the **Race** box, select the first value (use the exact label shown, for example Black or African American). Read **Patients** in the header. Write down the label and the number.
+1. Confirm **Pt Diagnosis Codes (OR)** still has only **H90.3** selected, and that the header still shows Patients = 15,612 and Encounters = 4,244,868. Clear every other box.
+2. Find the **Race** box (location not yet confirmed; see the note above). Select the first value (use the exact label shown, for example Black or African American). Read **Patients** in the header. Write down the label and the number.
 3. Clear only the Race selection (H90.3 stays). Select the next Race value and read **Patients**. Repeat for every value listed in the Race box, including Unknown / Declined if shown.
-4. Clear Race. Do the same once in the **Ethnicity** box (Hispanic or Latino / not), one value at a time.
+4. Clear Race. Do the same once in the **Ethnicity** box (Hispanic or Latino / not), one value at a time, if that box is present.
 5. Note whether **Multi-Racial** is a separate box and, if it is, its Patients count when selected (one value at a time).
 6. Reply as lines like `Race value: Patients = ____`.
 
