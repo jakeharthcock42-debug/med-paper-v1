@@ -2,7 +2,7 @@
 
 **Project context**: Supporting secondary data analysis for a medical student research paper/abstract on disparities of care across Mississippi counties (race, rural-urban, access). Target: local/regional conference abstract (e.g., MAFP, ACP MS chapter, UMMC Research Day).
 
-**Last updated**: 2026-11-27 (Paper 01 H-S1 sex-stratified audiology recorded)  
+**Last updated**: 2026-11-27 (Paper 01 R3 / H-S2 recorded; IRB determination noted)  
 **Maintainer notes**: Focus on publicly available or low-barrier datasets. UMMC internal resources noted separately for potential enrichment.
 
 ---
@@ -152,9 +152,9 @@
 ## UMMC-Internal Resources
 
 ### Patient Cohort Explorer / Research Data Warehouse (RDW) — ACCESS CONFIRMED
-- **Data-use status**: Data use confirmed by Jake Harthcock 2026-11-26 per the Cohort Explorer guide. Extracted rules with page cites: [`data-use-rules.md`](data-use-rules.md). Jake runs all queries; AI tools have no direct access to the Explorer.
+- **Data-use status**: Data use confirmed by Jake Harthcock 2026-11-26 per the Cohort Explorer guide. Extracted rules with page cites: [`data-use-rules.md`](data-use-rules.md). Jake runs all queries; AI tools have no direct access to the Explorer. Research with this patient database was determined not to require IRB approval per [PENDING exact determination wording/source] (Jake Harthcock, 2026-11-27).
 - **Suppression rule (project)**: never record a UMMC RDW cell under 11 ("<11 (suppressed)"), with complementary suppression where a hidden cell could be backed out. The app itself only allows report view/export when the population is greater than 25 (guide p. 20). Public county data are unaffected.
-- **Active request list (Paper 01)**: `papers/01-hearing-loss-disparities/rdw-data-requests.md`. Recorded: R0 (N = 15,612), R1 (race), R4 (audiology), R5 (ENT, descriptive), R9 (age-stratified audiology; MH RR 0.812, 95% CI 0.711–0.928), H-S1 (sex-stratified audiology; MH RR 0.873, 95% CI 0.765–0.997). Pediatric Audiology window resolved 2026-11-26 (9/3/2015–9/30/2026 with race cleared; 3/2026 header with race selected was a display artifact). Still open: R3, R7, R8.
+- **Active request list (Paper 01)**: `papers/01-hearing-loss-disparities/rdw-data-requests.md`. Recorded: R0 (N = 15,612), R1 (race), R3 (unfiltered RDW base: 1,658,574 patients, 73,271,189 encounters; Black 684,322, 41.26%; White 699,367, 42.17%; other/unknown combined 274,885, 16.57%), R4 (audiology), R5 (ENT, descriptive), R9 (age-stratified audiology; MH RR 0.812, 95% CI 0.711–0.928), H-S1 (sex-stratified audiology; MH RR 0.873, 95% CI 0.765–0.997), H-S2 (crude prevalence RR 0.734, 95% CI 0.711–0.758; not age-adjusted). Pediatric Audiology window resolved 2026-11-26 (9/3/2015–9/30/2026 with race cleared; 3/2026 header with race selected was a display artifact). Still open: R7, R8; optional age-stratified unfiltered base counts.
 - **Status**: Student has confirmed access and can run queries / export aggregate or de-identified results.
 - **What it provides**: De-identified, date-shifted data from Epic covering ~750,000 patients and ~24 million encounters (updated quarterly). Supports rapid cohort discovery by diagnosis, procedure, demographics, encounter type, etc.
 - **Potential for this project**:
