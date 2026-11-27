@@ -36,11 +36,11 @@ med-paper-v1/
     ├── 04-maternal-infant-outcomes/
     ├── 05-screening-gaps-cancer-stage/
     └── 01-hearing-loss-disparities/
-        ├── README.md                   ← status, aims, hypotheses, next actions (Step 1 here)
-        ├── draft-v1.md                 ← working manuscript (most developed file; hypotheses in §2.2)
+        ├── README.md                   ← status, aims, hypotheses, next actions
+        ├── draft-v1.md                 ← working manuscript (hypotheses in §2.2; abstract v2; Tables 1–3)
         ├── county-analysis.md          ← county-level public-data results (82 MS counties)
-        ├── data/                       ← ms_county_merged.csv + build_and_analyze.py
-        ├── rdw-data-requests.md        ← prioritized list of UMMC Explorer numbers needed (active)
+        ├── data/                       ← county files; r9_mh_analysis.py / r9_mh_results.md
+        ├── rdw-data-requests.md        ← prioritized list of UMMC Explorer numbers (R0, R1, R4, R5, R9 done)
         └── rdw-exploration-plan.md     ← original query plan (cohort/suppression superseded by banner)
 ```
 
@@ -61,11 +61,11 @@ papers/
 Racial and Geographic Disparities in Documented Hearing Loss and Related Care at an Academic Medical Center in Mississippi
 
 ### Core Research Question
-Among patients with documented hearing loss at UMMC, are there racial and/or geographic (rural) disparities in the utilization of audiology and otolaryngology (ENT) services? Place the findings in the context of Mississippi county-level hearing disability estimates.
+Among UMMC patients with ICD-10 H90.3, are Black patients less likely than White patients to have ≥1 Audiology-department encounter, and does that gap persist after age stratification? Otolaryngology contact is described as the diagnostic setting, not as an access measure. County-level hearing-disability estimates provide ecological context only.
 
 ### Current Cohort Definition (as of 26 Nov 2026)
 - **Primary code:** ICD-10 **H90.3** (Sensorineural hearing loss, bilateral)
-- **Approximate N:** **15,612 patients**
+- **N:** **15,612 patients**, 4,244,868 encounters, window 1/1/2013–9/30/2026 (R0, screenshot 2026-11-26)
 - **Why only one code?**  
   The Patient Cohort Explorer interface only allows **one selection per filter box**. It is not possible to multi-select codes within the same box (Diagnosis Codes OR, Diagnosis Name OR, etc.). H90.3 was chosen because it is the largest clean, clinically coherent single code.
 
@@ -75,23 +75,21 @@ Other codes explored earlier (single-select only):
 - H90.0 ≈ 4,029
 
 ### Manuscript Status (`papers/01-hearing-loss-disparities/draft-v1.md`)
-- Introduction is already written with solid literature backing (national prevalence, rural patterns, lower measured prevalence but lower treatment rates among Black patients, Mississippi disability context).
-- Specific Aims drafted.
-- Methods section drafted (includes the decision to use H90.3).
-- Results section contains ready-to-populate tables.
-- Early Discussion framing is present.
+- Hypotheses tightened 2026-11-26 (Jake approved): one primary (H-U2, including persistence after age stratification); secondary H-S1, H-S2, H-S3; county associations are ecological context; ENT hypotheses H-U3/H-U4 retired after observing 96.74% Otolaryngology contact (revision log in §2.2).
+- Conference abstract v2 (300 words) is in the draft. Tables 1–3 are populated for the completed UMMC pulls.
+- Formal citations and the IRB question for the target conference remain [PENDING].
 
-### Status as of 2026-11-26 (late)
+### Status as of 2026-11-26 (evening)
 - **Data use**: Data use confirmed by Jake Harthcock 2026-11-26 per Cohort Explorer guide ([`data-use-rules.md`](data-use-rules.md)). The guide does not mention IRB; whether the target conference needs an IRB determination is open.
-- **Suppression rule**: never record a UMMC RDW cell under 11 ("<11 (suppressed)"); app itself requires population >25 to view/export reports (guide p. 20). Public county data unaffected.
-- **Done**: hypotheses written (H-C1 to H-C5 county-level, H-U1 to H-U6 UMMC; `draft-v1.md` §2.2). County analysis done for all 82 MS counties with PLACES 2025 (BRFSS 2023), ACS 2020–2024, CHR&R 2025: rural counties higher (7.54% vs 6.91% age-adjusted, p = 1.5e-4); supported H-C1, H-C2 (negative), H-C4; not supported H-C3 (poverty); partial H-C5. Details: `county-analysis.md`.
-- **Waiting on Jake**: Step 1 (exact H90.3 total; click-by-click in the paper README), then R1 to R11 in `rdw-data-requests.md`. All UMMC results are [PENDING].
+- **Suppression rule**: never record a UMMC RDW cell under 11 ("<11 (suppressed)"); app itself requires population >25 to view/export reports (guide p. 20). Public county data unaffected. The repo is public; committed UMMC aggregates are publicly readable.
+- **Done (UMMC)**: R0 (N = 15,612; 4,244,868 encounters); R1 (FirstRace: White 8,597, Black 6,176, other/unknown 839); R4 Audiology (1,730/15,612, 11.08%; Black 630/6,176, 10.20% vs White 996/8,597, 11.59%; crude RR 0.880, 0.801–0.968, p = 0.008); R5 Otolaryngology 15,103/15,612 (96.74%), treated as a descriptive finding; R9 age-stratified Audiology (AgeKey = age at encounter). Mantel-Haenszel RR **0.812** (Greenland-Robins 95% CI 0.711–0.928; CMH p = 1.89e-5); sensitivity excluding 0–17: 0.810 (0.695–0.943). Details: `draft-v1.md` Table 3, `data/r9_mh_results.md`.
+- **Done (public)**: county analysis for all 82 MS counties (PLACES 2025, ACS 2020–2024, CHR&R 2025): rural 7.54% vs 6.91%, p = 1.5e-4; see `county-analysis.md`. These are ecological context, not confirmatory.
+- **Still [PENDING]**: R3 (RDW base-population race, to finish H-S2); R7 (State/County field usability); R8 (diagnosis origin); whether pediatric Audiology-department coding begins only in 2026 (0–17 Audiology window 3/2026–9/30/2026); formal citations; IRB for the target conference.
 
 ### Immediate Next Steps
-0. Step 1: confirm the exact H90.3 total with only H90.3 selected in Diagnosis Codes (see paper README), then Step 2 race breakdown (`rdw-data-requests.md` R1).
-1. With H90.3 still selected in Patient Cohort Explorer, extract the **Race** breakdown of the 15,612 patients.
-2. Determine how many of these patients have ever had an **Audiology** encounter and/or an **Otolaryngology (ENT)** encounter, stratified by race.
-3. Insert the numbers into `draft-v1.md`, calculate percentages, and draft the Results + Abstract. Full prioritized list: `papers/01-hearing-loss-disparities/rdw-data-requests.md`.
+1. Verify the pediatric Audiology-department coding window (0–17 Audiology selections showed encounters only from March 2026).
+2. Optional UMMC pulls: R3, R8, R7 field name, and H-S1 sex-stratified audiology (clicked counts, not pie-chart %).
+3. Then draft-v2: Jake reviews the abstract; add formal citations; confirm IRB needs.
 
 ---
 
@@ -147,13 +145,13 @@ Full living catalog is in `data-sources.md`. Key ones currently in play:
 
 ---
 
-## 7. Current Priority (as of handoff)
+## 7. Current Priority (as of 2026-11-26 evening)
 
-**Highest priority:** Finish the core descriptive and disparity tables for Paper 01 (Race breakdown + Audiology/ENT utilization stratified by race) and turn them into a conference-ready abstract.
+**Highest priority:** Paper 01 abstract v2 is drafted with the crude and age-stratified audiology results. Next is to verify the pediatric Audiology coding window, then optional R3/R8/R7, then draft-v2 (Jake review, citations, IRB question).
 
 Secondary priorities:
 - Keep `data-sources.md` and this handoff file updated.
-- Be ready to spin up Paper 02 as soon as Jake names the next topic.
+- Jake has not yet picked which of Papers 02–05 to start next (02, then 04, was recommended).
 
 ---
 
