@@ -27,10 +27,12 @@ med-paper-v1/
 | # | Working title | Status | Folder |
 |---|---------------|--------|--------|
 | 01 | Hearing loss disparities (UMMC + county context) | Ideation / early draft | [papers/01-hearing-loss-disparities](papers/01-hearing-loss-disparities) |
-| 02 | Oral cavity & pharynx cancer by race and rurality | Public-data first pass done; draft skeleton | [papers/02-oral-pharynx-cancer-disparities](papers/02-oral-pharynx-cancer-disparities) |
-| 03 | Primary care supply, poverty, Black–White gap in premature mortality | Public-data first pass done; draft skeleton | [papers/03-primary-care-premature-mortality-gap](papers/03-primary-care-premature-mortality-gap) |
-| 04 | Maternal/infant outcomes (LBW, teen births, infant mortality) | Public-data first pass done; draft skeleton | [papers/04-maternal-infant-outcomes](papers/04-maternal-infant-outcomes) |
-| 05 | Cancer screening gaps and stage (Delta/rural) | Public-data first pass done; draft skeleton | [papers/05-screening-gaps-cancer-stage](papers/05-screening-gaps-cancer-stage) |
+| 02 | Oral cavity & pharynx cancer by race and rurality | **Public-data only; analysis complete; draft-v1 abstract (2026-11-27)** | [papers/02-oral-pharynx-cancer-disparities](papers/02-oral-pharynx-cancer-disparities) |
+| 03 | Primary care supply, poverty, Black–White gap in premature mortality | **Public-data only; analysis complete; draft-v1 abstract; partial novelty overlap (Lee 2026)** | [papers/03-primary-care-premature-mortality-gap](papers/03-primary-care-premature-mortality-gap) |
+| 04 | Maternal/infant outcomes (LBW, teen births, infant mortality) | **Public-data only; analysis complete; draft-v1 abstract (2026-11-27)** | [papers/04-maternal-infant-outcomes](papers/04-maternal-infant-outcomes) |
+| 05 | Cancer screening gaps and stage (Delta/rural) | **Public-data only; draft-v1 abstract; weak / low novelty** | [papers/05-screening-gaps-cancer-stage](papers/05-screening-gaps-cancer-stage) |
+
+**Decision (2026-11-27):** Papers 02–05 use public data only (no UMMC/RDW pulls); Paper 01 continues with UMMC data. See `PROJECT-HANDOFF.md` section 3c.
 
 ## Key shared resources
 

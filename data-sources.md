@@ -116,13 +116,36 @@
 
 ### 4g. Notes on PLACES (all papers)
 - Dataset ids: county long format `swc5-untb`; GIS-friendly wide `i46a-9kgh` (2025 release; https://data.cdc.gov). Model-based (MRP; Greenlund 2022) with county poverty as an input, so PLACES–poverty correlations are partly built in.
-- **Data-quality flag**: the PLACES `DENTAL` measure ("visited dentist, past year", 2022) is 4.9–12.9% across MS counties, which is implausibly low for adults; excluded pending verification [PENDING].
+- **Data-quality flag**: the PLACES `DENTAL` measure ("visited dentist, past year", 2022) is 4.9–12.9% across MS counties, which is implausibly low for adults; excluded. **Update 2026-11-27:** confirmed anomalous in CDC's own 2024 and 2025 releases; see 4j (2020-based sensitivity measure).
 
 ### 4h. Interactive or not yet scripted [PENDING]
 - **MSTAHRS** (https://mstahrs.msdh.ms.gov/): interactive query only; cells under 5 suppressed by MSTAHRS (we suppress under 11). Needed for cause-specific deaths by race/county, preterm birth, prenatal care.
 - **CDC WONDER**: API is national-only; county/race queries must be run in the web interface.
-- **HRSA** HPSA data (https://data.hrsa.gov/data/download), **AHRF** (https://data.hrsa.gov/topics/health-workforce/ahrf), **March of Dimes** maternity care deserts (https://www.marchofdimes.org/maternity-care-deserts-report), **CDC BRFSS Prevalence & Trends** (https://www.cdc.gov/brfss/brfssprevalence/): not yet pulled.
+- **HRSA** HPSA data (https://data.hrsa.gov/data/download), **AHRF** (https://data.hrsa.gov/topics/health-workforce/ahrf), **March of Dimes** maternity care deserts (https://www.marchofdimes.org/maternity-care-deserts-report), **CDC BRFSS Prevalence & Trends** (https://www.cdc.gov/brfss/brfssprevalence/): HPSA data-warehouse download and CDC BRFSS Prevalence & Trends not yet pulled; **AHRF and PLACES 2020 were pulled 2026-11-27 (see 4i, 4j); March of Dimes PeriStats state figures are cited in 4k.**
 - Census API requires a key (not used); ACS values reach the papers through CHR and the bulk files noted in 4b.
+
+## Tier 1d — Added 2026-11-27 (public-data-only completion of Papers 02–05)
+
+### 4i. HRSA Area Health Resources Files (AHRF) 2024–2025 — pulled
+- https://data.hrsa.gov/data/download?data=AHRF (CSV zip `AHRF_2024-2025_CSV.zip`; NCHWA; released Dec 2025). County file, Mississippi FIPS 28 (82 counties). Used: non-federal OB-GYN MDs (`md_nf_obgyn_gen_23`, AMA masterfile 2023); short-term general hospitals with obstetric care (`stgh_obstetrc_care_23`, AHA survey 2023); APN midwives with NPI (`apn_midwvs_npi_23`); 3-yr average births and preterm births 2021–2023 (`births_3yr_avg_23`, `births_pretrm_3yr_avg_23`; NCHS natality); dentists in private practice (`dent_nf_prvprac_23`, ADA masterfile) and with NPI; primary care MD+DO excl. residents (`md_nf_prim_care_pc_excl_rsdnt_23`, `do_nf_prim_care_pc_excl_rsdnt_23`); primary-care and dental HPSA codes (`hpsa_prim_care_25`, `hpsa_dent_25`; code definitions not verified in the downloaded 2023–24 technical documentation, used descriptively); Census 2023 population. Variable definitions: AHRF 2023–2024 technical documentation (https://data.hrsa.gov/DataDownload/AHRF/AHRF%202023-2024%20User%20Tech.zip). Caveat: AHRF county preterm % gives 16.9% birth-weighted vs the official NCHS state figure 14.95% (2023), so use for within-state comparison only.
+- Saved: merged into `data/public/master_county_ms.csv` (`ahrf_*` columns); script `scripts/public-data/build_ahrf.py`.
+
+### 4j. CDC PLACES 2023 release (BRFSS 2020) — pulled as sensitivity
+- https://data.cdc.gov/d/h3ej-a9ec (age-adjusted prevalence, county, Mississippi): `DENTAL` (visited dentist or dental clinic in past year, 38.5–69.1%), `TEETHLOST`, `COLON_SCREEN` (ages 50–75 in this release; 45–75 in the 2025 release), `MAMMOUSE`. **Resolution of the 4g dental flag:** the 2024 (`fu4u-a9bh`) and 2025 releases both give Mississippi `DENTAL` (BRFSS 2022) of 4.9–12.9% (Hinds 7.9%), against about 39–66% in sampled counties of other states and the national estimate 63.9%; the 2020-based values are plausible. 2022-based Mississippi DENTAL remains excluded (likely a BRFSS 2022 Mississippi data issue; not confirmed by CDC); `pl20_dental` is used as a sensitivity covariate. Script: `scripts/public-data/build_places2020.py`.
+
+### 4k. State-level birth outcome sources (published tables)
+- NCHS, *Infant Mortality in the United States, 2022* (NVSR 73(5)): https://www.cdc.gov/nchs/data/nvsr/nvsr73/nvsr73-05.pdf — Mississippi 9.11 per 1,000 (highest).
+- Mississippi State Department of Health, *Mississippi Child Death Review 2021 and 2022 deaths* (Feb 2025): https://msdh.ms.gov/resources/media/21025.pdf — IMR 2022 Black NH 12.1, White NH 7.2 (MSDH Vital Records; CDC WONDER).
+- March of Dimes PeriStats (NCHS final natality), preterm by race, Mississippi 2022–2024 average: https://www.marchofdimes.org/peristats/data?obj=1&reg=99&slev=4&sreg=28&stop=63&top=3 — Black 18.5%, White 12.7%, Hispanic 11.0% (retrieved 2026-11-27).
+- NCHS VSRR 35, *Births: Provisional Data for 2023*: https://www.cdc.gov/nchs/data/vsrr/vsrr035.pdf — US preterm Black 14.65%, White 9.45%; Mississippi 14.95%.
+- NCHS DQS infant mortality by race and state (retired topic; data.cdc.gov `pjb2-jvdr`, last period 2013–2015): checked, not used.
+
+### 4l. Checked, not usable or not scripted (2026-11-27)
+- **CDC WONDER** (mortality and natality): the API accepts national queries only (https://wonder.cdc.gov/wonder/help/wonder-api.html); state/county/race queries require the web form, which was not scripted. Natality county detail is limited to counties of 100,000+ residents. Remains an optional manual follow-up.
+- **MSTAHRS**: interactive; not scripted.
+- **CDC PRAMStat** (data.cdc.gov): files only through 2011, no Mississippi 2012+ data.
+- **State Cancer Profiles**: no oral cavity subsite (oral cavity vs oropharynx) breakdown; US Cancer Statistics subsite queries are interactive and not scripted.
+- **Census API**: key required; not used. **Novelty searches** run with PubMed E-utilities (`scripts/public-data/pubmed.py`), 2026-11-27.
 
 ---
 

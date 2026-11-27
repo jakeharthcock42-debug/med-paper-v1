@@ -106,6 +106,21 @@ Each folder has `README.md` (question, aims, hypotheses with planned tests and f
 
 Recommended order: 02 or 04 for the cleanest abstract, 03 as a primary-care-audience paper, 05 as a follow-on (see each README). Pipeline: `scripts/public-data/README.md`.
 
+## 3c. Papers 02–05 — DECISION: public data only; draft-v1 abstracts written (2026-11-27)
+
+**Decision (Jake, 2026-11-27):** Papers 02–05 are completed using **only publicly available data**; no UMMC/RDW pulls, because Jake is the bottleneck. Paper 01 continues with Jake separately. The UMMC add-on request lists from 3b are no longer requested; each paper README now has a **"Deferred / not used (UMMC RDW)"** section recording what was dropped and why. (They can be revived later if Jake chooses.)
+
+Added public sources (see `data-sources.md` Tier 1d): HRSA AHRF 2024–2025 (OB-GYN, obstetric hospitals, midwives, preterm births, dentists, PCP, HPSA); CDC PLACES 2023 release (BRFSS 2020; dental visit, teeth lost, CRC screening, mammography); NCHS NVSR 73(5) infant mortality 2022; MSDH Child Death Review 2025; March of Dimes PeriStats preterm by race; NCHS VSRR 35. CDC WONDER state/county data are not available by API (national-only per CDC) and were not scripted; MSTAHRS is interactive and was not scripted (both optional manual follow-ups).
+
+| # | Paper | Headline (public data) | Novelty (PubMed 2026-11-27) |
+|---|-------|------------------------|------------------------------|
+| 02 | Oral cavity & pharynx cancer by race/rurality | Black NH incidence 9.5 vs White 15.6/100k (RR 0.61) but mortality 3.7 vs 3.5 (RR 1.06), late stage 73.1% vs 64.8%; fewer dentists per 10k tracks higher late-stage share (rho −0.51, n = 34) | Moderate: no MS-specific oral cancer disparity paper found |
+| 04 | Birth outcomes and obstetric access | Black LBW > White in 77/77 counties (median 17.9% vs 8.8%); 67% of counties have no obstetric hospital (37.5% of births); no adjusted association with preterm/LBW | Moderate: no county-level MS obstetric access analysis found |
+| 03 | PCP supply and Black–White premature mortality | Black > White premature mortality in 71/80 counties (742 vs 601); PCP/10k −10.0 (−17.0, −2.9) for White vs +3.6 (−6.1, 13.3) for Black | **Partial overlap**: Lee 2026 (Prev Chronic Dis) covers MS county YPLL trends |
+| 05 | Screening and stage (breast, CRC) | MS vs US CRC mortality 17.5 vs 12.7; Black/White breast mortality RR 1.43; county screening not associated with late stage after adjustment; PCP supply is | **Weak / low novelty**; several MS CRC and breast papers exist |
+
+Each paper folder now has `README.md` (re-scoped aims, hypotheses with results, sources with data years, limits, Deferred section), `draft-v1.md` (conference-style abstract, intro, methods, results tables, discussion outline, verified references), and `results/` (including `*b_results.md`). All abstracts are draft-v1 for Jake's review; IRB/RDW determination still [PENDING].
+
 ---
 
 ## 4. Key Technical Constraints Discovered
@@ -152,6 +167,7 @@ Full living catalog is in `data-sources.md`. Key ones currently in play:
 Secondary priorities:
 - Keep `data-sources.md` and this handoff file updated.
 - Jake has not yet picked which of Papers 02–05 to start next (02, then 04, was recommended).
+- Papers 02–05 draft-v1 abstracts (public data only) are ready for Jake's review (priority 02, 04; 03 has a novelty overlap; 05 is weak). See section 3c.
 
 ---
 
