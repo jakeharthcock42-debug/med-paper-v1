@@ -2,7 +2,7 @@
 
 **For**: Jake Harthcock (runs all queries; pastes aggregate numbers back).  
 **Status**: **ACTIVE.** Data use confirmed by Jake Harthcock 2026-11-26 per Cohort Explorer guide ([`../../data-use-rules.md`](../../data-use-rules.md)).  
-**Cohort**: ICD-10 **H90.3** (sensorineural hearing loss, bilateral), **15,612** patients (0.94% of RDW) and **4,244,868** encounters (5.79%), confirmed from a 2026-11-26 screenshot (Pt Diagnosis Codes (OR) = H90.3 only; Current Selections: `Pt_Dx_Code ORMode H90.3`). Data window: encounters between **1/1/2013** and **9/30/2026**. Race uses the **FirstRace** field (Data Filters → Patient Demographics → Race).  
+**Cohort**: ICD-10 **H90.3** (sensorineural hearing loss, bilateral), **15,612** patients (0.94% of RDW) and **4,244,868** encounters (5.79%), confirmed from a 2026-11-26 screenshot (Pt Diagnosis Codes (OR) = H90.3 only; Current Selections: `Pt_Dx_Code ORMode H90.3`). Data window: encounters between **1/1/2013** and **9/30/2026**. Race uses the **FirstRace** field (Data Filters → Patient Demographics → Race). Audiology/ENT use uses **Department Specialty** (Data Filters → Admissions & Visits → Encounter Search; Current Selections label **DepartmentSpecialty**); Data Filters selections are encounter-level.  
 **Last updated**: 2026-11-26.
 
 ## Rules for every request
@@ -55,17 +55,25 @@
 - Why: tests whether Black patients are over- or under-represented in the H90.3 cohort relative to the population the RDW draws from.
 - Note: the R0 header shows the H90.3 cohort as **0.94%** of RDW patients (and **5.79%** of encounters). The R1 race-filtered headers show White H90.3 patients as **0.52%** of RDW and Black H90.3 patients as **0.37%**. Those percentages imply denominators exist on the unfiltered view, but the exact totals stay **[PENDING]** until you report them from the cleared-filter header. Do not back-calculate them from the percentages. H-U1 cannot be tested until this denominator (and the RDW race split) is reported.
 
-### R4. Audiology use among H90.3 patients — H-U2, Table 2 — **next** (report field names before selecting)
-- The department or specialty filter location is not yet confirmed. **Do not select a value until you have sent the exact field names.**
-- Click-by-click:
-  1. Confirm you are on the **Data Filters** page and that only **H90.3** is selected in diagnosis (Current Selections: `Pt_Dx_Code ORMode H90.3`; header Patients = 15,612; Encounters = 4,244,868). Clear any FirstRace / Race selection first.
-  2. The Data Filters page has these tabs: **Patient Demographics**, **Admissions & Visits**, **ED Visits**, **Procedures**, **Medications**, **Labs**, **Diagnosis**. Open **Admissions & Visits** and look for a department, clinic, specialty, or provider-specialty field. Write down each field’s exact label and leave it unselected.
-  3. If you do not see such a field on Admissions & Visits, check the other Data Filters tabs, the Patient Filters page, and the page reached by **Proceed to Encounter Filters**. Send the exact names and locations of any candidate fields you find.
-  4. Reply with those exact field names (and which tab or page each is on) before clicking any value. If more than one field could be audiology or ENT, list them all and wait for confirmation.
-  5. After the field is confirmed: keep H90.3 selected; select the exact Audiology label (use the exact label; if there are several audiology labels, report each one separately, never combined by guesswork); report header **Patients** (and Encounters if shown). Then add **FirstRace**, one value at a time (**Black or African American**, then **White or Caucasian**). Report Patients each. Counts under 11 as `<11 (suppressed)`.
+### R4. Audiology use among H90.3 patients — H-U2, Table 2 — **DONE** (2026-11-26, screenshots)
+- Field confirmed: **Data Filters** → **Admissions & Visits** → Encounter Search → **Department Specialty** (Current Selections label **DepartmentSpecialty**), value **Audiology**. Data Filters selections are encounter-level: header Patients = H90.3 patients with ≥1 Audiology-department encounter.
+- **Result**
+  - H90.3 + Audiology: Patients = **1,730** (0.10% of RDW; 1,730 / 15,612 = **11.08%**), Encounters = **3,808** (0.01%); encounter window **6/26/2014–9/30/2026**.
+  - + FirstRace Black or African American: Patients = **630** (0.04%; 630 / 6,176 = **10.20%**), Encounters = **1,297**; Sex Female **62.38%**, Male **37.62%**; window **6/26/2014–9/30/2026**.
+  - + FirstRace White or Caucasian: Patients = **996** (0.06%; 996 / 8,597 = **11.59%**), Encounters = **2,295**; Sex Female **53.41%**, Male **46.59%**; window **7/5/2014–9/30/2026**.
+  - Other / unknown combined with audiology: Patients = **104** of 839 (**12.40%**), computed as 1,730 − 630 − 996. Reported as one combined row only.
+- Black vs White (2×2: Black 630 with / 5,546 without; White 996 with / 7,601 without). Risk difference (Black − White) = **−1.38** percentage points (Wald 95% CI **−2.40 to −0.37**). Risk ratio = **0.880** (Katz log-Wald 95% CI **0.801–0.968**). Pearson χ²(1) = **7.03**, p = **0.008**. Odds ratio = **0.867** (Woolf 95% CI **0.780–0.963**). H-U2 supported (modest absolute difference).
+- The 0.10%, 0.04%, 0.06%, and 0.01% of RDW figures are recorded as displayed; do not back-calculate an RDW denominator from them.
+- Caveats: Audiology department data appear only from mid-2014 (selected-window start 6/26/2014; 7/5/2014 for White), while the H90.3 cohort window starts 1/1/2013; “ever” audiology is a UMMC visit only; H90.3 may be coded at audiology visits (circularity; R8).
 
-### R5. ENT use among H90.3 patients — H-U3, Table 2
-- Same as R4, after the field is confirmed, with the exact **Otolaryngology / ENT** label (use the label as it appears; if several, report each separately).
+### R5. ENT use among H90.3 patients — H-U3, Table 2 — **next** (exact Department Specialty label pending)
+- The **Department Specialty** field is confirmed (**Data Filters** → **Admissions & Visits** → Encounter Search; Current Selections label **DepartmentSpecialty**). Data Filters selections are encounter-level. The exact Otolaryngology / ENT value label is not yet confirmed. **Do not select a value until you have sent the exact label.**
+- Click-by-click:
+  1. Keep H90.3 selected. Clear any **FirstRace** selection and clear **Audiology** in Department Specialty so the header returns to Patients = 15,612 and Encounters = 4,244,868 (Current Selections: `Pt_Dx_Code ORMode H90.3` only).
+  2. Stay on **Data Filters** → **Admissions & Visits** → Encounter Search → **Department Specialty**.
+  3. Scroll the Department Specialty list and look for Otolaryngology, ENT, or a similar label. Write down each candidate’s exact name as it appears. Leave them unselected.
+  4. Reply with those exact label(s) before clicking any value. If more than one could be ENT, list them all and wait for confirmation.
+  5. After the label is confirmed: keep H90.3 selected; select that exact ENT label; report header **Patients** and **Encounters** (and the encounter window if shown). Then add FirstRace = **Black or African American**, then **White or Caucasian**, reporting Patients and Encounters each time. Counts under 11 as `<11 (suppressed)`.
 
 ### R6. Audiology **or** ENT among H90.3 patients — H-U4 (primary outcome), Table 2
 - The guide says the Patient Filters support advanced AND/OR/NOT searches at the patient level (pp. 5–6). If available, set Diagnosis = H90.3 AND (Audiology OR Otolaryngology). Report Patients overall and by race (Black, White, then others).
@@ -95,15 +103,15 @@
 - H90.3 patients who ever had an ED encounter, by race. Report Patients each (only if time allows).
 
 ## How the numbers get used
-R0 to R3 fill Table 1 and H-U1 (race distribution vs RDW). R1 cohort race counts are in; R3 (RDW base-population race) is still needed to finish H-U1. R4 to R6 fill Table 2 and H-U2 to H-U4. R7 enables H-U5 and H-U6. R8 and R9 are the main robustness checks. R10 and R11 are optional covariates. Send results as plain text, one request at a time (**R4 is next**: report department/specialty field names first, before selecting a value).
+R0 to R3 fill Table 1 and H-U1 (race distribution vs RDW). R1 cohort race counts are in; R3 (RDW base-population race) is still needed to finish H-U1. R4 is done (H-U2). R5 and R6 fill the rest of Table 2 and H-U3 to H-U4. R7 enables H-U5 and H-U6. R8 and R9 are the main robustness checks. R10 and R11 are optional covariates. Send results as plain text, one request at a time (**R5 is next**: report the exact Department Specialty label for Otolaryngology / ENT first, before selecting a value).
 
 ## Status checklist
 - [x] R0 total — Patients = 15,612 (0.94% of RDW); Encounters = 4,244,868 (5.79%); window 1/1/2013–9/30/2026 (screenshot, 2026-11-26)
 - [x] R1 race exact counts — done 2026-11-26 (FirstRace): White or Caucasian Patients = 8,597 (55.1% of 15,612), Encounters = 2,119,544; Black or African American Patients = 6,176 (39.6%), Encounters = 2,000,250; other/unknown combined = 839 (15,612 − 8,597 − 6,176). Dropdown 47.1% / 49.9% are encounter shares, not patient shares.
 - [x] R2 sex percentages — overall Female 54.84%, Male 45.16% (pie chart, no race selected; likely patient-based, basis unconfirmed); sex by race recorded with R1 (White F 50.81% / M 49.19%; Black F 61.33% / M 38.67%); exact counts and age **[PENDING]**
 - [ ] R3 RDW race denominator (still required to finish H-U1)
-- [ ] R4 audiology — next: report department/specialty field names before selecting
-- [ ] R5 ENT
+- [x] R4 audiology — done 2026-11-26 (Department Specialty = Audiology): Patients 1,730/15,612 (11.08%); Black 630/6,176 (10.20%); White 996/8,597 (11.59%); other/unknown 104/839 (12.40%; 1,730 − 630 − 996). RD −1.38 pp (95% CI −2.40 to −0.37); RR 0.880 (0.801–0.968); Pearson χ²(1) = 7.03, p = 0.008
+- [ ] R5 ENT — next: report the exact Department Specialty label before selecting
 - [ ] R6 audiology or ENT
 - [ ] R7 residence variable
 - [ ] R8 diagnosis origin
