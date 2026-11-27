@@ -76,7 +76,7 @@ Other codes explored earlier (single-select only):
 
 ### Manuscript Status (`papers/01-hearing-loss-disparities/draft-v1.md`)
 - Hypotheses tightened 2026-11-26 (Jake approved): one primary (H-U2, including persistence after age stratification); secondary H-S1, H-S2, H-S3; county associations are ecological context; ENT hypotheses H-U3/H-U4 retired after observing 96.74% Otolaryngology contact (revision log in §2.2).
-- Conference abstract v2 (300 words) is in the draft. Tables 1–3 are populated for the completed UMMC pulls.
+- Conference abstract v2 (294 words) is in the draft. Tables 1–3 are populated for the completed UMMC pulls.
 - Formal citations and the IRB question for the target conference remain [PENDING].
 
 ### Status as of 2026-11-26 (evening)
@@ -84,12 +84,12 @@ Other codes explored earlier (single-select only):
 - **Suppression rule**: never record a UMMC RDW cell under 11 ("<11 (suppressed)"); app itself requires population >25 to view/export reports (guide p. 20). Public county data unaffected. The repo is public; committed UMMC aggregates are publicly readable.
 - **Done (UMMC)**: R0 (N = 15,612; 4,244,868 encounters); R1 (FirstRace: White 8,597, Black 6,176, other/unknown 839); R4 Audiology (1,730/15,612, 11.08%; Black 630/6,176, 10.20% vs White 996/8,597, 11.59%; crude RR 0.880, 0.801–0.968, p = 0.008); R5 Otolaryngology 15,103/15,612 (96.74%), treated as a descriptive finding; R9 age-stratified Audiology (AgeKey = age at encounter). Mantel-Haenszel RR **0.812** (Greenland-Robins 95% CI 0.711–0.928; CMH p = 1.89e-5); sensitivity excluding 0–17: 0.810 (0.695–0.943). Details: `draft-v1.md` Table 3, `data/r9_mh_results.md`.
 - **Done (public)**: county analysis for all 82 MS counties (PLACES 2025, ACS 2020–2024, CHR&R 2025): rural 7.54% vs 6.91%, p = 1.5e-4; see `county-analysis.md`. These are ecological context, not confirmatory.
-- **Still [PENDING]**: R3 (RDW base-population race, to finish H-S2); R7 (State/County field usability); R8 (diagnosis origin); whether pediatric Audiology-department coding begins only in 2026 (0–17 Audiology window 3/2026–9/30/2026); formal citations; IRB for the target conference.
+- **Pediatric window**: resolved 2026-11-26. With race cleared, H90.3 + AgeKey 0–17 + Audiology: Patients 401 (0.02%), Encounters 868, window 9/3/2015–9/30/2026. Coding spans 2015–2026; the 3/2026 header with race selected was a display artifact. The 0–17 band stays in the primary MH estimate.
+- **Still [PENDING]**: R3 (RDW base-population race, to finish H-S2); R7 (State/County field usability); R8 (diagnosis origin); formal citations; IRB for the target conference.
 
 ### Immediate Next Steps
-1. Verify the pediatric Audiology-department coding window (0–17 Audiology selections showed encounters only from March 2026).
-2. Optional UMMC pulls: R3, R8, R7 field name, and H-S1 sex-stratified audiology (clicked counts, not pie-chart %).
-3. Then draft-v2: Jake reviews the abstract; add formal citations; confirm IRB needs.
+1. Optional UMMC pulls: R3, R8, R7 field name, and H-S1 sex-stratified audiology (clicked counts, not pie-chart %).
+2. Then draft-v2: Jake reviews the abstract; add formal citations; confirm IRB needs.
 
 ---
 
@@ -147,7 +147,7 @@ Full living catalog is in `data-sources.md`. Key ones currently in play:
 
 ## 7. Current Priority (as of 2026-11-26 evening)
 
-**Highest priority:** Paper 01 abstract v2 is drafted with the crude and age-stratified audiology results. Next is to verify the pediatric Audiology coding window, then optional R3/R8/R7, then draft-v2 (Jake review, citations, IRB question).
+**Highest priority:** Paper 01 abstract v2 is drafted with the crude and age-stratified audiology results. The pediatric Audiology coding-window check is done (9/3/2015–9/30/2026 with race cleared). Next: optional R3/R8/R7, then draft-v2 (Jake review, citations, IRB question).
 
 Secondary priorities:
 - Keep `data-sources.md` and this handoff file updated.
