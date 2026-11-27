@@ -2,7 +2,7 @@
 
 **Project context**: Supporting secondary data analysis for a medical student research paper/abstract on disparities of care across Mississippi counties (race, rural-urban, access). Target: local/regional conference abstract (e.g., MAFP, ACP MS chapter, UMMC Research Day).
 
-**Last updated**: 2026-11-27 (Paper 01 R3 / H-S2 recorded; IRB determination noted)  
+**Last updated**: 2026-11-27 (official RDW citation, DOI, and human-protection boilerplate recorded)  
 **Maintainer notes**: Focus on publicly available or low-barrier datasets. UMMC internal resources noted separately for potential enrichment.
 
 ---
@@ -152,7 +152,10 @@
 ## UMMC-Internal Resources
 
 ### Patient Cohort Explorer / Research Data Warehouse (RDW) — ACCESS CONFIRMED
-- **Data-use status**: Data use confirmed by Jake Harthcock 2026-11-26 per the Cohort Explorer guide. Extracted rules with page cites: [`data-use-rules.md`](data-use-rules.md). Jake runs all queries; AI tools have no direct access to the Explorer. Research with this patient database was determined not to require IRB approval per [PENDING exact determination wording/source] (Jake Harthcock, 2026-11-27).
+- **Data-use status**: Data use confirmed by Jake Harthcock 2026-11-26 per the Cohort Explorer guide. Extracted rules with page cites: [`data-use-rules.md`](data-use-rules.md). Jake runs all queries; AI tools have no direct access to the Explorer.
+- **Official citation** (UMMC Center for Informatics and Analytics internal guidance, provided by Jake Harthcock 2026-11-27): University of Mississippi Medical Center, Center for Informatics and Analytics (2020): Patient Cohort Explorer. figshare. Software. https://doi.org/10.6084/m9.figshare.12252737. The DOI resolved (HTTP 302) to https://figshare.com/articles/software/Patient_Cohort_Explorer/12252737 (figshare API confirms the 2020 software record).
+- **Human-protection boilerplate** (quote verbatim when a statement is required): “The data warehouse from which the information for this study is derived has been de-identified and date-shifted so that it does not include any protected health information (PHI). Pursuant to 45 CFR 46, use of this database does not meet the definition of human subjects’ research and does not require IRB review.”
+- **Date-shifting**: because the warehouse is date-shifted, displayed calendar dates and windows may not correspond to true calendar dates. Do not claim that within-patient intervals are preserved unless a source states that.
 - **Suppression rule (project)**: never record a UMMC RDW cell under 11 ("<11 (suppressed)"), with complementary suppression where a hidden cell could be backed out. The app itself only allows report view/export when the population is greater than 25 (guide p. 20). Public county data are unaffected.
 - **Active request list (Paper 01)**: `papers/01-hearing-loss-disparities/rdw-data-requests.md`. Recorded: R0 (N = 15,612), R1 (race), R3 (unfiltered RDW base: 1,658,574 patients, 73,271,189 encounters; Black 684,322, 41.26%; White 699,367, 42.17%; other/unknown combined 274,885, 16.57%), R4 (audiology), R5 (ENT, descriptive), R9 (age-stratified audiology; MH RR 0.812, 95% CI 0.711–0.928), H-S1 (sex-stratified audiology; MH RR 0.873, 95% CI 0.765–0.997), H-S2 (crude prevalence RR 0.734, 95% CI 0.711–0.758; not age-adjusted). Pediatric Audiology window resolved 2026-11-26 (9/3/2015–9/30/2026 with race cleared; 3/2026 header with race selected was a display artifact). Still open: R7, R8; optional age-stratified unfiltered base counts.
 - **Status**: Student has confirmed access and can run queries / export aggregate or de-identified results.
