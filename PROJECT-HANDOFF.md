@@ -37,7 +37,8 @@ med-paper-v1/
     ├── 05-screening-gaps-cancer-stage/
     └── 01-hearing-loss-disparities/
         ├── README.md                   ← status, aims, hypotheses, next actions
-        ├── draft-v1.md                 ← working manuscript (hypotheses in §2.2; abstract v2; Tables 1–5)
+        ├── draft-v1.md                 ← prior working manuscript
+        ├── draft-v2.md                 ← current manuscript (formal citations; abstract v2; Tables 1–5; Appendix A revision log)
         ├── county-analysis.md          ← county-level public-data results (82 MS counties)
         ├── data/                       ← county files; r9_mh_*; hs1_sex_*; hs2_r3_analysis.py / hs2_r3_results.md
         ├── rdw-data-requests.md        ← prioritized list of UMMC Explorer numbers (R0, R1, R3–R5, R9, H-S1, H-S2 done)
@@ -75,22 +76,22 @@ Other codes explored earlier (single-select only):
 - H90.0 ≈ 4,029
 
 ### Manuscript Status (`papers/01-hearing-loss-disparities/draft-v1.md`)
-- Hypotheses tightened 2026-11-26 (Jake approved): one primary (H-U2, including persistence after age stratification); secondary H-S1, H-S2, H-S3; county associations are ecological context; ENT hypotheses H-U3/H-U4 retired after observing 96.74% Otolaryngology contact (revision log in §2.2).
+- Hypotheses tightened 2026-11-26 (Jake approved): one primary (H-U2, including persistence after age stratification); secondary H-S1, H-S2, H-S3; county associations are ecological context; ENT hypotheses H-U3/H-U4 retired after observing 96.74% Otolaryngology contact (revision log in `draft-v2.md` Appendix A).
 - Conference abstract v2 is in the draft (under the ≤500-word project standard). Tables 1–5 are populated for the completed UMMC pulls, including H-S1 (Table 4) and H-S2 / R3 (Table 5).
-- Formal literature citations remain [PENDING]. Official RDW citation and human-protection boilerplate (UMMC CIA internal guidance, Jake 2026-11-27) are recorded; see the standard language in section 5 and [`data-use-rules.md`](data-use-rules.md).
+- Formal literature citations are in `draft-v2.md` (2026-11-27; 12 PubMed-verified PMIDs plus the official RDW citation and public-data sources). Official RDW citation and human-protection boilerplate (UMMC CIA internal guidance, Jake 2026-11-27) are recorded; see the standard language in section 5 and [`data-use-rules.md`](data-use-rules.md).
 
 ### Status as of 2026-11-27
 - **Data use**: Data use confirmed by Jake Harthcock 2026-11-26 per Cohort Explorer guide ([`data-use-rules.md`](data-use-rules.md)). Official citation: University of Mississippi Medical Center, Center for Informatics and Analytics (2020): Patient Cohort Explorer. figshare. Software. https://doi.org/10.6084/m9.figshare.12252737. Human-protection boilerplate (verbatim): “The data warehouse from which the information for this study is derived has been de-identified and date-shifted so that it does not include any protected health information (PHI). Pursuant to 45 CFR 46, use of this database does not meet the definition of human subjects’ research and does not require IRB review.” Displayed RDW calendar dates may not correspond to true calendar dates because the warehouse is date-shifted.
 - **Suppression rule**: never record a UMMC RDW cell under 11 ("<11 (suppressed)"); app itself requires population >25 to view/export reports (guide p. 20). Public county data unaffected. The repo is public; committed UMMC aggregates are publicly readable.
-- **Done (UMMC)**: R0 (N = 15,612; 4,244,868 encounters); R1 (FirstRace: White 8,597, Black 6,176, other/unknown 839); R4 Audiology (1,730/15,612, 11.08%; Black 630/6,176, 10.20% vs White 996/8,597, 11.59%; crude RR 0.880, 0.801–0.968, p = 0.008); R5 Otolaryngology 15,103/15,612 (96.74%), treated as a descriptive finding; R9 age-stratified Audiology (AgeKey = age at encounter). Mantel-Haenszel RR **0.812** (Greenland-Robins 95% CI 0.711–0.928; CMH p = 1.89e-5); sensitivity excluding 0–17: 0.810 (0.695–0.943). Details: `draft-v1.md` Table 3, `data/r9_mh_results.md`.
-- **H-S1 (2026-11-27)**: sex-stratified Audiology (clicked counts; no age filter). Female 393/3,788 (10.37%) vs 532/4,368 (12.18%), RR 0.852 (0.753–0.963); Male 237/2,388 (9.92%) vs 464/4,229 (10.97%), RR 0.905 (0.780–1.049). Sex-stratified MH RR **0.873** (0.765–0.997; CMH p = 0.00485); homogeneity p = 0.53. H-S1 supported. Female all = 8,562 (other/unknown 406); Male all [PENDING] (not captured; not back-calculated; not required). Race-adjusted female vs male MH RR 1.085 (0.952–1.237). Details: `draft-v1.md` Table 4, `data/hs1_sex_results.md`.
-- **R3 / H-S2 (2026-11-27)**: unfiltered RDW (no filters; clicked counts; window 1/1/2013–9/30/2026). All patients **1,658,574** (encounters **73,271,189**); Black **684,322** (41.26%; encounters 39,081,291); White **699,367** (42.17%; encounters 30,228,243); other/unknown combined **274,885** (16.57%; 1,658,574 − 684,322 − 699,367). Pie Unknown 6.04% and Other 2.73% are encounter shares, not used as patient counts. Crude ever-diagnosed H90.3 prevalence: Black 6,176/684,322 (0.902%) vs White 8,597/699,367 (1.229%); RR **0.734** (Katz 95% CI 0.711–0.758); RD −0.327 pp (−0.361 to −0.293); Pearson χ²(1) = 349.63, p = 5.11e-78. Cohort vs base share: Black 39.6% vs 41.26%; White 55.1% vs 42.17% (White over-representation partly the counterpart of other/unknown 5.4% vs 16.57%). H-S2 **supported (crude)**; not age-adjusted. Previously displayed 0.94%, 0.52%, 0.37%, and 5.79% of RDW figures confirmed. Details: `draft-v1.md` Table 5, `data/hs2_r3_results.md`.
+- **Done (UMMC)**: R0 (N = 15,612; 4,244,868 encounters); R1 (FirstRace: White 8,597, Black 6,176, other/unknown 839); R4 Audiology (1,730/15,612, 11.08%; Black 630/6,176, 10.20% vs White 996/8,597, 11.59%; crude RR 0.880, 0.801–0.968, p = 0.008); R5 Otolaryngology 15,103/15,612 (96.74%), treated as a descriptive finding; R9 age-stratified Audiology (AgeKey = age at encounter). Mantel-Haenszel RR **0.812** (Greenland-Robins 95% CI 0.711–0.928; CMH p = 1.89e-5); sensitivity excluding 0–17: 0.810 (0.695–0.943). Details: `draft-v2.md` Table 3, `data/r9_mh_results.md`.
+- **H-S1 (2026-11-27)**: sex-stratified Audiology (clicked counts; no age filter). Female 393/3,788 (10.37%) vs 532/4,368 (12.18%), RR 0.852 (0.753–0.963); Male 237/2,388 (9.92%) vs 464/4,229 (10.97%), RR 0.905 (0.780–1.049). Sex-stratified MH RR **0.873** (0.765–0.997; CMH p = 0.00485); homogeneity p = 0.53. H-S1 supported. Female all = 8,562 (other/unknown 406); Male all [PENDING] (not captured; not back-calculated; not required). Race-adjusted female vs male MH RR 1.085 (0.952–1.237). Details: `draft-v2.md` Table 4, `data/hs1_sex_results.md`.
+- **R3 / H-S2 (2026-11-27)**: unfiltered RDW (no filters; clicked counts; window 1/1/2013–9/30/2026). All patients **1,658,574** (encounters **73,271,189**); Black **684,322** (41.26%; encounters 39,081,291); White **699,367** (42.17%; encounters 30,228,243); other/unknown combined **274,885** (16.57%; 1,658,574 − 684,322 − 699,367). Pie Unknown 6.04% and Other 2.73% are encounter shares, not used as patient counts. Crude ever-diagnosed H90.3 prevalence: Black 6,176/684,322 (0.902%) vs White 8,597/699,367 (1.229%); RR **0.734** (Katz 95% CI 0.711–0.758); RD −0.327 pp (−0.361 to −0.293); Pearson χ²(1) = 349.63, p = 5.11e-78. Cohort vs base share: Black 39.6% vs 41.26%; White 55.1% vs 42.17% (White over-representation partly the counterpart of other/unknown 5.4% vs 16.57%). H-S2 **supported (crude)**; not age-adjusted. Previously displayed 0.94%, 0.52%, 0.37%, and 5.79% of RDW figures confirmed. Details: `draft-v2.md` Table 5, `data/hs2_r3_results.md`.
 - **Done (public)**: county analysis for all 82 MS counties (PLACES 2025, ACS 2020–2024, CHR&R 2025): rural 7.54% vs 6.91%, p = 1.5e-4; see `county-analysis.md`. These are ecological context, not confirmatory.
 - **Pediatric window**: resolved 2026-11-26. With race cleared, H90.3 + AgeKey 0–17 + Audiology: Patients 401 (0.02%), Encounters 868, window 9/3/2015–9/30/2026. Coding spans 2015–2026; the 3/2026 header with race selected was a display artifact. The 0–17 band stays in the primary MH estimate.
-- **Still [PENDING]**: R7 (State/County field usability); R8 (diagnosis origin); formal literature citations. Optional: age-stratified unfiltered RDW base counts for an age-adjusted H-S2 prevalence comparison. Official RDW citation and human-protection boilerplate are recorded (see section 5).
+- **Still [PENDING]**: R7 (State/County field usability / H-S3); R8 (diagnosis origin); Male all-patients count (not required for H-S1). Optional: age-stratified unfiltered RDW base counts for an age-adjusted H-S2 prevalence comparison. Formal literature citations are no longer pending (`draft-v2.md`). Official RDW citation and human-protection boilerplate are recorded (see section 5).
 
 ### Immediate Next Steps
-1. **draft-v2** with formal citations (Jake reviews the abstract).
+1. Jake reviews `papers/01-hearing-loss-disparities/draft-v2.md`, picks a target venue and deadline, then `final.md`.
 2. Optional UMMC pulls: R8 (diagnosis origin), R7 field name, and age-stratified unfiltered RDW base counts.
 
 ---
@@ -171,14 +172,14 @@ Because the warehouse is date-shifted, displayed calendar dates and windows may 
 - Prefer updating the actual markdown files in the repo rather than only chatting.
 - When he says “proceed”, advance the current paper or improve structure.
 - He is happy to run RDW queries and paste aggregate counts/percentages.
-- Maintain clean versioning: `draft-v1.md` → later `draft-v2.md` or move to `final.md` when ready for submission.
+- Maintain clean versioning: `draft-v1.md` → `draft-v2.md` (Paper 01 draft-v2 is done) → `final.md` when Jake has reviewed the draft and picked a venue.
 - Multiple papers should each live in their own numbered subfolder under `/papers`.
 
 ---
 
 ## 7. Current Priority (as of 2026-11-27)
 
-**Highest priority:** Paper 01 R3/H-S2 is done (crude prevalence RR 0.734, 0.711–0.758; not age-adjusted). Official RDW citation and human-protection boilerplate are recorded (section 5). Abstract v2 includes the crude, age-stratified, and sex-stratified audiology results plus the base-population comparison. Next: **draft-v2** with formal literature citations; optional R8/R7; optional age-stratified base counts.
+**Highest priority:** Paper 01 **draft-v2 is done** (2026-11-27; formal literature citations verified; abstract 449 words). Official RDW citation and human-protection boilerplate are recorded (section 5). Next: Jake reviews `draft-v2.md`, picks a target venue and deadline, then `final.md`. Optional remaining UMMC pulls: R8, R7, age-stratified base counts.
 
 Secondary priorities:
 - Keep `data-sources.md` and this handoff file updated.
