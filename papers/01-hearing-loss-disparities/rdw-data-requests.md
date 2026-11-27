@@ -2,7 +2,7 @@
 
 **For**: Jake Harthcock (runs all queries; pastes aggregate numbers back).  
 **Status**: **ACTIVE.** Data use confirmed by Jake Harthcock 2026-11-26 per Cohort Explorer guide ([`../../data-use-rules.md`](../../data-use-rules.md)).  
-**Cohort**: ICD-10 **H90.3** (sensorineural hearing loss, bilateral), approximately 15,612 patients.  
+**Cohort**: ICD-10 **H90.3** (sensorineural hearing loss, bilateral), **15,612** patients (confirmed 2026-11-26). Encounters **[PENDING]**.  
 **Last updated**: 2026-11-26.
 
 ## Rules for every request
@@ -15,9 +15,10 @@
 
 ## Priority 1 — core Tables 1 and 2 (needed for the abstract)
 
-### R0. Cohort total (Step 1) — H-U1, Table 1
+### R0. Cohort total (Step 1) — H-U1, Table 1 — **DONE** (2026-11-26)
 - Filters: Diagnosis Codes = H90.3 only.
 - Report: Patients; Encounters.
+- **Result**: Patients = **15,612**. Encounters **[PENDING]** (not reported).
 
 ### R1. Race breakdown of the H90.3 cohort (Step 2) — H-U1, Table 1
 1. Keep H90.3 selected in Diagnosis Codes. Clear every other box.
@@ -72,10 +73,10 @@
 - H90.3 patients who ever had an ED encounter, by race. Report Patients each (only if time allows).
 
 ## How the numbers get used
-R0 to R3 fill Table 1 and H-U1 (race distribution vs RDW). R4 to R6 fill Table 2 and H-U2 to H-U4. R7 enables H-U5 and H-U6. R8 and R9 are the main robustness checks. R10 and R11 are optional covariates. Send results as plain text, one request at a time (R0 first).
+R0 to R3 fill Table 1 and H-U1 (race distribution vs RDW). R4 to R6 fill Table 2 and H-U2 to H-U4. R7 enables H-U5 and H-U6. R8 and R9 are the main robustness checks. R10 and R11 are optional covariates. Send results as plain text, one request at a time (R1 is next).
 
 ## Status checklist
-- [ ] R0 total
+- [x] R0 total — Patients = 15,612 (2026-11-26); Encounters **[PENDING]**
 - [ ] R1 race
 - [ ] R2 sex and age
 - [ ] R3 RDW race denominator
