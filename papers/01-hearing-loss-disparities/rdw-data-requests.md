@@ -2,7 +2,7 @@
 
 **For**: Jake Harthcock (runs all queries; pastes aggregate numbers back).  
 **Status**: **ACTIVE.** Data use confirmed by Jake Harthcock 2026-11-26 per Cohort Explorer guide ([`../../data-use-rules.md`](../../data-use-rules.md)).  
-**Cohort**: ICD-10 **H90.3** (sensorineural hearing loss, bilateral), **15,612** patients (0.94% of RDW) and **4,244,868** encounters (5.79%), confirmed from a 2026-11-26 screenshot (Pt Diagnosis Codes (OR) = H90.3 only; Current Selections: `Pt_Dx_Code ORMode H90.3`). Data window: encounters between **1/1/2013** and **9/30/2026**.  
+**Cohort**: ICD-10 **H90.3** (sensorineural hearing loss, bilateral), **15,612** patients (0.94% of RDW) and **4,244,868** encounters (5.79%), confirmed from a 2026-11-26 screenshot (Pt Diagnosis Codes (OR) = H90.3 only; Current Selections: `Pt_Dx_Code ORMode H90.3`). Data window: encounters between **1/1/2013** and **9/30/2026**. Race uses the **FirstRace** field (Data Filters → Patient Demographics → Race).  
 **Last updated**: 2026-11-26.
 
 ## Rules for every request
@@ -20,47 +20,52 @@
 - Report: Patients; Encounters.
 - **Result**: Patients = **15,612** (0.94% of RDW). Encounters = **4,244,868** (5.79%). Data window: encounters between **1/1/2013** and **9/30/2026**.
 
-### R1. Race breakdown of the H90.3 cohort (Step 2) — H-U1, Table 1 — **percentages recorded** (2026-11-26, screenshot); exact counts **[PENDING]**
-- Location confirmed: **Data Filters** page → **Patient Demographics** tab → Demographic Search list → **Race**. The dropdown shows each value’s percentage of the current (H90.3) cohort. Race is not on the Patient Filters (Diagnosis / Procedures / Medications / Labs) screen.
-- **Percentages, exactly as displayed** (H90.3, Patients = 15,612). Do not back-calculate counts. A displayed 0.0% implies fewer than 11 patients and is recorded as `<11 (suppressed)`.
-  - (blank/unlabeled row) 0.0% → `<11 (suppressed)`
+### R1. Race breakdown of the H90.3 cohort (Step 2) — H-U1, Table 1 — **DONE** (exact counts, 2026-11-26, screenshots)
+- Location confirmed: **Data Filters** page → **Patient Demographics** tab → Demographic Search list → **Race**. Current Selections label: **FirstRace**. Race is not on the Patient Filters (Diagnosis / Procedures / Medications / Labs) screen.
+- **Result — patient counts** (header totals with H90.3 + one FirstRace value selected):
+  - White or Caucasian: Patients = **8,597** (0.52% of RDW; **55.1%** of 15,612 = 8,597 / 15,612); Encounters = **2,119,544** (2.89% of RDW; **49.9%** of 4,244,868 cohort encounters = 2,119,544 / 4,244,868); encounters per patient = **246.5** (2,119,544 / 8,597). Sex (pie chart with this FirstRace selected): Female **50.81%**, Male **49.19%**.
+  - Black or African American: Patients = **6,176** (0.37% of RDW; **39.6%** of 15,612 = 6,176 / 15,612); Encounters = **2,000,250** (2.73% of RDW; **47.1%** of 4,244,868 = 2,000,250 / 4,244,868); encounters per patient = **323.9** (2,000,250 / 6,176). Sex: Female **61.33%**, Male **38.67%**.
+  - Other / unknown combined: Patients = **839** (**5.4%** of 15,612), computed as 15,612 − 8,597 − 6,176. Reported as one combined row only.
+- Patient-share percentages are rounded to one decimal and sum to 100.1% because of that rounding. The 0.52% and 0.37% of RDW figures are recorded as displayed; do not back-calculate an RDW denominator from them (that total stays **[PENDING]** until R3). Exact sex counts **[PENDING]**; do not back-calculate them from the pie-chart percentages.
+- **Encounter shares vs patient shares.** The Race dropdown percentages are encounter shares of the 4,244,868 H90.3 encounters, not patient shares (Black 47.1% matches 2,000,250 / 4,244,868; White 49.9% matches 2,119,544 / 4,244,868). They are kept as encounter-share notes only and are **not** converted to patient counts. A displayed 0.0% encounter share is not treated as a patient count and is not recorded as `<11 (suppressed)` from the dropdown alone.
+  - (blank/unlabeled row) 0.0%
   - American Indian or Alaska Native 0.2%
   - Asian 0.5%
-  - Asian Indian 0.0% → `<11 (suppressed)`
+  - Asian Indian 0.0%
   - Black or African American 47.1%
   - Hispanic 0.2%
   - MS Band Choctaw Indian 0.2%
   - Multiracial 0.4%
-  - Native Hawaiian or Other Pacific Islander 0.0% → `<11 (suppressed)`
+  - Native Hawaiian or Other Pacific Islander 0.0%
   - Other 1.1%
   - Patient Refused 0.1%
   - Unknown 0.2%
   - White or Caucasian 49.9%
-- Grayed out (no patients in this selection): Chinese, Filipino, Guamanian or Chamorro, Japanese, Korean, Native Hawaiian, Other Pacific Islander, Samoan, Vietnamese.
-- **Still needed — exact header counts (do this next):**
-  1. Keep H90.3 selected. On Data Filters → Patient Demographics, confirm the header still shows Patients = 15,612.
-  2. Click **Black or African American**. Report the **Patients** number in the header.
-  3. Click **White or Caucasian** (replaces the Black selection). Report the **Patients** number.
-  4. Reply as `Black or African American: Patients = ____ ; White or Caucasian: Patients = ____`. Counts under 11 as `<11 (suppressed)`.
-- Ethnicity (Hispanic or Latino / not) as a separate box, if present, remains **[PENDING]** (Hispanic also appears as a Race-list value at 0.2%).
+- Grayed out (no patients in this selection, as previously observed): Chinese, Filipino, Guamanian or Chamorro, Japanese, Korean, Native Hawaiian, Other Pacific Islander, Samoan, Vietnamese.
+- Ethnicity (Hispanic or Latino / not) as a separate box, if present, remains **[PENDING]** (Hispanic also appears as a Race-list value at 0.2% encounter share).
 
 ### R2. Sex and age of the H90.3 cohort — Table 1 — **sex percentages recorded** (2026-11-26, screenshot); exact counts and age **[PENDING]**
-- Sex pie chart on the Patient Demographics screen (same screenshot as R1): Female **54.84%**, Male **45.16%**. Exact Patients counts **[PENDING]**; do not back-calculate them. If needed later, click Female, then Male, and report the header Patients number for each.
+- Overall-cohort sex pie chart on the Patient Demographics screen (H90.3, no race selected): Female **54.84%**, Male **45.16%**. This is likely patient-based; the pie chart basis is unconfirmed. Exact Patients counts **[PENDING]**; do not back-calculate them. If needed later, click Female, then Male, and report the header Patients number for each.
+- Sex by race was captured with the R1 FirstRace clicks (pie chart with one race selected): White Female **50.81%**, Male **49.19%**; Black Female **61.33%**, Male **38.67%**. Exact by-race sex counts **[PENDING]**; not back-calculated.
 - Age: use the **Age** box to read counts for age bands (adult bands such as 18–39, 40–59, 60–74, 75 and older, or whatever the box offers; tell me the bands you used). One value or range at a time. Report Patients per band.
 
 ### R3. Denominator: all RDW patients by race — H-U1
 - Filters: clear **everything** (no diagnosis). Report total Patients (and, if shown, total Encounters).
 - Then Race one value at a time (same method as R1), report Patients per value. Optionally repeat with the same age bands as R2 so the comparison can be age-matched.
 - Why: tests whether Black patients are over- or under-represented in the H90.3 cohort relative to the population the RDW draws from.
-- Note: the R0 header shows the H90.3 cohort as **0.94%** of RDW patients (and **5.79%** of encounters). Those percentages imply denominators exist on the unfiltered view, but the exact totals stay **[PENDING]** until you report them from the cleared-filter header. Do not back-calculate them from the percentages.
+- Note: the R0 header shows the H90.3 cohort as **0.94%** of RDW patients (and **5.79%** of encounters). The R1 race-filtered headers show White H90.3 patients as **0.52%** of RDW and Black H90.3 patients as **0.37%**. Those percentages imply denominators exist on the unfiltered view, but the exact totals stay **[PENDING]** until you report them from the cleared-filter header. Do not back-calculate them from the percentages. H-U1 cannot be tested until this denominator (and the RDW race split) is reported.
 
-### R4. Audiology use among H90.3 patients — H-U2, Table 2
-- Find the box that holds the clinic, department, or provider specialty (look under Patient Filters, Encounter Filters, and the standard data filters; send me the box names you see). Select **Audiology** (use the exact label; if there are several audiology labels, report each one separately, never combined by guesswork).
-- Filters: H90.3 + Audiology (patient-level). Report Patients overall.
-- Then add **Race**, one value at a time (at least Black, White; then every other value that is not suppressed). Report Patients each.
+### R4. Audiology use among H90.3 patients — H-U2, Table 2 — **next** (report field names before selecting)
+- The department or specialty filter location is not yet confirmed. **Do not select a value until you have sent the exact field names.**
+- Click-by-click:
+  1. Confirm you are on the **Data Filters** page and that only **H90.3** is selected in diagnosis (Current Selections: `Pt_Dx_Code ORMode H90.3`; header Patients = 15,612; Encounters = 4,244,868). Clear any FirstRace / Race selection first.
+  2. The Data Filters page has these tabs: **Patient Demographics**, **Admissions & Visits**, **ED Visits**, **Procedures**, **Medications**, **Labs**, **Diagnosis**. Open **Admissions & Visits** and look for a department, clinic, specialty, or provider-specialty field. Write down each field’s exact label and leave it unselected.
+  3. If you do not see such a field on Admissions & Visits, check the other Data Filters tabs, the Patient Filters page, and the page reached by **Proceed to Encounter Filters**. Send the exact names and locations of any candidate fields you find.
+  4. Reply with those exact field names (and which tab or page each is on) before clicking any value. If more than one field could be audiology or ENT, list them all and wait for confirmation.
+  5. After the field is confirmed: keep H90.3 selected; select the exact Audiology label (use the exact label; if there are several audiology labels, report each one separately, never combined by guesswork); report header **Patients** (and Encounters if shown). Then add **FirstRace**, one value at a time (**Black or African American**, then **White or Caucasian**). Report Patients each. Counts under 11 as `<11 (suppressed)`.
 
 ### R5. ENT use among H90.3 patients — H-U3, Table 2
-- Same as R4 with **Otolaryngology / ENT** (exact label).
+- Same as R4, after the field is confirmed, with the exact **Otolaryngology / ENT** label (use the label as it appears; if several, report each separately).
 
 ### R6. Audiology **or** ENT among H90.3 patients — H-U4 (primary outcome), Table 2
 - The guide says the Patient Filters support advanced AND/OR/NOT searches at the patient level (pp. 5–6). If available, set Diagnosis = H90.3 AND (Audiology OR Otolaryngology). Report Patients overall and by race (Black, White, then others).
@@ -90,14 +95,14 @@
 - H90.3 patients who ever had an ED encounter, by race. Report Patients each (only if time allows).
 
 ## How the numbers get used
-R0 to R3 fill Table 1 and H-U1 (race distribution vs RDW). R4 to R6 fill Table 2 and H-U2 to H-U4. R7 enables H-U5 and H-U6. R8 and R9 are the main robustness checks. R10 and R11 are optional covariates. Send results as plain text, one request at a time (R1 is next).
+R0 to R3 fill Table 1 and H-U1 (race distribution vs RDW). R1 cohort race counts are in; R3 (RDW base-population race) is still needed to finish H-U1. R4 to R6 fill Table 2 and H-U2 to H-U4. R7 enables H-U5 and H-U6. R8 and R9 are the main robustness checks. R10 and R11 are optional covariates. Send results as plain text, one request at a time (**R4 is next**: report department/specialty field names first, before selecting a value).
 
 ## Status checklist
 - [x] R0 total — Patients = 15,612 (0.94% of RDW); Encounters = 4,244,868 (5.79%); window 1/1/2013–9/30/2026 (screenshot, 2026-11-26)
-- [x] R1 race percentages — recorded 2026-11-26 (Black or African American 47.1%; White or Caucasian 49.9%; full list under R1); exact header counts **[PENDING]**
-- [x] R2 sex percentages — Female 54.84%, Male 45.16% (pie chart, 2026-11-26); exact counts and age **[PENDING]**
-- [ ] R3 RDW race denominator
-- [ ] R4 audiology
+- [x] R1 race exact counts — done 2026-11-26 (FirstRace): White or Caucasian Patients = 8,597 (55.1% of 15,612), Encounters = 2,119,544; Black or African American Patients = 6,176 (39.6%), Encounters = 2,000,250; other/unknown combined = 839 (15,612 − 8,597 − 6,176). Dropdown 47.1% / 49.9% are encounter shares, not patient shares.
+- [x] R2 sex percentages — overall Female 54.84%, Male 45.16% (pie chart, no race selected; likely patient-based, basis unconfirmed); sex by race recorded with R1 (White F 50.81% / M 49.19%; Black F 61.33% / M 38.67%); exact counts and age **[PENDING]**
+- [ ] R3 RDW race denominator (still required to finish H-U1)
+- [ ] R4 audiology — next: report department/specialty field names before selecting
 - [ ] R5 ENT
 - [ ] R6 audiology or ENT
 - [ ] R7 residence variable
