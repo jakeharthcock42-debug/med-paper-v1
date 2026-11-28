@@ -200,7 +200,7 @@ A living table of late-2026 and 2027 abstract deadlines, with sources, is in [`p
 
 ## 9. Abstract writing guide (added 2026-11-27)
 
-A section-by-section how-to for conference and journal abstracts is in [`guides/abstract-writing-guide.md`](guides/abstract-writing-guide.md). It covers title, structured sections, vignette format, number reporting, observational and ecological language, style, venue limits (including the project standard of ≤500 words including section labels), a pre-submission checklist, and a skeleton template. Sources are listed in that file; they are reporting-guideline and how-to references, not datasets, so they were not added to `data-sources.md`. Use the guide when drafting or revising abstracts for Papers 01–04 (and future papers). Recheck each venue’s official page before submission. Jake submits; agents do not.
+A section-by-section how-to for conference and journal abstracts is in [`guides/abstract-writing-guide.md`](guides/abstract-writing-guide.md). It covers title, structured sections, vignette format, number reporting, observational and ecological language, style, venue limits (including the project standard of ≤500 words including section labels), a pre-submission checklist, and a skeleton template. Sources are listed in that file; they are reporting-guideline and how-to references, not datasets, so they were not added to `data-sources.md`. Use the guide when drafting or revising abstracts for Papers 01–04 (and future papers). Recheck each venue’s official page before submission. Jake submits; agents do not. A 2026-11-27 review of the current abstracts against the guide is in [`guides/abstract-review-2026-11-27.md`](guides/abstract-review-2026-11-27.md) (review only; abstracts were not edited).
 
 ---
 
