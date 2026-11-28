@@ -29,7 +29,8 @@ med-paper-v1/
 ├── data-use-rules.md                   ← Cohort Explorer user-guide rules, with page cites
 ├── PROJECT-HANDOFF.md                  ← this file
 ├── guides/
-│   └── abstract-writing-guide.md       ← how-to for conference/journal abstracts (added 2026-11-27)
+│   ├── abstract-writing-guide.md       ← how-to for conference/journal abstracts (added 2026-11-27)
+│   └── abstract-review-2026-11-27.md   ← review of Papers 01–04 abstracts; fixes applied 2026-11-27
 ├── data/public/                        ← merged MS county public data + State Cancer Profiles extract (Papers 02–05)
 ├── scripts/public-data/                ← pipeline + analysis scripts for Papers 02–05
 └── papers/
@@ -40,7 +41,7 @@ med-paper-v1/
     └── 01-hearing-loss-disparities/
         ├── README.md                   ← status, aims, hypotheses, next actions
         ├── draft-v1.md                 ← prior working manuscript
-        ├── draft-v2.md                 ← current manuscript (formal citations; abstract v2; Tables 1–5; Appendix A revision log)
+        ├── draft-v2.md                 ← current manuscript (formal citations; abstract revised 2026-11-27, 391 words; Tables 1–5; Appendix A revision log)
         ├── county-analysis.md          ← county-level public-data results (82 MS counties)
         ├── data/                       ← county files; r9_mh_*; hs1_sex_*; hs2_r3_analysis.py / hs2_r3_results.md
         ├── rdw-data-requests.md        ← prioritized list of UMMC Explorer numbers (R0, R1, R3–R5, R9, H-S1, H-S2 done)
@@ -79,7 +80,7 @@ Other codes explored earlier (single-select only):
 
 ### Manuscript Status (`papers/01-hearing-loss-disparities/draft-v1.md`)
 - Hypotheses tightened 2026-11-26 (Jake approved): one primary (H-U2, including persistence after age stratification); secondary H-S1, H-S2, H-S3; county associations are ecological context; ENT hypotheses H-U3/H-U4 retired after observing 96.74% Otolaryngology contact (revision log in `draft-v2.md` Appendix A).
-- Conference abstract v2 is in the draft (under the ≤500-word project standard). Tables 1–5 are populated for the completed UMMC pulls, including H-S1 (Table 4) and H-S2 / R3 (Table 5).
+- Conference abstract in `draft-v2.md` was revised 2026-11-27 against the writing-guide review (391 words including section labels; UMMC kept in the main text, with a note that an SGIM submission must remove institution identifiers). Tables 1–5 are populated for the completed UMMC pulls, including H-S1 (Table 4) and H-S2 / R3 (Table 5).
 - Formal literature citations are in `draft-v2.md` (2026-11-27; 12 PubMed-verified PMIDs plus the official RDW citation and public-data sources). Official RDW citation and human-protection boilerplate (UMMC CIA internal guidance, Jake 2026-11-27) are recorded; see the standard language in section 5 and [`data-use-rules.md`](data-use-rules.md).
 
 ### Status as of 2026-11-27
@@ -181,12 +182,12 @@ Because the warehouse is date-shifted, displayed calendar dates and windows may 
 
 ## 7. Current Priority (as of 2026-11-27)
 
-**Highest priority:** Paper 01 **draft-v2 is done** (2026-11-27; formal literature citations verified; abstract 449 words). Official RDW citation and human-protection boilerplate are recorded (section 5). Next: Jake reviews `draft-v2.md`, picks a target venue and deadline, then `final.md`. Optional remaining UMMC pulls: R8, R7, age-stratified base counts.
+**Highest priority:** Paper 01 **draft-v2 is done** (2026-11-27; formal literature citations verified; abstract revised 2026-11-27, 391 words). Official RDW citation and human-protection boilerplate are recorded (section 5). Next: Jake reviews `draft-v2.md`, picks a target venue and deadline, then `final.md`. Optional remaining UMMC pulls: R8, R7, age-stratified base counts. **Bookmarked, on hold (Jake 2026-11-27):** AAO-HNSF 1,800-character short version of Paper 01 (deadline Dec 16, 2026).
 
 Secondary priorities:
 - Keep `data-sources.md` and this handoff file updated.
 - Jake has not yet picked which of Papers 02–05 to start next (02, then 04, was recommended).
-- Papers 02–05 draft-v1 abstracts (public data only) are ready for Jake's review (priority 02, 04; 03 has a novelty overlap; 05 is weak and has been merged into 02 as a cancer pair; abstract limit is now ≤500 words). See sections 3c and 3d.
+- Papers 02–04 draft-v1 abstracts (public data only) were revised 2026-11-27 against the writing-guide review (370, 299, and 312 words) and are ready for Jake's review (priority 02, 04; 03 has a novelty overlap; 05 is merged into 02 as a cancer pair; abstract limit is ≤500 words). See sections 3c and 3d and [`guides/abstract-review-2026-11-27.md`](guides/abstract-review-2026-11-27.md).
 - Conference abstract deadlines: see [`papers/conference-targets.md`](papers/conference-targets.md).
 - Abstract-writing reference: see [`guides/abstract-writing-guide.md`](guides/abstract-writing-guide.md).
 
@@ -200,7 +201,7 @@ A living table of late-2026 and 2027 abstract deadlines, with sources, is in [`p
 
 ## 9. Abstract writing guide (added 2026-11-27)
 
-A section-by-section how-to for conference and journal abstracts is in [`guides/abstract-writing-guide.md`](guides/abstract-writing-guide.md). It covers title, structured sections, vignette format, number reporting, observational and ecological language, style, venue limits (including the project standard of ≤500 words including section labels), a pre-submission checklist, and a skeleton template. Sources are listed in that file; they are reporting-guideline and how-to references, not datasets, so they were not added to `data-sources.md`. Use the guide when drafting or revising abstracts for Papers 01–04 (and future papers). Recheck each venue’s official page before submission. Jake submits; agents do not. A 2026-11-27 review of the current abstracts against the guide is in [`guides/abstract-review-2026-11-27.md`](guides/abstract-review-2026-11-27.md) (review only; abstracts were not edited).
+A section-by-section how-to for conference and journal abstracts is in [`guides/abstract-writing-guide.md`](guides/abstract-writing-guide.md). It covers title, structured sections, vignette format, number reporting, observational and ecological language, style, venue limits (including the project standard of ≤500 words including section labels), a pre-submission checklist, and a skeleton template. Sources are listed in that file; they are reporting-guideline and how-to references, not datasets, so they were not added to `data-sources.md`. Use the guide when drafting or revising abstracts for Papers 01–04 (and future papers). Recheck each venue’s official page before submission. Jake submits; agents do not. A 2026-11-27 review of the abstracts against the guide is in [`guides/abstract-review-2026-11-27.md`](guides/abstract-review-2026-11-27.md). Jake approved applying the fixes the same day; the revised abstracts are in Paper 01 `draft-v2.md` (391 words) and Papers 02–04 `draft-v1.md` (370, 299, and 312 words). **Bookmarked, on hold (Jake 2026-11-27):** AAO-HNSF 1,800-character short version of Paper 01 (deadline Dec 16, 2026).
 
 ---
 

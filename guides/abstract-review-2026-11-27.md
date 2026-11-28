@@ -1,11 +1,12 @@
 # Abstract review against the writing guide
 
 **Date:** 2026-11-27  
-**Scope:** Review only. Abstracts were not edited.  
+**Scope:** Review dated 2026-11-27. Fixes below were applied the same day (Jake approved). Abstracts now live in Paper 01 `draft-v2.md` and Papers 02–04 `draft-v1.md`. No AAO-HNSF short version was written (**on hold per Jake 2026-11-27**).  
+**Revised word counts (same method):** Paper 01 **391**; Paper 02 **370**; Paper 03 **299**; Paper 04 **312**. All ≤500 words including labels.  
 **Guide:** [`guides/abstract-writing-guide.md`](abstract-writing-guide.md)  
 **Versions scored:** Paper 01 conference abstract v2 in `papers/01-hearing-loss-disparities/draft-v2.md` (same text also appears in `draft-v1.md`; v2 is the latest file). Papers 02–04 draft-v1 abstracts in their paper folders (no later draft exists).
 
-**Word-count method:** Whitespace-separated tokens after stripping markdown bold markers, including section labels, excluding the title. Character counts are the same text with whitespace collapsed to single spaces, including labels and spaces, for comparison with AAO-HNSF (1,800 characters for the four sections combined) and SGIM 2027 (3,000 characters including spaces for Background–Conclusions; [official page](https://annualmeeting.sgim.org/present/scientific-abstracts/), confirmed 2026-11-27). Paper 01’s draft header still says 449 words; a direct token count of the current text is 378.
+**Word-count method:** Whitespace-separated tokens after stripping markdown bold markers, including section labels, excluding the title. Character counts are the same text with whitespace collapsed to single spaces, including labels and spaces, for comparison with AAO-HNSF (1,800 characters for the four sections combined) and SGIM 2027 (3,000 characters including spaces for Background–Conclusions; [official page](https://annualmeeting.sgim.org/present/scientific-abstracts/), confirmed 2026-11-27). Paper 01’s draft header previously said 449 words; a direct token count of the pre-revision text was 378. The revised header uses the counted total.
 
 All four abstracts are within the project standard of ≤500 words including labels. None currently fits AAO-HNSF’s 1,800-character limit without cutting. Paper 01 fits SGIM’s 3,000-character limit (2,673 characters) if no table or figure is added.
 
@@ -25,11 +26,16 @@ All four abstracts are within the project standard of ≤500 words including lab
 - County data are correctly labeled “ecological, not confirmatory,” and the primary hypothesis is stated in Methods.
 
 ### Fixes
-1. **Pending result in a submission draft.** Phrase: “Rural residence remains [PENDING].” The guide forbids pending results in a submitted abstract. Cut this sentence until the pull is done, or complete R7/H-S3 first and then report the number.
-2. **Design is not named (STROBE 1(a)).** Phrase: “We analyzed de-identified UMMC Patient Cohort Explorer counts…” Suggested: “In this cross-sectional analysis of routinely collected data, we used de-identified [source] counts…” Move the window “1/1/2013–9/30/2026” from Results into Methods (RECORD 1.2).
-3. **Results lead with secondary county findings, not the primary Audiology hypothesis.** Phrase: “Age-adjusted hearing disability was higher in rural than non-rural counties (7.54% vs 6.91%; p = 1.5e-4; rho = 0.477)…” Open Results with the H90.3 cohort N and the Audiology contrast (already well reported later). Keep the county sentences as brief ecological context, and do not lead a contrast with a P value; add a 95% CI only if it is already in `county-analysis.md`.
-4. **“RDW” is never spelled out.** Phrase: “The unfiltered RDW included…” Suggested: “The unfiltered research data warehouse (RDW) included…”
-5. **Venue-specific, if submitting to SGIM or AAO-HNSF.** SGIM disqualifies abstracts that identify the institution; “UMMC Patient Cohort Explorer” and “UMMC-only capture” should become something like “an academic medical center in the Southern region.” AAO-HNSF needs the title cut from 18 words to 15 and the body cut from 2,673 to ≤1,800 characters.
+1. **Pending result in a submission draft.** Phrase: “Rural residence remains [PENDING].” The guide forbids pending results in a submitted abstract. Cut this sentence until the pull is done, or complete R7/H-S3 first and then report the number.  
+   **Applied 2026-11-27:** Sentence cut. Rural residence remains open as a paper-level gap (R7/H-S3), not in the abstract.
+2. **Design is not named (STROBE 1(a)).** Phrase: “We analyzed de-identified UMMC Patient Cohort Explorer counts…” Suggested: “In this cross-sectional analysis of routinely collected data, we used de-identified [source] counts…” Move the window “1/1/2013–9/30/2026” from Results into Methods (RECORD 1.2).  
+   **Applied 2026-11-27:** Design named; window moved into Methods. “UMMC” kept in the main version.
+3. **Results lead with secondary county findings, not the primary Audiology hypothesis.** Phrase: “Age-adjusted hearing disability was higher in rural than non-rural counties (7.54% vs 6.91%; p = 1.5e-4; rho = 0.477)…” Open Results with the H90.3 cohort N and the Audiology contrast (already well reported later). Keep the county sentences as brief ecological context, and do not lead a contrast with a P value; add a 95% CI only if it is already in `county-analysis.md`.  
+   **Applied 2026-11-27:** Results now open with the RDW and H90.3 cohort, then the Audiology contrast. County findings moved to the end and report the already-computed Welch 95% CI (difference 0.63 points, 0.28 to 0.98) instead of leading with p = 1.5e-4. No new CI was computed.
+4. **“RDW” is never spelled out.** Phrase: “The unfiltered RDW included…” Suggested: “The unfiltered research data warehouse (RDW) included…”  
+   **Applied 2026-11-27:** Spelled out at first use.
+5. **Venue-specific, if submitting to SGIM or AAO-HNSF.** SGIM disqualifies abstracts that identify the institution; “UMMC Patient Cohort Explorer” and “UMMC-only capture” should become something like “an academic medical center in the Southern region.” AAO-HNSF needs the title cut from 18 words to 15 and the body cut from 2,673 to ≤1,800 characters.  
+   **Applied in part 2026-11-27:** A SGIM note was added that a submission must remove institution identifiers; “UMMC” is kept in the main abstract. No separate AAO-HNSF 1,800-character short version was written (**on hold per Jake 2026-11-27**).
 
 ### [PENDING] gaps
 Rural residence (in the abstract itself). Still open in the paper, not all in the abstract: R7/H-S3, R8 (diagnosis origin), male all-patients count, and an age-adjusted prevalence comparison.
@@ -50,10 +56,14 @@ Rural residence (in the abstract itself). Still open in the paper, not all in th
 - The abstract uses the available room under 500 words to cover the merged cancer pair without feeling empty.
 
 ### Fixes
-1. **Several contrasts are reported with a P value and no interval.** Phrases: “more late-stage diagnosis (73.1% vs 64.8%; approximate p<0.001)”; “median 14.6 vs 13.9; p=0.31”; “42% vs 41%; p=0.41.” Keep the two rates or medians; add a 95% CI only if it is already in the results tables; otherwise drop the isolated P value. The same applies to “incidence ratio 1.04,” which has no interval at all.
-2. **Conclusions reach past the data.** Phrase: “pointing to stage, treatment, and follow-up.” Treatment and follow-up were not measured. Suggested: “…is diagnosed later in Black residents despite lower incidence. Treatment and follow-up were not measured. County dental and primary care supply tracked stage.”
-3. **Too many abbreviations** (NPCR, NCHS, USDA, HRSA, CDC, plus US). Spell out the first use of NPCR and NCHS, or drop the less essential acronyms.
-4. **Venue-specific:** over AAO-HNSF’s 1,800-character and 15-word-title limits if the oral-cavity half is submitted there. Live State Cancer Profiles values should be re-checked before submission (noted in the draft; not a wording defect).
+1. **Several contrasts are reported with a P value and no interval.** Phrases: “more late-stage diagnosis (73.1% vs 64.8%; approximate p<0.001)”; “median 14.6 vs 13.9; p=0.31”; “42% vs 41%; p=0.41.” Keep the two rates or medians; add a 95% CI only if it is already in the results tables; otherwise drop the isolated P value. The same applies to “incidence ratio 1.04,” which has no interval at all.  
+   **Applied 2026-11-27:** Isolated p-values dropped; the two rates or medians were kept. An approximate 95% CI for the breast incidence ratio was computed from published rate CIs (130.6, 126.6–134.8 vs 125.5, 122.5–128.6) with the paper’s existing log-normal method: **1.04 (1.00–1.08)**. Calculation: [`papers/02-oral-pharynx-cancer-disparities/results/abstract-ci-breast-incidence-rr.md`](../papers/02-oral-pharynx-cancer-disparities/results/abstract-ci-breast-incidence-rr.md). No CI was added for late-stage percentages (only rounded reconstructed counts), metro/nonmetro medians, or Medicare mammography (no CI or usable counts in the repo).
+2. **Conclusions reach past the data.** Phrase: “pointing to stage, treatment, and follow-up.” Treatment and follow-up were not measured. Suggested: “…is diagnosed later in Black residents despite lower incidence. Treatment and follow-up were not measured. County dental and primary care supply tracked stage.”  
+   **Applied 2026-11-27:** Wording updated as suggested.
+3. **Too many abbreviations** (NPCR, NCHS, USDA, HRSA, CDC, plus US). Spell out the first use of NPCR and NCHS, or drop the less essential acronyms.  
+   **Applied 2026-11-27:** NPCR, NCHS, USDA, and HRSA spelled out at first use.
+4. **Venue-specific:** over AAO-HNSF’s 1,800-character and 15-word-title limits if the oral-cavity half is submitted there. Live State Cancer Profiles values should be re-checked before submission (noted in the draft; not a wording defect).  
+   **Not applied (venue version):** No AAO-HNSF short version was written (on hold per Jake 2026-11-27). SCP re-verification remains a pre-submission note, not a wording fix.
 
 ### [PENDING] gaps
 None inside the abstract. Before submission: re-verify State Cancer Profiles on the live site (draft status).
@@ -74,9 +84,12 @@ None inside the abstract. Before submission: re-verify State Cancer Profiles on 
 - Section balance is close to the guide’s practical allocation, and the ecological caveat is present. There is still room under 500 words to add intervals where they are missing.
 
 ### Fixes
-1. **Descriptive contrasts lean on a P value or a ratio without an interval.** Phrase: “median 742 vs 601 per 100,000; p<0.001); statewide rates were 715 vs 550 (ratio 1.30).” Keep the 71-of-80 count and the medians; add a 95% CI for the ratio only if it is already computed in the results files.
-2. **Conclusions overstate what an ecological model can say.** Phrase: “is not closed by greater physician supply.” Suggested: “was not narrower in counties with greater physician supply, which tracked White but not Black mortality.”
-3. **Spell out or reduce abbreviations** (NCHS, HRSA, MD+DO, CDC, USDA). “US” and “PCP” if used should be clear on first mention (the abstract says “primary care physicians” in Methods, which is good).
+1. **Descriptive contrasts lean on a P value or a ratio without an interval.** Phrase: “median 742 vs 601 per 100,000; p<0.001); statewide rates were 715 vs 550 (ratio 1.30).” Keep the 71-of-80 count and the medians; add a 95% CI for the ratio only if it is already computed in the results files.  
+   **Applied 2026-11-27:** Kept “71 of 80 counties” and the medians 742 vs 601; kept statewide rates 715 vs 550; dropped p<0.001 and ratio 1.30 (no 95% CI or counts were in the repo).
+2. **Conclusions overstate what an ecological model can say.** Phrase: “is not closed by greater physician supply.” Suggested: “was not narrower in counties with greater physician supply, which tracked White but not Black mortality.”  
+   **Applied 2026-11-27:** Wording updated as suggested.
+3. **Spell out or reduce abbreviations** (NCHS, HRSA, MD+DO, CDC, USDA). “US” and “PCP” if used should be clear on first mention (the abstract says “primary care physicians” in Methods, which is good).  
+   **Applied 2026-11-27:** NCHS, HRSA, MD+DO, and USDA spelled out at first use.
 
 ### [PENDING] gaps
 None in the abstract. The manuscript Methods still contain “[PENDING: IRB/RDW confirmation]”; that is outside the abstract, and Jake has already recorded that this database does not require IRB review.
@@ -97,9 +110,12 @@ None in the abstract. The manuscript Methods still contain “[PENDING: IRB/RDW 
 - Conclusions stay cautious on the null hospital finding and include the ecological caveat.
 
 ### Fixes
-1. **Some headline ratios and P values lack intervals.** Phrases: “infant mortality in 2022 was 12.1 vs 7.2 per 1,000 (rate ratio 1.68)”; “preterm birth in 2022–2024 was 18.5% vs 12.7%”; “median 17.9% vs 8.8%, p<0.001.” Keep the two rates; add 95% CIs only if they are already in the results tables.
-2. **“Unrelated” is stronger than an R² of 0.04 really allows.** Phrase: “a gap of about 9 percentage points unrelated to county poverty, segregation, primary care supply, or rurality (R²=0.04).” Suggested: “a gap of about 9 percentage points that was not associated with county poverty, segregation, primary care supply, or rurality (R²=0.04).”
-3. **Spell out OLS and SEs**, and expand OB-GYN at first use if the venue limits abbreviations.
+1. **Some headline ratios and P values lack intervals.** Phrases: “infant mortality in 2022 was 12.1 vs 7.2 per 1,000 (rate ratio 1.68)”; “preterm birth in 2022–2024 was 18.5% vs 12.7%”; “median 17.9% vs 8.8%, p<0.001.” Keep the two rates; add 95% CIs only if they are already in the results tables.  
+   **Applied 2026-11-27:** Kept the two rates and the county medians; dropped rate ratio 1.68 and p<0.001 (no 95% CIs or counts were in the repo).
+2. **“Unrelated” is stronger than an R² of 0.04 really allows.** Phrase: “a gap of about 9 percentage points unrelated to county poverty, segregation, primary care supply, or rurality (R²=0.04).” Suggested: “a gap of about 9 percentage points that was not associated with county poverty, segregation, primary care supply, or rurality (R²=0.04).”  
+   **Applied 2026-11-27:** Wording updated as suggested.
+3. **Spell out OLS and SEs**, and expand OB-GYN at first use if the venue limits abbreviations.  
+   **Applied 2026-11-27:** NCHS, HRSA, ordinary least squares (OLS), standard errors, and obstetrician-gynecologist (OB-GYN) spelled out at first use.
 
 ### [PENDING] gaps
 None in the abstract. Same manuscript-level IRB note as Paper 03, outside the abstract.
@@ -110,5 +126,5 @@ None in the abstract. Same manuscript-level IRB note as Paper 03, outside the ab
 
 - All four already meet the project’s ≤500-word cap and, for Papers 02–04, already name an ecological design and include an individual-level-confirmation caveat.
 - Papers 03 and 04 were drafted to an older ≤300-word target (282 and 297 words). They can take more of the 500-word allowance to add intervals and spell out abbreviations without new unsourced numbers.
-- AAO-HNSF is mainly relevant to Papers 01 and 02 (hearing / head and neck). Both need a shorter title and a substantially shorter body to meet 1,800 characters. Paper 01 is the one that also has an SGIM-specific institution-anonymizing rule.
+- AAO-HNSF is mainly relevant to Papers 01 and 02 (hearing / head and neck). Both would still need a shorter title and a substantially shorter body to meet 1,800 characters. **Bookmarked, on hold (Jake 2026-11-27):** AAO-HNSF 1,800-character short version of Paper 01 (deadline Dec 16, 2026). Paper 01 keeps “UMMC” in the main abstract and now has a SGIM note that a submission must remove institution identifiers.
 - Nothing was submitted. Jake submits after choosing a venue and applying that venue’s instructions.

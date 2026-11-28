@@ -9,7 +9,8 @@ med-paper-v1/
 ├── README.md                 # this file
 ├── data-sources.md           # living catalog of public + UMMC datasets
 ├── guides/                   # reusable how-to documents
-│   └── abstract-writing-guide.md
+│   ├── abstract-writing-guide.md
+│   └── abstract-review-2026-11-27.md
 ├── data/public/              # merged MS county public data + State Cancer Profiles extract
 ├── scripts/public-data/      # pipeline + analysis scripts (Papers 02–05)
 └── papers/                   # one subfolder per potential paper
@@ -28,17 +29,18 @@ med-paper-v1/
 
 | # | Working title | Status | Folder |
 |---|---------------|--------|--------|
-| 01 | Hearing loss disparities (UMMC + county context) | Ideation / early draft | [papers/01-hearing-loss-disparities](papers/01-hearing-loss-disparities) |
-| 02 | Oral cavity & pharynx, breast, and colorectal cancer disparities by race and rurality (merged with former 05) | **Public-data only; analysis complete; merged draft-v1 abstract (2026-11-27)** | [papers/02-oral-pharynx-cancer-disparities](papers/02-oral-pharynx-cancer-disparities) |
-| 03 | Primary care supply, poverty, Black–White gap in premature mortality | **Public-data only; analysis complete; draft-v1 abstract; partial novelty overlap (Lee 2026)** | [papers/03-primary-care-premature-mortality-gap](papers/03-primary-care-premature-mortality-gap) |
-| 04 | Maternal/infant outcomes (LBW, teen births, infant mortality) | **Public-data only; analysis complete; draft-v1 abstract (2026-11-27)** | [papers/04-maternal-infant-outcomes](papers/04-maternal-infant-outcomes) |
+| 01 | Hearing loss disparities (UMMC + county context) | **draft-v2 done; abstract revised 2026-11-27 (391 words)** | [papers/01-hearing-loss-disparities](papers/01-hearing-loss-disparities) |
+| 02 | Oral cavity & pharynx, breast, and colorectal cancer disparities by race and rurality (merged with former 05) | **Public-data only; analysis complete; merged draft-v1 abstract, revised 2026-11-27 (370 words)** | [papers/02-oral-pharynx-cancer-disparities](papers/02-oral-pharynx-cancer-disparities) |
+| 03 | Primary care supply, poverty, Black–White gap in premature mortality | **Public-data only; analysis complete; draft-v1 abstract, revised 2026-11-27 (299 words); partial novelty overlap (Lee 2026)** | [papers/03-primary-care-premature-mortality-gap](papers/03-primary-care-premature-mortality-gap) |
+| 04 | Maternal/infant outcomes (LBW, teen births, infant mortality) | **Public-data only; analysis complete; draft-v1 abstract, revised 2026-11-27 (312 words)** | [papers/04-maternal-infant-outcomes](papers/04-maternal-infant-outcomes) |
 | 05 | Cancer screening gaps and stage (Delta/rural) | **Merged into 02 on 2026-11-27 (Jake decision); folder kept for provenance** | [papers/05-screening-gaps-cancer-stage](papers/05-screening-gaps-cancer-stage) |
 
 **Decision (2026-11-27):** Papers 02–05 use public data only (no UMMC/RDW pulls); Paper 01 continues with UMMC data. See `PROJECT-HANDOFF.md` section 3c.
 
-**Abstract limit (project standard, 2026-11-27): ≤500 words including section labels.** Paper 05 was merged into Paper 02 as a cancer-disparities pair (see `PROJECT-HANDOFF.md` section 3d). For how to write abstracts, see [`guides/abstract-writing-guide.md`](guides/abstract-writing-guide.md).
+**Abstract limit (project standard, 2026-11-27): ≤500 words including section labels.** Paper 05 was merged into Paper 02 as a cancer-disparities pair (see `PROJECT-HANDOFF.md` section 3d). For how to write abstracts, see [`guides/abstract-writing-guide.md`](guides/abstract-writing-guide.md). Abstracts for Papers 01–04 were revised 2026-11-27 against [`guides/abstract-review-2026-11-27.md`](guides/abstract-review-2026-11-27.md). **Bookmarked, on hold (Jake 2026-11-27):** AAO-HNSF 1,800-character short version of Paper 01 (deadline Dec 16, 2026).
 
 ## Key shared resources
 
 - **[data-sources.md](data-sources.md)** — Datasets (CHR, MSTAHRS, PLACES, State Cancer Profiles, RDW, etc.) with access notes and ENT relevance.
 - **[guides/abstract-writing-guide.md](guides/abstract-writing-guide.md)** — Section-by-section how-to for conference and journal abstracts.
+- **[guides/abstract-review-2026-11-27.md](guides/abstract-review-2026-11-27.md)** — Review of Papers 01–04 abstracts; fixes applied 2026-11-27.
