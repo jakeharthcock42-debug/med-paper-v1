@@ -1,7 +1,7 @@
 # PROJECT HANDOFF — med-paper-v1
 
-**Owner:** Jake Harthcock, medical student at University of Mississippi Medical Center (UMMC)  
-**Date of handoff:** 26 November 2026  
+**Owner:** Jake Harthcock, medical student at University of Mississippi Medical Center (UMMC) 
+**Date of handoff:** 26 November 2026 
 **Purpose of this file:** Complete context dump so a new GrokBot (or any AI assistant) can immediately continue the project without prior conversation history.
 
 ---
@@ -28,6 +28,8 @@ med-paper-v1/
 ├── data-sources.md                     ← living catalog of public + UMMC datasets
 ├── data-use-rules.md                   ← Cohort Explorer user-guide rules, with page cites
 ├── PROJECT-HANDOFF.md                  ← this file
+├── guides/
+│   └── abstract-writing-guide.md       ← how-to for conference/journal abstracts (added 2026-11-27)
 ├── data/public/                        ← merged MS county public data + State Cancer Profiles extract (Papers 02–05)
 ├── scripts/public-data/                ← pipeline + analysis scripts for Papers 02–05
 └── papers/
@@ -67,8 +69,8 @@ Among UMMC patients with ICD-10 H90.3, are Black patients less likely than White
 ### Current Cohort Definition (as of 26 Nov 2026)
 - **Primary code:** ICD-10 **H90.3** (Sensorineural hearing loss, bilateral)
 - **N:** **15,612 patients**, 4,244,868 encounters, window 1/1/2013–9/30/2026 (R0, screenshot 2026-11-26)
-- **Why only one code?**  
-  The Patient Cohort Explorer interface only allows **one selection per filter box**. It is not possible to multi-select codes within the same box (Diagnosis Codes OR, Diagnosis Name OR, etc.). H90.3 was chosen because it is the largest clean, clinically coherent single code.
+- **Why only one code?** 
+ The Patient Cohort Explorer interface only allows **one selection per filter box**. It is not possible to multi-select codes within the same box (Diagnosis Codes OR, Diagnosis Name OR, etc.). H90.3 was chosen because it is the largest clean, clinically coherent single code.
 
 Other codes explored earlier (single-select only):
 - H90.5 ≈ 6,856
@@ -186,6 +188,7 @@ Secondary priorities:
 - Jake has not yet picked which of Papers 02–05 to start next (02, then 04, was recommended).
 - Papers 02–05 draft-v1 abstracts (public data only) are ready for Jake's review (priority 02, 04; 03 has a novelty overlap; 05 is weak and has been merged into 02 as a cancer pair; abstract limit is now ≤500 words). See sections 3c and 3d.
 - Conference abstract deadlines: see [`papers/conference-targets.md`](papers/conference-targets.md).
+- Abstract-writing reference: see [`guides/abstract-writing-guide.md`](guides/abstract-writing-guide.md).
 
 ---
 
@@ -195,5 +198,11 @@ A living table of late-2026 and 2027 abstract deadlines, with sources, is in [`p
 
 ---
 
-**End of handoff.**  
+## 9. Abstract writing guide (added 2026-11-27)
+
+A section-by-section how-to for conference and journal abstracts is in [`guides/abstract-writing-guide.md`](guides/abstract-writing-guide.md). It covers title, structured sections, vignette format, number reporting, observational and ecological language, style, venue limits (including the project standard of ≤500 words including section labels), a pre-submission checklist, and a skeleton template. Sources are listed in that file; they are reporting-guideline and how-to references, not datasets, so they were not added to `data-sources.md`. Use the guide when drafting or revising abstracts for Papers 01–04 (and future papers). Recheck each venue’s official page before submission. Jake submits; agents do not.
+
+---
+
+**End of handoff.** 
 Any new GrokBot should treat this file + the existing files in the repository as the complete current state of the project and continue directly from the “Immediate Next Steps” listed above.
