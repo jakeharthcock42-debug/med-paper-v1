@@ -1,7 +1,7 @@
 # 03 — Primary Care Supply and the Black–White Premature Mortality Gap Across Mississippi Counties
 
 **Working title**: Primary Care Physician Supply and the Black–White Gap in Premature Mortality Across Mississippi's 82 Counties: a Public-Data Ecological Analysis  
-**Status**: **Public-data analysis complete; abstract draft-v1 written (2026-11-27).** Public-data-only by Jake's decision (2026-11-27); no UMMC pull needed.  
+**Status**: **Public-data analysis complete; abstract draft-v1 written and revised 2026-11-27 (299 words).** Public-data-only by Jake's decision (2026-11-27); no UMMC pull needed.  
 **Natural fit**: Family medicine / internal medicine (MAFP, ACP Mississippi).  
 **Novelty check (PubMed, 2026-11-27) — PARTIAL OVERLAP, FLAG**: Lee JE et al., *Prev Chronic Dis* 2026;23:E32 (PMID 42594183) modeled county premature mortality (YPLL) in Mississippi 2015–2025 from the same County Health Rankings source, with spatial models and socioeconomic drivers, but not race-specific rates, primary care supply, or the Black–White gap. No Mississippi paper on primary care supply by race and premature mortality was found. The contribution here is the race-stratified PCP–mortality association and gap analysis; the descriptive Black–White gap is not new in itself. Moderate-to-low novelty; best as an MAFP/ACP abstract.
 
@@ -49,12 +49,12 @@ Reproducibility: `scripts/public-data/` (`p03.py`, `p03b.py`, `build_ahrf.py`, `
 Per Jake's 2026-11-27 decision, Papers 02–05 use public data only. The earlier UMMC Patient Cohort Explorer request (E11.x, I10 patients by race with ≥1 primary-care encounter; visit counts and A1c/BP control by race) is **not used**. It would show UMMC-clinic chronic-disease management by race, which public aggregates cannot, and remains a possible later extension.
 
 ## Next actions
-- [ ] Abstract trimmed to <=300 words (including section labels); Jake to review; 05 merge-into-02 vs drop pending Jake.
-- [ ] Jake: review/edit `draft-v1.md` abstract; decide whether the Lee 2026 overlap warrants reframing to emphasize the race-specific PCP finding.
+- [x] Abstract written and revised 2026-11-27 against [`guides/abstract-review-2026-11-27.md`](../../guides/abstract-review-2026-11-27.md) (Jake approved applying the fixes; 299 words, project limit ≤500). Isolated p-value and statewide ratio 1.30 dropped (no CI or counts in the repo); conclusions softened; NCHS/HRSA/MD+DO/USDA spelled out.
+- [ ] Jake to review the revised `draft-v1.md` abstract and decide whether the Lee 2026 overlap warrants reframing to emphasize the race-specific PCP finding.
 - [ ] Optional manual: CDC WONDER state-level premature deaths by race and cause; MSTAHRS county data (cells under 11 suppressed).
 - [ ] Optional: add NP/PA supply from AHRF (NPI-based variables `np_npi_23`) as a sensitivity analysis.
 
 ## Files
-- `draft-v1.md` — abstract (draft-v1), intro, methods, results tables, discussion, references
+- `draft-v1.md` — abstract (revised 2026-11-27, 299 words), intro, methods, results tables, discussion, references
 - `results/p03_results.md` — CHR/PLACES first pass; `results/p03b_results.md` — AHRF PCP analyses by race
 - `results/p03_county_dataset.csv`, `results/p03b_county_dataset.csv` — county aggregates (82 rows)

@@ -1,7 +1,7 @@
 # 02 — Racial Disparities in Oral Cavity & Pharynx, Breast, and Colorectal Cancer in Mississippi (merged with former Paper 05)
 
 **Working title**: Racial Disparities in Oral Cavity and Pharynx, Breast, and Colorectal Cancer Incidence, Stage, and Mortality in Mississippi: a Public-Data Ecological Analysis  
-**Status**: **Merged 2026-11-27 (Jake decision): former Paper 05 (screening gaps and cancer stage) folded into this paper as a cancer-disparities pair.** Public-data analysis complete; merged abstract written (draft-v1, 358 words). Public-data-only by Jake's decision (2026-11-27); no UMMC pull is needed or planned.  
+**Status**: **Merged 2026-11-27 (Jake decision): former Paper 05 (screening gaps and cancer stage) folded into this paper as a cancer-disparities pair.** Public-data analysis complete; merged abstract written (draft-v1) and revised 2026-11-27 against the writing-guide review (370 words). Public-data-only by Jake's decision (2026-11-27); no UMMC pull is needed or planned.  
 **Abstract limit (project standard, Jake 2026-11-27): ≤500 words including section labels.**  
 **Natural fit**: ENT / head & neck oncology (oral cavity and pharynx) plus family/internal medicine (screening-amenable cancers); companion to Paper 01 (hearing loss).  
 **Target**: UMMC Research Day, MAFP, ACP Mississippi abstracts → possible full paper  
@@ -71,14 +71,17 @@ Reproducibility: `scripts/public-data/` (`p02.py`, `p02b.py`, `p05.py`, `p05b.py
 Per Jake's 2026-11-27 decision, Papers 02–05 use public data only because UMMC pulls make him the bottleneck. Not used: (a) the earlier UMMC Patient Cohort Explorer request for this paper (ICD-10 C01–C06, C09, C10 by race/sex/age; ENT/radiation/medical oncology encounters; tobacco documentation), which would add subsite detail, local referral patterns and tobacco documentation; and (b) the former Paper 05 request (mammography, colonoscopy/FIT, and Pap/HPV procedure codes by race and primary-care encounter; stage from the tumor registry), which would link screening completion to stage at the patient level. Both remain possible later extensions.
 
 ## Next actions
-- [ ] Abstract merged and written (358 words; limit is now ≤500 words incl. labels, Jake 2026-11-27); Jake to review `draft-v1.md` and choose venue.
+- [x] Abstract merged and written (draft-v1, 2026-11-27); limit is ≤500 words incl. labels.
+- [x] Abstract revised 2026-11-27 against [`guides/abstract-review-2026-11-27.md`](../../guides/abstract-review-2026-11-27.md) (Jake approved applying the fixes; 370 words). Isolated p-values dropped; approximate 95% CI added for breast incidence ratio 1.04 (see `results/abstract-ci-breast-incidence-rr.md`); conclusions no longer imply treatment or follow-up were measured; NPCR/NCHS/USDA/HRSA spelled out.
+- [ ] Jake to review the revised `draft-v1.md` abstract and choose venue.
 - [ ] Papers/05 folder kept for provenance; its status is "Merged into 02 on 2026-11-27 (Jake decision)".
 - [ ] Re-verify SCP figures against live SCP pages immediately before any abstract submission (SCP updates yearly).
 - [ ] Optional: query MSTAHRS (https://mstahrs.msdh.ms.gov/) manually for oral cavity/pharynx death counts by race and region (interactive; suppress cells under 5 by source rule, and under 11 in anything we report).
 - [ ] Optional: US Cancer Statistics (https://gis.cdc.gov/Cancer/USCS/) manual query for MS subsite rates; CDC BRFSS Mississippi screening by race (unsmoothed) for Part B.
 
 ## Files
-- `draft-v1.md` — merged abstract (draft-v1), intro, methods, results tables (Parts A and B), discussion, references
+- `draft-v1.md` — merged abstract (revised 2026-11-27, 370 words), intro, methods, results tables (Parts A and B), discussion, references
+- `results/abstract-ci-breast-incidence-rr.md` — approximate 95% CI for the breast incidence ratio 1.04, from published rate CIs
 - `results/p02_results.md`, `results/p02b_results.md` — oral cavity/pharynx state and county output (AHRF dentist supply, HPSA, PLACES 2020)
 - `results/p02_county_dataset.csv`, `results/p02b_county_dataset.csv` — county-level aggregates (82 rows)
 - `../05-screening-gaps-cancer-stage/results/p05_results.md`, `p05b_results.md` and county CSVs — Part B output (provenance)

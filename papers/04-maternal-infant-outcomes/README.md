@@ -1,7 +1,7 @@
 # 04 — Maternal and Infant Outcomes: Black–White Gaps and Obstetric Access Across Mississippi Counties
 
 **Working title**: Black–White Differences in Birth Outcomes and Obstetric Care Access Across Mississippi's 82 Counties: a Public-Data Ecological Analysis  
-**Status**: **Public-data analysis complete; abstract draft-v1 written (2026-11-27).** Public-data-only by Jake's decision (2026-11-27); no UMMC pull needed.  
+**Status**: **Public-data analysis complete; abstract draft-v1 written and revised 2026-11-27 (312 words).** Public-data-only by Jake's decision (2026-11-27); no UMMC pull needed.  
 **Natural fit**: OB/GYN, pediatrics, family medicine; MAFP and Research Day.  
 **Novelty check (PubMed, 2026-11-27)**: Mississippi birth-outcome papers exist (e.g., Eudy 2009, Lower Delta infant mortality; Smith 2014, Delta maternal mortality; Sandlin 2015, Delta fetal mortality), but no county-level analysis linking Mississippi obstetric-service availability to Black–White birth outcomes was found. Moderate novelty; the state-level Black–White gaps are well known, so the contribution is the county-level gap uniformity and the obstetric access mapping.
 
@@ -52,13 +52,13 @@ Reproducibility: `scripts/public-data/` (`p04.py`, `p04b.py`, `build_ahrf.py`, `
 Per Jake's 2026-11-27 decision, Papers 02–05 use public data only. The earlier UMMC Patient Cohort Explorer request (delivery encounters by method and race; hypertensive disorders O10–O16, gestational diabetes O24, postpartum hemorrhage O72, preterm labor O60; postpartum visit within 12 weeks; insurance) is **not used**. It would add UMMC-only clinical outcomes and care-use patterns that public aggregates cannot show; it remains a possible later extension.
 
 ## Next actions
-- [ ] Abstract trimmed to <=300 words (including section labels); Jake to review; 05 merge-into-02 vs drop pending Jake.
-- [ ] Jake: review and edit the `draft-v1.md` abstract; choose venue (MAFP / Research Day).
+- [x] Abstract written and revised 2026-11-27 against [`guides/abstract-review-2026-11-27.md`](../../guides/abstract-review-2026-11-27.md) (Jake approved applying the fixes; 312 words, project limit ≤500). Rate ratio 1.68 and isolated p-value dropped (no CI or counts in the repo); “unrelated to” softened; NCHS/HRSA/OLS/SEs/OB-GYN spelled out.
+- [ ] Jake to review the revised `draft-v1.md` abstract and choose venue (MAFP / Research Day).
 - [ ] Optional manual: CDC WONDER natality (state level by race: preterm, prenatal care timing) and MSTAHRS county birth/infant death counts; suppress cells under 11.
 - [ ] Optional: replace AHRF preterm variable with CDC WONDER county-group data for validation.
 
 ## Files
-- `draft-v1.md` — abstract (draft-v1), intro, methods, results tables, discussion, references
+- `draft-v1.md` — abstract (revised 2026-11-27, 312 words), intro, methods, results tables, discussion, references
 - `results/p04_results.md` — CHR county Black–White analyses
 - `results/p04b_results.md` — AHRF obstetric access analyses
 - `results/p04_county_dataset.csv`, `results/p04_county_dataset_ahrf.csv` — county aggregates (82 rows)
